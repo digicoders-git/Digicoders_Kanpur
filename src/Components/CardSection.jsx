@@ -178,14 +178,15 @@ const CardSection = () => {
     <div>
 
       {/* ✅ Training Section — */}
-      <div className="text-center py-8">
+      <div className="text-center p-8">
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
           IT Training Programs
         </h2>
-        <p className="text-gray-500 text-base md:text-lg">
+        <div className="mx-auto mt-3 h-[2px] w-40 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+
+        <p className="text-gray-500 text-base pt-3 md:text-lg">
           Specially designed for Engineering Students &amp; Professionals
         </p>
-          <div className="mx-auto mt-3 h-[2px] w-40 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
       </div>
       <section className="relative bg-gray-50 py-10 px-4 overflow-hidden" id="training">
         <div className="absolute inset-x-0 top-0 h-64 bg-blue-600/5 pointer-events-none" />
