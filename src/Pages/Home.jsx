@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../Components/Header'
 import CardSection from '../Components/CardSection';
-import Footer from '../Components/Footer';
-import {slides} from '../Components/CardSection'
-import {features} from '../Components/CardSection'
+import { slides, features, branches } from '../Components/CardSection'
 import { IoCall } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaCircleArrowRight } from "react-icons/fa6";
@@ -12,7 +9,8 @@ import about from '../../public/Images/hero1.jpg'
 import hero2 from '../../public/Images/hero2.jpg'
 import hero3 from '../../public/Images/hero3.jpg'
 import ExpertSection from '../Components/ExpertSection';
-import Notice from '../Components/Notice';
+import ServicesSection from '../Components/ServicesSection';
+import BranchCard from '../Components/BranchCard';
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
@@ -25,20 +23,8 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    );
-  };
-
   return (
     <>
-      <Notice/>
-      <Header />
 
       {/* HERO SECTION */}
       <div className="relative w-full h-[60vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
@@ -113,7 +99,7 @@ const Home = () => {
       {/* RECENT PLACEMENT */}
       <div className="w-full px-4 md:px-10 py-6 bg-gray-100 overflow-hidden">
 
-        <h1 className="text-center text-2xl md:text-4xl font-bold pt-4 pb-6 md:pb-10">
+        <h1 className="text-center text-2xl md:text-5xl font-bold pt-4 pb-6 md:pb-10">
           Recent Placement
           <div className="mx-auto mt-3 h-[2px] w-32 md:w-40 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
         </h1>
@@ -150,51 +136,53 @@ const Home = () => {
         <ExpertSection/>
       </div>
 
-      <section className="py-10 bg-white text-black">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
-            Why Choose <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text text-transparent italic">Us</span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Engineering tomorrow, today. We architect digital advantage for ambitious businesses.
-          </p>
-        </div>
-
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group bg-gray-100/50 border shadow-2xl hover:border-blue-500/50 rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none hover:rounded-tl-none hover:rounded-br-none hover:rounded-tr-3xl hover:rounded-bl-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/10"
-            >
-              <div className="text-5xl mb-6 transition-transform group-hover:scale-110 duration-300">
-                {feature.icon}
-              </div>
-              
-              <h3 className="text-2xl font-semibold mb-4 text-black">
-                {feature.title}
-              </h3>
-              
-              <p className="text-gray-400 leading-relaxed">
-                {feature.desc}
-              </p>
-
-              {/* Decorative line */}
-              <div className="mt-8 h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full group-hover:w-20 transition-all duration-300" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
       {/* CARD SECTION */}
       <div className='px-4 md:px-10'>
         <CardSection/>
       </div>
 
-      {/* ABOUT SECTION */}
+      {/* WHY CHOOSE US START */}
+      <section className="py-10 bg-white text-black">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+              Why Choose <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text text-transparent italic">Us</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Engineering tomorrow, today. We architect digital advantage for ambitious businesses.
+            </p>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="group bg-gray-100/50 border shadow-2xl hover:border-blue-500/50 rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none hover:rounded-tl-none hover:rounded-br-none hover:rounded-tr-3xl hover:rounded-bl-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/10"
+              >
+                <div className="text-5xl mb-6 transition-transform group-hover:scale-110 duration-300">
+                  {feature.icon}
+                </div>
+                
+                <h3 className="text-xl font-bold mb-4 text-black">
+                  {feature.title}
+                </h3>
+                
+                <p className="text-gray-400 text-justify leading-relaxed">
+                  {feature.desc}
+                </p>
+
+                {/* Decorative line */}
+                <div className="mt-8 h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full group-hover:w-20 transition-all duration-300" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* WHY CHOOSE US END */}
+
+      {/* ABOUT SECTION START */}
       <div className='px-4 md:px-10 py-10 flex flex-col md:flex-row gap-8 md:gap-10'>
         
         <div className='w-full md:w-1/2'>
@@ -239,9 +227,7 @@ const Home = () => {
                 <FaCircleArrowRight className='text-blue-500'/> Digital Services
               </p>
             </div>
-
           </div>
-
           <div className='py-5'>
             <button className='py-2 px-4 bg-blue-500 text-white font-semibold rounded-md'>
               Our Services
@@ -249,8 +235,21 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <Footer/>
+      {/* ABOUT SECTION END */}
+      
+      {/* ✅ Branch Section — */}
+      <div className='px-10 py-8 bg-gray-50'>
+        <h1 className="text-center text-4xl font-bold pb-3">
+          Our Branches
+          <div className="mx-auto mt-3 h-[2px] w-40 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+        </h1>
+        <div className="flex flex-wrap justify-center gap-8 px-10 py-16 bg-gray-50">
+          {branches.map((branch) => (
+            <BranchCard key={branch.city} {...branch} />
+          ))}
+        </div>
+      </div>
+      <ServicesSection/>
     </>
   );
 };

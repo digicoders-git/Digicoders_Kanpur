@@ -29,9 +29,9 @@ const ExpertCard = ({ image, name, role, experience, expertise, linkedin }) => {
 
         {/* Expertise Tags */}
         <div className="flex flex-wrap gap-1.5 mt-4">
-          {expertise.map((tag, i) => (
+          {expertise.map((tag) => (
             <span
-              key={i}
+              key={tag}
               className="text-xs bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full font-medium border border-blue-100"
             >
               {tag}

@@ -1,9 +1,6 @@
 import { useState } from "react";
 
-const Footer = () => {
-  const [formData, setFormData] = useState({ name: "", email: "" });
-
-  const trainingLinks = [
+const trainingLinks = [
     "Vocational Training",
     "Summer Training",
     "Winter Training",
@@ -33,6 +30,9 @@ const Footer = () => {
     { label: "in", title: "LinkedIn", bg: "bg-blue-700" },
     { label: "𝕏", title: "Twitter", bg: "bg-sky-500" },
   ];
+
+const Footer = () => {
+  const [formData, setFormData] = useState({ name: "", email: "" });
 
   return (
     <footer className="bg-white border-t-4 border-blue-600 font-sans">

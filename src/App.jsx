@@ -8,11 +8,16 @@ import Placement from './Pages/Placement'
 import Training from './Pages/Training'
 import Gallery from './Pages/Gallery'
 import Contact from './Pages/Contact'
+import Header from './Components/Header'
+import Notice from './Components/Notice'
+import Footer from './Components/Footer'
 
 const App = () => {
   return (
     <>
       <Router>
+        <Notice/>
+        <Header/>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/about' element={<About/>} />
@@ -23,6 +28,7 @@ const App = () => {
           <Route path='/gallery' element={<Gallery/>}/>
           <Route path='/contact' element={<Contact/>} />
         </Routes>
+        <Footer/>
       </Router>
     </>
   )

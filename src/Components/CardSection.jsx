@@ -3,6 +3,7 @@ import BranchCard from './BranchCard'
 import TrainingCard from './TrainingCard'
 import lucknow from '/Images/hero1.jpg'
 import kanpur from '/Images/hero2.jpg'
+import { FaBriefcase, FaChalkboardTeacher, FaMicrochip, FaRocket, FaShieldAlt, FaUserTie } from 'react-icons/fa'
 
 
 //for  hero section
@@ -28,44 +29,43 @@ import kanpur from '/Images/hero2.jpg'
       video: "/Videos/hero1.mp4",
     },
    ];
+   // Why choose us 
 
   export const features = [
     {
-      icon: "🚀",
-      title: "Future-First Innovation",
-      desc: "We don't follow trends — we set them. AI, quantum-ready systems, and intelligent automation built into every solution.",
+      icon: <FaUserTie />,
+      title: "Expert Mentors & Developers",
+      desc: "Learn and collaborate with experienced mentors and skilled developers who bring real industry insights and practical problem-solving expertise",
     },
     {
-      icon: "🤝",
-      title: "Radically Client-Centric",
-      desc: "Your success is our obsession. Real-time adaptive solutions with full transparency and shared accountability.",
+      icon: <FaChalkboardTeacher />,
+      title: "Industry-Oriented Training",
+      desc: "Hands-on training with real-world projects, modern tools, and industry practices to make students job-ready and confident professionals.",
     },
     {
-      icon: "⚡",
-      title: "Elite Talent, Zero Bureaucracy",
-      desc: "Direct access to senior experts. Fast decisions and ownership — no layers, no delays.",
+      icon: <FaBriefcase />,
+      title: "Placement & Career Support",
+      desc: "Comprehensive career support including resume building, mock interviews, and placement assistance to help students confidently secure job opportunities.",
     },
     {
-      icon: "🛡️",
-      title: "Security by Design",
-      desc: "Zero-trust architecture, continuous threat intelligence, and ethical AI governance from day one.",
+      icon: <FaRocket />,
+      title: "Fast & Scalable Development",
+      desc: "We build high-performance, scalable applications using modern technologies to ensure speed, reliability, and seamless growth for your business.",
     },
     {
-      icon: "📈",
-      title: "Velocity & ROI Obsessed",
-      desc: "3-5x faster value realization through intelligent automation and modular architecture.",
+      icon: <FaShieldAlt />,
+      title: "Secure & Reliable Solutions",
+      desc: "We deliver secure, reliable software solutions with best practices, data protection, and consistent performance you can depend on",
     },
     {
-      icon: "🧠",
-      title: "Human + Machine Symbiosis",
-      desc: "Technology that amplifies human potential, delivering higher adoption and sustainable transformation.",
+      icon: <FaMicrochip />,
+      title: "Latest Technology Stack",
+      desc: "We use modern, cutting-edge technologies and frameworks to build efficient, future-ready solutions that keep you ahead of the competition",
     },
   ];
 
-const CardSection = () => {
-
-  // Our  branches
-  const branches = [
+   // Our  branches
+ export const branches = [
     {
       city: "Lucknow",
       image: lucknow,
@@ -84,8 +84,8 @@ const CardSection = () => {
     },
   ]
 
-  //For Training
-  const trainingData = [
+   //For Training
+  export const trainingData = [
   {
     id: 1,
     icon: (
@@ -205,8 +205,7 @@ const CardSection = () => {
   },
 ];
 
-  
-
+const CardSection = () => {
   return (
     <div>
 
@@ -239,20 +238,6 @@ const CardSection = () => {
           </div>
         </div>
       </section>
-
-      {/* ✅ Branch Section — */}
-      <div className='px-10 py-8 bg-gray-50'>
-        <h1 className="text-center text-4xl font-bold pb-3">
-          Our Branches
-          <div className="mx-auto mt-3 h-[2px] w-40 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
-        </h1>
-        <div className="flex flex-wrap justify-center gap-8 px-10 py-16 bg-gray-50">
-          {branches.map((branch, i) => (
-            <BranchCard key={i} {...branch} />
-          ))}
-        </div>
-      </div>
-
     </div>
   )
 }

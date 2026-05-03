@@ -121,7 +121,7 @@ const ExpertSection = () => {
 
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
             Learn from Industry <span className="text-blue-600 italic">Experts</span>
           </h2>
 
