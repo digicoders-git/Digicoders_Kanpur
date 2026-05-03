@@ -29,6 +29,39 @@ import kanpur from '/Images/hero2.jpg'
     },
    ];
 
+  export const features = [
+    {
+      icon: "🚀",
+      title: "Future-First Innovation",
+      desc: "We don't follow trends — we set them. AI, quantum-ready systems, and intelligent automation built into every solution.",
+    },
+    {
+      icon: "🤝",
+      title: "Radically Client-Centric",
+      desc: "Your success is our obsession. Real-time adaptive solutions with full transparency and shared accountability.",
+    },
+    {
+      icon: "⚡",
+      title: "Elite Talent, Zero Bureaucracy",
+      desc: "Direct access to senior experts. Fast decisions and ownership — no layers, no delays.",
+    },
+    {
+      icon: "🛡️",
+      title: "Security by Design",
+      desc: "Zero-trust architecture, continuous threat intelligence, and ethical AI governance from day one.",
+    },
+    {
+      icon: "📈",
+      title: "Velocity & ROI Obsessed",
+      desc: "3-5x faster value realization through intelligent automation and modular architecture.",
+    },
+    {
+      icon: "🧠",
+      title: "Human + Machine Symbiosis",
+      desc: "Technology that amplifies human potential, delivering higher adoption and sustainable transformation.",
+    },
+  ];
+
 const CardSection = () => {
 
   // Our  branches
@@ -178,7 +211,7 @@ const CardSection = () => {
     <div>
 
       {/* ✅ Training Section — */}
-      <div className="text-center p-8">
+      <div className="text-center p">
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3">
           IT Training Programs
         </h2>
@@ -190,20 +223,20 @@ const CardSection = () => {
       </div>
       <section className="relative bg-gray-50 py-10 px-4 overflow-hidden" id="training">
         <div className="absolute inset-x-0 top-0 h-64 bg-blue-600/5 pointer-events-none" />
-          <div className="relative max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-              {trainingData.map((card) => (
-                <TrainingCard
-                  key={card.id}
-                  icon={card.icon}
-                  title={card.title}
-                  audience={card.audience}
-                  description={card.description}
-                  featured={card.featured}
-                  btnVariant={card.btnVariant}
-                />
-              ))}
-            </div>
+        <div className="relative max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+            {trainingData.map((card) => (
+              <TrainingCard
+                key={card.id}
+                icon={card.icon}
+                title={card.title}
+                audience={card.audience}
+                description={card.description}
+                featured={card.featured}
+                btnVariant={card.btnVariant}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

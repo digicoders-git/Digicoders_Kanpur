@@ -10,21 +10,21 @@ const ExpertCard = ({ image, name, role, experience, expertise, linkedin }) => {
           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
         />
         {/* Overlay gradient at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" />
+        {/* <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" /> */}
       </div>
 
       {/* Content Area */}
-      <div className="px-6 pb-6 -mt-2">
+      <div className="px-4 pb-6 mt-2">
         
         {/* Name & Role */}
         <h3 className="text-lg font-bold text-gray-900 leading-tight">{name}</h3>
         <p className="text-blue-600 text-sm font-semibold mt-0.5">{role}</p>
 
         {/* Divider */}
-        <div className="w-10 h-0.5 bg-orange-400 rounded-full my-3" />
+        <div className=" mt-3 h-[2px] w-24 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
 
         {/* Experience */}
-        <p className="text-xs text-gray-400 font-medium uppercase tracking-widest mb-2">Experience</p>
+        <p className="text-xs text-gray-400 font-medium uppercase tracking-widest my-2">Experience</p>
         <p className="text-sm text-gray-600 font-medium">{experience}</p>
 
         {/* Expertise Tags */}

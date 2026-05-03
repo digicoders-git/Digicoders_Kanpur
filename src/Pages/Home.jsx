@@ -3,6 +3,7 @@ import Header from '../Components/Header'
 import CardSection from '../Components/CardSection';
 import Footer from '../Components/Footer';
 import {slides} from '../Components/CardSection'
+import {features} from '../Components/CardSection'
 import { IoCall } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaCircleArrowRight } from "react-icons/fa6";
@@ -148,6 +149,45 @@ const Home = () => {
       <div className='px-4 md:px-10'>
         <ExpertSection/>
       </div>
+
+      <section className="py-10 bg-white text-black">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+            Why Choose <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text text-transparent italic">Us</span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Engineering tomorrow, today. We architect digital advantage for ambitious businesses.
+          </p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="group bg-gray-100/50 border shadow-2xl hover:border-blue-500/50 rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none hover:rounded-tl-none hover:rounded-br-none hover:rounded-tr-3xl hover:rounded-bl-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/10"
+            >
+              <div className="text-5xl mb-6 transition-transform group-hover:scale-110 duration-300">
+                {feature.icon}
+              </div>
+              
+              <h3 className="text-2xl font-semibold mb-4 text-black">
+                {feature.title}
+              </h3>
+              
+              <p className="text-gray-400 leading-relaxed">
+                {feature.desc}
+              </p>
+
+              {/* Decorative line */}
+              <div className="mt-8 h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full group-hover:w-20 transition-all duration-300" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
       {/* CARD SECTION */}
       <div className='px-4 md:px-10'>

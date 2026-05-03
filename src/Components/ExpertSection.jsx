@@ -67,7 +67,7 @@ const ArrowBtn = ({ direction, onClick, disabled }) => (
     className={`
       w-11 h-11 rounded-full border flex items-center justify-center transition-all duration-200
       ${disabled
-        ? "border-gray-200 text-gray-300 cursor-not-allowed bg-white"
+        ? "border-gray-200 text-gray-300  bg-white"
         : "border-blue-200 text-blue-600 bg-white hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-sm"
       }
     `}
@@ -110,19 +110,19 @@ const ExpertSection = () => {
   };
 
   return (
-    <section className="bg-white py-16 px-4" id="experts">
+    <section className="bg-white py-10 px-4" id="experts">
       <div className="max-w-6xl mx-auto">
 
         {/* ✅ CENTERED HEADER */}
-        <div className="text-center mb-10">
-          <span className="flex flex-col items-center justify-center gap-2 text-blue-600 text-sm font-semibold tracking-widest uppercase mb-3">
+        <div className="text-center mb-6">
+          <span className="flex flex-col items-center justify-center gap-2 text-blue-600 text-sm font-semibold tracking-widest uppercase mb-2">
             Meet Our Team
-            <div className="mx-auto mt-3 h-[2px] w-26 md:w-32 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+            <div className="mx-auto mt-1 h-[2px] w-26 md:w-32 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
 
           </span>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-            Learn from Industry <span className="text-blue-600">Experts</span>
+            Learn from Industry <span className="text-blue-600 italic">Experts</span>
           </h2>
 
           <p className="text-gray-400 mt-2 text-sm md:text-base">
