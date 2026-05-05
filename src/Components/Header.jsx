@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import logo from '/Images/logo.png'
+import logo from '/Images/logo1.png'
+
 import { NavLink } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 
@@ -19,8 +20,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className='sticky top-0 px-6 md:px-10 text-black bg-white z-50'>
-      <div className='h-16 w-full flex items-center justify-between'>
+    <div className='sticky top-0 px-6 md:px-10 text-black bg-white z-50 '>
+      <div className='h-16 w-full flex items-center border-t-1 border-gray-500 justify-between'>
 
         {/* Logo */}
         <div className='h-12'>
