@@ -130,90 +130,188 @@ const Registration = () => {
       `}</style>
 
       {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
-      <section
-        className="relative overflow-hidden pt-20 pb-0"
-        style={{ background: 'linear-gradient(135deg, #0a0f1e 0%, #0f2a6b 55%, #0a0f1e 100%)' }}
-      >
-        {/* Grid texture */}
+       
+      <section className="relative overflow-hidden pt-0 pb-0" style={{ minHeight: '580px' }}>
+
+        {/* === Background Image === */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0"
           style={{
-            backgroundImage:
-              'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)',
-            backgroundSize: '48px 48px',
+            backgroundImage: `url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 30%',
+            filter: 'brightness(0.32) saturate(1.1)',
           }}
         />
-        {/* Orbs */}
-        <div className="absolute top-10 left-16 w-80 h-80 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
-        <div className="absolute bottom-0 right-10 w-72 h-72 rounded-full blur-3xl opacity-15"
-          style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
 
-        <div className="relative max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+        {/* Dark gradient overlay — top & bottom */}
+        {/* <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(3,8,26,.75) 0%, rgba(3,8,26,.42) 45%, rgba(3,8,26,.85) 100%)',
+          }}
+        /> */}
 
-          {/* Left text */}
-          <div className="flex-1 text-center md:text-left">
-            <div className="hero-anim inline-flex items-center gap-2 bg-blue-500/10 border border-blue-400/20 rounded-full px-4 py-1.5 mb-6">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-blue-300 text-sm font-medium">Admissions Open — Batch Starting Soon</span>
-            </div>
+        {/* ── CONTENT ── */}
+        <div className="relative max-w-4xl mx-auto px-6 py-5 flex flex-col items-center text-center gap-7" style={{ zIndex: 2 }}>
 
-            <h1 className="hero-anim-1 text-5xl md:text-6xl font-black text-white leading-tight mb-5">
-              Start Your{' '}
-              <span className="shimmer-text">Tech Career</span>
-              <br />Today
-            </h1>
-
-            <p className="hero-anim-2 text-gray-300 text-lg leading-relaxed mb-8 max-w-md">
-              Register now and take the first step toward a future-proof career in technology.
-              Expert trainers, live projects, and guaranteed placement support.
-            </p>
-
-            <div className="hero-anim-3 flex flex-wrap gap-3 justify-center md:justify-start">
-              {[
-                { icon: Award, text: 'ISO Certified', color: '#fbbf24' },
-                { icon: Users, text: '1000+ Trained', color: '#34d399' },
-                { icon: Briefcase, text: '500+ Placed', color: '#60a5fa' },
-              ].map(({ icon: Icon, text, color }, i) => (
-                <div key={i} className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/10">
-                  <Icon size={14} style={{ color }} />
-                  <span className="text-white text-sm font-medium">{text}</span>
-                </div>
-              ))}
-            </div>
+          {/* Live badge */}
+          <div
+            className="hero-anim flex items-center gap-2 rounded-full px-5 py-2"
+            style={{
+              background: 'rgba(255,255,255,0.08)',
+              border: '0.5px solid rgba(99,102,241,0.45)',
+              backdropFilter: 'blur(8px)',
+            }}
+          >
+            <span
+              className="w-2 h-2 rounded-full bg-green-400"
+              style={{ animation: 'pulse 1.8s ease-in-out infinite' }}
+            />
+            <span className="text-green-300 text-xs font-semibold tracking-widest uppercase">
+              Admissions Open · Next Batch Starting Soon
+            </span>
           </div>
 
-          {/* Right — floating visual */}
-          <div className="flex-shrink-0 relative w-64 h-64">
-            <div className="absolute inset-0 rounded-full border-2 border-blue-400/25"
-              style={{ animation: 'pulse-ring 2.2s ease-out infinite' }} />
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center shadow-2xl float">
-              <div className="text-center">
-                <GraduationCap size={40} className="text-white mx-auto mb-2" />
-                <div className="text-3xl font-black text-white">Enroll</div>
-                <div className="text-blue-200 text-xs font-medium mt-1">& Get Placed</div>
-              </div>
-            </div>
+          {/* Eyebrow */}
+          <div className="hero-anim-1 flex items-center gap-3">
+            <div
+              className="w-8 h-px"
+              style={{ background: 'linear-gradient(90deg, transparent, #6366f1)' }}
+            />
+            <span className="text-indigo-300 text-xs font-semibold tracking-widest uppercase">
+              Professional IT Training Institute
+            </span>
+            <div
+              className="w-8 h-px"
+              style={{ background: 'linear-gradient(90deg, #6366f1, transparent)' }}
+            />
+          </div>
+
+          {/* Headline */}
+          <div className="hero-anim-1">
+            <h1
+              className="font-black text-white leading-tight mb-4"
+              style={{
+                fontSize: 'clamp(32px, 5vw, 54px)',
+                letterSpacing: '-0.02em',
+                textShadow: '0 2px 24px rgba(0,0,0,0.6)',
+              }}
+            >
+              Launch Your<br />
+              <span className="shimmer-text">Tech Career</span> with Experts
+            </h1>
+            <p
+              className="text-slate-300 leading-relaxed mx-auto"
+              style={{
+                fontSize: '15px',
+                maxWidth: '500px',
+                textShadow: '0 1px 10px rgba(0,0,0,0.7)',
+              }}
+            >
+              Industry-led training in Web Dev, Python, Cloud &amp; Data Science.
+              <br />Live projects · Expert mentors · Placement guaranteed.
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="hero-anim-2 flex flex-wrap gap-3 justify-center">
+            
+            <a  href="#register"
+              className="group flex items-center gap-2 font-bold text-white rounded-xl transition-all duration-300 hover:-translate-y-0.5"
+              style={{
+                padding: '13px 32px',
+                background: 'linear-gradient(135deg, #2563eb, #4f46e5)',
+                fontSize: '14px',
+                boxShadow: '0 4px 24px rgba(79,70,229,0.5)',
+              }}
+            >
+              Register Now — Free
+              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            
+            <a  href="#demo"
+              className="flex items-center gap-2 font-medium text-slate-200 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
+              style={{
+                padding: '13px 28px',
+                background: 'rgba(255,255,255,0.1)',
+                fontSize: '14px',
+                border: '0.5px solid rgba(255,255,255,0.25)',
+                backdropFilter: 'blur(6px)',
+              }}
+            >
+              Book Free Demo
+            </a>
+          </div>
+
+          {/* Trust Badges */}
+          <div className="hero-anim-3 flex flex-wrap gap-2 justify-center">
             {[
-              { label: '20+ Courses', top: '-4%',  left: '55%', color: '#fbbf24', delay: '0s' },
-              { label: 'Free Demo',   top: '78%',  left: '-8%', color: '#34d399', delay: '0.4s' },
-              { label: '2 Branches',  top: '78%',  left: '60%', color: '#a78bfa', delay: '0.8s' },
-            ].map((b, i) => (
-              <div key={i}
-                className="absolute bg-white rounded-xl shadow-lg px-3 py-1.5 flex items-center gap-2 text-xs font-bold whitespace-nowrap"
-                style={{ top: b.top, left: b.left, animation: `floatY ${3.5 + i * 0.4}s ease-in-out infinite ${b.delay}` }}>
-                <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: b.color }} />
-                {b.label}
+              { icon: Award,     text: 'ISO Certified' },
+              { icon: Users,     text: '1000+ Students Trained' },
+              { icon: Briefcase, text: '500+ Placed' },
+              { icon: Star,      text: '7+ Years Excellence' },
+            ].map(({ icon: Icon, text }, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 rounded-xl px-3.5 py-2"
+                style={{
+                  background: 'rgba(0,0,0,0.38)',
+                  border: '0.5px solid rgba(255,255,255,0.15)',
+                  backdropFilter: 'blur(6px)',
+                }}
+              >
+                <Icon size={13} className="text-slate-400" />
+                <span className="text-slate-300 text-xs font-medium">{text}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Stat Cards */}
+          <div
+            className="hero-anim-3 grid grid-cols-3 gap-3 w-full"
+            style={{ maxWidth: '480px' }}
+          >
+            {[
+              { num: '20+',  label: 'Courses',            color: '#38bdf8' },
+              { num: '2',    label: 'Branches',            color: '#a78bfa' },
+              { num: '100%', label: 'Placement Support',   color: '#34d399' },
+            ].map((s, i) => (
+              <div
+                key={i}
+                className="rounded-2xl py-5 text-center"
+                style={{
+                  background: 'rgba(0,0,0,0.42)',
+                  border: '0.5px solid rgba(255,255,255,0.12)',
+                  backdropFilter: 'blur(8px)',
+                }}
+              >
+                <div
+                  className="font-black leading-none"
+                  style={{ fontSize: '26px', color: s.color }}
+                >
+                  {s.num}
+                </div>
+                <div className="text-xs text-slate-400 font-medium mt-1.5">{s.label}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Wave */}
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
-          <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="white" />
+        {/* Wave bottom */}
+        <svg
+          viewBox="0 0 1440 52"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full block"
+          style={{ position: 'relative', zIndex: 2 }}
+        >
+          <path d="M0,28 C360,4 1080,56 1440,20 L1440,52 L0,52 Z" fill="rgba(255,255,255,0.05)" />
+          <path d="M0,36 C400,8 1040,60 1440,28 L1440,52 L0,52 Z" fill="white" />
         </svg>
       </section>
+
 
       {/* ── SECTION 2: HOW IT WORKS ──────────────────────────────────────────── */}
       <section className="py-16 px-6 bg-white">

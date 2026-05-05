@@ -11,6 +11,8 @@ import Contact from './Pages/Contact'
 import Header from './Components/Header'
 import Notice from './Components/Notice'
 import Footer from './Components/Footer'
+import { IoCall } from 'react-icons/io5'
+import { FaWhatsapp } from 'react-icons/fa'
 
 const App = () => {
   return (
@@ -29,7 +31,28 @@ const App = () => {
           <Route path='/contact' element={<Contact/>} />
         </Routes>
         <Footer/>
+        {/* Side floating buttons */}
+        <button className='hidden md:block fixed text-white px-2 py-1 bg-red-500 rotate-90 left-[-50px] top-1/2 -translate-y-1/2 z-30 text-sm font-semibold'>
+          Assessment Portal
+        </button>
+        <button className='hidden md:block fixed text-white px-2 py-1 bg-green-600 rotate-90 right-[-59px] top-1/2 -translate-y-1/2 z-30 text-sm font-semibold'>
+          Register For Training
+        </button>
+
+        {/* Call & WhatsApp FABs */}
+        <div className="fixed bottom-5 left-5 flex flex-col gap-3 z-50">
+          <a href="tel:+919198483820"
+            className="bg-blue-600 hover:bg-blue-700 p-3 rounded-full text-white text-xl shadow-lg hover:-translate-y-0.5 transition-all">
+            <IoCall />
+          </a>
+          <a href="https://wa.me/919198483820" target="_blank" rel="noreferrer"
+            className="bg-green-600 hover:bg-green-700 p-3 rounded-full text-white text-xl shadow-lg hover:-translate-y-0.5 transition-all">
+            <FaWhatsapp />
+          </a>
+        </div>
       </Router>
+
+      
     </>
   )
 }

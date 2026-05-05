@@ -173,89 +173,84 @@ const About = () => {
       `}</style>
 
       {/* ── SECTION 1: HERO ─────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 pt-20 pb-0">
+      <section className="relative flex items-stretch min-h-[520px] bg-[#f3f2f0] font-[DM_Sans] overflow-hidden">
 
-        {/* Grid texture */}
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: 'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
+      {/* Dark Shape (instead of ::before) */}
+      <div className="absolute top-0 right-0 w-[52%] h-full bg-[#061d3d] z-0"
+          style={{ clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0% 100%)" }}>
+      </div>
 
-        {/* Glowing orbs */}
-        <div className="absolute top-10 left-10 w-72 h-72 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
-        <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-15"
-          style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
+      {/* Ghost Year */}
+      <div className="absolute top-6 right-6 text-[100px] font-black text-white/5 tracking-[-4px] font-[Playfair_Display] pointer-events-none select-none hidden md:block">
+        2017
+      </div>
 
-        <div className="relative max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+      {/* LEFT */}
+      <div className="relative z-10 flex-1 flex flex-col justify-center px-[6%] py-5 pr-7">
 
-          {/* Left text */}
-          <div className="flex-1 text-center md:text-left" style={{ animation: 'slideRight 0.7s ease forwards' }}>
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-400/20 rounded-full px-4 py-1.5 mb-6">
-              <Star size={14} className="text-yellow-400 fill-yellow-400" />
-              <span className="text-blue-300 text-sm font-medium">Trusted Since 2017</span>
-            </div>
-
-            <h1 className="text-5xl md:text-6xl font-black text-white leading-tight mb-6">
-              Shaping{' '}
-              <span className="shimmer-text">Tomorrow's</span>
-              <br />Tech Leaders
-            </h1>
-
-            <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg">
-              We are more than just a training institute — we are a career launchpad.
-              For 7+ years, we have been turning students' ambitions into real success stories.
-            </p>
-
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/10">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-white text-sm font-medium">Admissions Open</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/10">
-                <BookOpen size={14} className="text-blue-300" />
-                <span className="text-white text-sm font-medium">20+ Courses</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/10">
-                <Award size={14} className="text-yellow-300" />
-                <span className="text-white text-sm font-medium">ISO Certified</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right visual — floating card stack */}
-          <div className="flex-shrink-0 relative w-72 h-72" style={{ animation: 'slideLeft 0.8s ease forwards' }}>
-            {/* Pulse ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-blue-400/30"
-              style={{ animation: 'pulse-ring 2s ease-out infinite' }} />
-            {/* Main circle */}
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-2xl"
-              style={{ animation: 'floatY 4s ease-in-out infinite' }}>
-              <div className="text-center">
-                <div className="text-5xl font-black text-white">7+</div>
-                <div className="text-blue-200 text-sm font-medium mt-1">Years of</div>
-                <div className="text-yellow-300 text-sm font-bold">Excellence</div>
-              </div>
-            </div>
-            {/* Floating badges */}
-            {[
-              { label: '1000+ Students', top: '0%', left: '60%', color: '#fbbf24' },
-              { label: '500+ Placed', top: '75%', left: '-5%', color: '#34d399' },
-              { label: '2 Branches', top: '75%', left: '60%', color: '#a78bfa' },
-            ].map((b, i) => (
-              <div key={i} className="absolute bg-white rounded-xl shadow-lg px-3 py-2 flex items-center gap-2 text-xs font-bold"
-                style={{ top: b.top, left: b.left, animation: `floatY ${3.5 + i * 0.5}s ease-in-out infinite ${i * 0.3}s` }}>
-                <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: b.color }} />
-                {b.label}
-              </div>
-            ))}
-          </div>
+        {/* Tag */}
+        <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.12em] text-blue-500 mb-6">
+          <div className="w-7 h-[1px] bg-[#7c6a4e]" />
+           Lucknow & Kanpur 
         </div>
 
-        {/* Wave bottom */}
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
-          <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="white" />
-        </svg>
-      </section>
+        {/* Heading */}
+        <h1 className="font-[Playfair_Display] text-[clamp(38px,4vw,56px)] font-black leading-tight text-[#0e1c2e] mb-2">
+          We Build <br />
+          <em className="italic text-blue-800">Real</em> Careers,<br />
+          Not Just <br />
+          Résumés.
+        </h1>
 
+        {/* Subtext */}
+        <p className="text-[14px] font-light text-[#5a4f3f] leading-[1.8] max-w-[340px] my-5">
+          7+ years. 1000+ students. One relentless belief — every learner deserves a genuine shot at the industry.
+        </p>
+
+        {/* Pills */}
+        <div className="flex flex-wrap gap-2">
+          <a href="/registration"
+            className="px-4 py-[7px] text-[12px] font-medium rounded hover:bg-white hover:text-black border hover:border-[#d8cfbf] border-[#0e1c2e] bg-[#0e1c2e] text-[#f5f2ec]">
+            Register Now
+          </a>
+
+          {["20+ Courses", "ISO Certified", "Placement Guarantee"].map((item, i) => (
+            <span key={i}
+              className="px-4 py-2 text-[12px] font-medium rounded hover:bg-[#0e1c2e] hover:text-white border border-[#d8cfbf] bg-white text-[#0e1c2e]">
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* RIGHT */}
+      <div className="relative z-10 flex-[0_0_42%] flex flex-col justify-center pl-12 pr-[5%] py-5">
+
+      {[
+        { num: '1000', sup: '+', label: 'Students Trained', desc: 'Across both campuses' },
+        { num: '500', sup: '+', label: 'Placements Done', desc: 'In top MNCs & startups' },
+        { num: '7', sup: '+', label: 'Years of Excellence', desc: 'Since 2017' },
+        { num: '50', sup: '+', label: 'Industry Partners', desc: 'Pan-India hiring network' },
+      ].map((s, i) => (
+        <div key={i}
+          className="flex items-center py-4 border-b border-white/10 first:border-t">
+
+          <div className="w-24 flex-shrink-0 font-[Playfair_Display] text-[38px] font-bold text-white">
+            {s.num}
+            <sup className="text-[20px] text-[#c17d3c]">{s.sup}</sup>
+          </div>
+
+          <div className="w-[6px] h-[6px] bg-[#c17d3c] rounded-full mr-4" />
+
+          <div>
+            <div className="text-[13px] font-medium text-white">{s.label}</div>
+            <div className="text-[11px] text-white/40 mt-1">{s.desc}</div>
+          </div>
+        </div>
+      ))}
+      </div>
+
+      </section>
       {/* ── SECTION 2: STATS ─────────────────────────────────────────────── */}
       <section className="py-16 px-6 bg-white" ref={statsRef}>
         <div className="max-w-6xl mx-auto">

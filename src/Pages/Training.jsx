@@ -274,108 +274,383 @@ const Training = () => {
       `}</style>
 
       {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
-      <section
-        className="relative overflow-hidden pt-20 pb-0"
-        style={{ background: 'linear-gradient(135deg, #0a0f1e 0%, #0f2a6b 55%, #0a0f1e 100%)' }}
-      >
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: 'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
-        <div className="absolute top-10 left-16 w-80 h-80 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
-        <div className="absolute bottom-0 right-10 w-72 h-72 rounded-full blur-3xl opacity-15"
-          style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
+      {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
+{/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
+<section className="relative overflow-hidden" style={{ background: '#0a0f1e' }}>
 
-        <div className="relative max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+  {/* BG Image */}
+  <div
+    className="absolute inset-0"
+    style={{
+      backgroundImage: `url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center 25%',
+      filter: 'brightness(0.18) saturate(1.2)',
+    }}
+  />
 
-          {/* Left */}
-          <div className="flex-1 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-400/20 rounded-full px-4 py-1.5 mb-6"
-              style={{ animation: 'fadeUp 0.6s ease both' }}>
-              <BookOpen size={13} className="text-blue-300" />
-              <span className="text-blue-300 text-sm font-medium">20+ Industry-Ready Courses</span>
-            </div>
+  {/* Gradient overlay */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background: 'linear-gradient(135deg, rgba(10,10,10,.97) 0%, rgba(15,42,100,.70) 70%, rgba(10,15,30,.92) 100%)',
+    }}
+  />
 
-            <h1 className="text-5xl md:text-6xl font-black text-white leading-tight mb-5"
-              style={{ animation: 'fadeUp 0.6s ease 0.1s both' }}>
-              Learn. Build.{' '}
-              <span className="shimmer-text">Get Placed.</span>
-            </h1>
+  {/* Grid texture */}
+  {/* <div
+    className="absolute inset-0 opacity-[0.04]"
+    style={{
+      backgroundImage:
+        'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)',
+      backgroundSize: '48px 48px',
+    }}
+  /> */}
 
-            <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg"
-              style={{ animation: 'fadeUp 0.6s ease 0.2s both' }}>
-              Hands-on training programs designed with industry experts — from beginner to job-ready
-              in weeks, not years. Real projects, real skills, real results.
-            </p>
+  {/* Left vertical glow line — hidden on mobile */}
+  <div
+    className="absolute left-0 top-0 w-[3px] h-full hidden md:block"
+    style={{ background: 'linear-gradient(180deg, transparent, #3b82f6, #6366f1, transparent)' }}
+  />
 
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start"
-              style={{ animation: 'fadeUp 0.6s ease 0.3s both' }}>
-              {[
-                { icon: Award,      text: 'Certified Trainers',  color: '#fbbf24' },
-                { icon: Play,       text: 'Live Project Training',color: '#34d399' },
-                { icon: Briefcase,  text: 'Placement Guarantee', color: '#60a5fa' },
-              ].map(({ icon: Icon, text, color }, i) => (
-                <div key={i} className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/10">
-                  <Icon size={14} style={{ color }} />
-                  <span className="text-white text-sm font-medium">{text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+  {/* MAIN CONTENT */}
+  <div
+    className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8"
+    style={{ zIndex: 2 }}
+  >
+    {/* Grid: stacked on mobile, side-by-side on lg+ */}
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] xl:grid-cols-[1fr_320px] gap-0">
 
-          {/* Right — floating stat cards */}
-          <div className="flex-shrink-0 relative w-64 h-64">
-            <div className="absolute inset-0 rounded-full border-2 border-blue-400/25"
-              style={{ animation: 'pulse-ring 2.2s ease-out infinite' }} />
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center shadow-2xl"
-              style={{ animation: 'floatY 4s ease-in-out infinite' }}>
-              <div className="text-center">
-                <Code size={36} className="text-white mx-auto mb-2" />
-                <div className="text-3xl font-black text-white">20+</div>
-                <div className="text-blue-200 text-xs font-medium mt-1">Courses</div>
-              </div>
-            </div>
-            {[
-              { label: '4.8★ Rating',   top: '-4%',  left: '55%', color: '#fbbf24', delay: '0s' },
-              { label: '500+ Placed',   top: '78%',  left: '-8%', color: '#34d399', delay: '0.4s' },
-              { label: 'Live Projects', top: '78%',  left: '58%', color: '#a78bfa', delay: '0.8s' },
-            ].map((b, i) => (
-              <div key={i}
-                className="absolute bg-white rounded-xl shadow-lg px-3 py-1.5 flex items-center gap-2 text-xs font-bold whitespace-nowrap"
-                style={{ top: b.top, left: b.left, animation: `floatY ${3.5 + i * 0.4}s ease-in-out infinite ${b.delay}` }}>
-                <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: b.color }} />
-                {b.label}
-              </div>
-            ))}
-          </div>
+      {/* ── LEFT: Content ── */}
+      <div className="flex flex-col justify-center gap-4 sm:gap-5 py-12 sm:py-14 lg:py-16 lg:pr-10">
+
+        {/* Eyebrow */}
+        <div
+          className="flex items-center gap-3"
+          style={{ animation: 'fadeUp 0.5s ease 0.08s both' }}
+        >
+          <div
+            className="w-[3px] h-6 sm:h-7 rounded-sm flex-shrink-0"
+            style={{ background: 'linear-gradient(180deg, #3b82f6, #6366f1)' }}
+          />
+          <span className="text-blue-300 text-[10px] sm:text-[11px] font-bold tracking-[.12em] sm:tracking-[.15em] uppercase">
+            Professional IT Training Institute
+          </span>
         </div>
 
-        {/* Wave */}
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
-          <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="white" />
-        </svg>
-      </section>
+        {/* Headline */}
+        <div style={{ animation: 'fadeUp 0.5s ease 0.18s both' }}>
+          <h1
+            className="font-black text-slate-100 leading-[1.1] m-0"
+            style={{
+              fontSize: 'clamp(30px, 5vw, 46px)',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Learn. Build.<br />
+            <span className="shimmer-text">Get Placed.</span>
+          </h1>
+        </div>
 
-      {/* ── SECTION 2: STATS BAR ─────────────────────────────────────────────── */}
-      <section className="py-12 px-6 bg-white">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {stats.map((s, i) => {
-            const Icon = s.icon
-            return (
-              <div key={i} className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-2xl p-4 hover:shadow-md transition-all duration-300 group"
-                style={{ animation: `fadeUp 0.5s ease both ${i * 0.08}s` }}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                  style={{ backgroundColor: s.color + '18' }}>
-                  <Icon size={18} style={{ color: s.color }} />
-                </div>
+        {/* Description */}
+        <p
+          className="text-slate-400 text-sm leading-[1.75] m-0 max-w-full sm:max-w-[480px] lg:max-w-[420px]"
+          style={{ animation: 'fadeUp 0.5s ease 0.18s both' }}
+        >
+          Hands-on training programs designed with industry experts — from beginner
+          to job-ready in weeks, not years. Real projects, real skills, real results.
+        </p>
+
+        {/* Feature pills */}
+        <div
+          className="flex flex-wrap gap-2"
+          style={{ animation: 'fadeUp 0.5s ease 0.28s both' }}
+        >
+          {[
+            { dot: '#fbbf24', text: 'Certified Trainers' },
+            { dot: '#34d399', text: 'Live Project Training' },
+            { dot: '#60a5fa', text: 'Placement Guarantee' },
+          ].map(({ dot, text }, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-2 rounded-full px-3 sm:px-3.5 py-1.5"
+              style={{
+                background: 'rgba(255,255,255,0.07)',
+                border: '0.5px solid rgba(255,255,255,0.12)',
+              }}
+            >
+              <span
+                className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                style={{ backgroundColor: dot }}
+              />
+              <span className="text-slate-200 text-[11px] sm:text-xs font-medium">{text}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* CTAs */}
+        <div
+          className="flex flex-col xs:flex-row gap-3"
+          style={{ animation: 'fadeUp 0.5s ease 0.28s both' }}
+        >
+          
+          <a  href="#courses"
+            className="group flex items-center justify-center gap-2 font-bold text-white rounded-xl transition-all duration-300 hover:-translate-y-0.5 text-center"
+            style={{
+              padding: '12px 28px',
+              background: 'linear-gradient(135deg, #2563eb, #4f46e5)',
+              fontSize: '13px',
+              boxShadow: '0 4px 20px rgba(79,70,229,.4)',
+            }}
+          >
+            Explore Courses
+            <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+          
+          <a  href="#demo"
+            className="flex items-center justify-center font-medium text-slate-200 rounded-xl transition-all duration-300 hover:-translate-y-0.5 text-center"
+            style={{
+              padding: '12px 22px',
+              background: 'rgba(255,255,255,0.08)',
+              fontSize: '13px',
+              border: '0.5px solid rgba(255,255,255,0.2)',
+            }}
+          >
+            Free Demo Class
+          </a>
+        </div>
+
+        {/* Stats row */}
+        <div
+          className="grid grid-cols-4 gap-2 sm:flex sm:gap-6 pt-3"
+          style={{
+            borderTop: '0.5px solid rgba(255,255,255,0.08)',
+            animation: 'fadeUp 0.5s ease 0.38s both',
+          }}
+        >
+          {[
+            { n: '20+',   l: 'Courses',  c: '#60a5fa' },
+            { n: '1000+', l: 'Students', c: '#a78bfa' },
+            { n: '500+',  l: 'Placed',   c: '#34d399' },
+            { n: '4.8★',  l: 'Rating',   c: '#fbbf24' },
+          ].map((s, i) => (
+            <div key={i} className="text-center">
+              <div
+                className="font-black leading-none text-lg sm:text-xl"
+                style={{ color: s.c }}
+              >
+                {s.n}
+              </div>
+              <div className="text-[9px] sm:text-[10px] text-slate-500 mt-1 font-semibold uppercase tracking-wider">
+                {s.l}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── RIGHT: Course Preview Panel — hidden on mobile, shown lg+ ── */}
+      <div className="hidden lg:flex items-center py-8 pl-5 relative">
+
+        {/* Vertical divider */}
+        {/* <div
+          className="absolute left-0 top-[15%] w-px"
+          style={{
+            height: '70%',
+            background: 'linear-gradient(180deg, transparent, rgba(99,102,241,0.4), transparent)',
+          }}
+        /> */}
+
+        <div className="w-full flex flex-col gap-2.5">
+
+          {/* Panel header */}
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-slate-400 text-[10px] font-bold tracking-widest uppercase">
+              Top Courses
+            </span>
+            <span className="text-blue-500 text-[10px] font-semibold">20+ Available →</span>
+          </div>
+
+          {/* Course mini cards */}
+          {[
+            { title: 'Full Stack Web Dev',    dur: '4–6 Months', color: '#3b82f6', fill: 70 },
+            { title: 'Data Science & ML',     dur: '4–6 Months', color: '#8b5cf6', fill: 83, badge: 'Hot' },
+            { title: 'Cloud Computing (AWS)', dur: '2–3 Months', color: '#ef4444', fill: 47 },
+            { title: 'Python Programming',    dur: '2–3 Months', color: '#f59e0b', fill: 56 },
+            { title: 'Cyber Security',        dur: '3–4 Months', color: '#06b6d4', fill: 42 },
+          ].map((c, i) => (
+            <div
+              key={i}
+              className="rounded-xl p-2.5"
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '0.5px solid rgba(255,255,255,0.1)',
+                animation: `fadeUp 0.4s ease both ${0.1 + i * 0.07}s`,
+              }}
+            >
+              <div className="flex items-center justify-between mb-1.5">
                 <div>
-                  <div className="font-black text-gray-900 text-lg leading-none">{s.value}</div>
-                  <div className="text-xs text-gray-500 font-medium mt-0.5">{s.label}</div>
+                  <div className="text-slate-100 text-[11px] font-bold leading-tight">{c.title}</div>
+                  <div className="text-slate-500 text-[10px] mt-0.5">{c.dur}</div>
                 </div>
+                {c.badge && (
+                  <span
+                    className="text-[9px] font-bold rounded-full px-2 py-0.5 flex-shrink-0"
+                    style={{
+                      background: 'rgba(239,68,68,.15)',
+                      color: '#fca5a5',
+                      border: '0.5px solid rgba(239,68,68,.3)',
+                    }}
+                  >
+                    {c.badge}
+                  </span>
+                )}
               </div>
-            )
-          })}
+              <div
+                className="h-[2px] rounded-full overflow-hidden"
+                style={{ background: 'rgba(255,255,255,0.08)' }}
+              >
+                <div
+                  className="h-full rounded-full"
+                  style={{ width: `${c.fill}%`, backgroundColor: c.color }}
+                />
+              </div>
+              <div className="flex justify-between mt-1">
+                <span className="text-slate-500 text-[9px]">Seats filled</span>
+                <span className="text-[9px] font-bold" style={{ color: c.color }}>
+                  {c.fill}%
+                </span>
+              </div>
+            </div>
+          ))}
+
+          {/* View all */}
+          
+          <a  href="#courses"
+            className="rounded-xl p-2.5 text-center block transition-all hover:opacity-80"
+            style={{
+              background: 'linear-gradient(135deg, rgba(37,99,235,.2), rgba(79,70,229,.2))',
+              border: '0.5px solid rgba(99,102,241,.35)',
+            }}
+          >
+            <span className="text-indigo-300 text-[11px] font-bold">
+              View All 20+ Courses →
+            </span>
+          </a>
         </div>
-      </section>
+      </div>
+
+      {/* ── MOBILE ONLY: Horizontal course scroll strip ── */}
+      <div className="lg:hidden pb-8 -mx-4 px-4" style={{ animation: 'fadeUp 0.5s ease 0.45s both' }}>
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-slate-400 text-[10px] font-bold tracking-widest uppercase">
+            Popular Courses
+          </span>
+          <a href="#courses" className="text-blue-400 text-[10px] font-semibold">
+            View All →
+          </a>
+        </div>
+        <div className="flex gap-3 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none' }}>
+          {[
+            { title: 'Full Stack Web Dev',  color: '#3b82f6', fill: 70,  dur: '4–6 Mo' },
+            { title: 'Data Science & ML',   color: '#8b5cf6', fill: 83,  dur: '4–6 Mo', badge: 'Hot' },
+            { title: 'AWS Cloud',           color: '#ef4444', fill: 47,  dur: '2–3 Mo' },
+            { title: 'Python',              color: '#f59e0b', fill: 56,  dur: '2–3 Mo' },
+            { title: 'Cyber Security',      color: '#06b6d4', fill: 42,  dur: '3–4 Mo' },
+          ].map((c, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 rounded-xl p-3"
+              style={{
+                width: '140px',
+                background: 'rgba(255,255,255,0.06)',
+                border: '0.5px solid rgba(255,255,255,0.12)',
+              }}
+            >
+              <div className="flex items-start justify-between mb-2">
+                <div
+                  className="w-1.5 h-full rounded-full mr-2 mt-1 flex-shrink-0"
+                  style={{ minHeight: '28px', backgroundColor: c.color, width: '3px' }}
+                />
+                <div className="flex-1">
+                  <div className="text-slate-100 text-[11px] font-bold leading-tight">{c.title}</div>
+                  <div className="text-slate-500 text-[10px] mt-0.5">{c.dur}</div>
+                </div>
+                {c.badge && (
+                  <span
+                    className="text-[8px] font-bold rounded-full px-1.5 py-0.5 ml-1 flex-shrink-0"
+                    style={{
+                      background: 'rgba(239,68,68,.15)',
+                      color: '#fca5a5',
+                      border: '0.5px solid rgba(239,68,68,.3)',
+                    }}
+                  >
+                    {c.badge}
+                  </span>
+                )}
+              </div>
+              <div
+                className="h-[2px] rounded-full overflow-hidden mt-2"
+                style={{ background: 'rgba(255,255,255,0.08)' }}
+              >
+                <div
+                  className="h-full rounded-full"
+                  style={{ width: `${c.fill}%`, backgroundColor: c.color }}
+                />
+              </div>
+              <div className="text-right mt-1">
+                <span className="text-[9px] font-bold" style={{ color: c.color }}>
+                  {c.fill}% full
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {/* ── Scrolling Tech Ticker ── */}
+  <div
+    className="relative overflow-hidden py-2"
+    style={{
+      zIndex: 2,
+      borderTop: '0.5px solid rgba(255,255,255,0.07)',
+      borderBottom: '0.5px solid rgba(255,255,255,0.07)',
+      background: 'rgba(0,0,0,0.2)',
+    }}
+  >
+    <div className="flex w-max" style={{ animation: 'ticker 18s linear infinite' }}>
+      {[...Array(2)].map((_, repeat) =>
+        ['React', 'Node.js', 'Python', 'Java', 'AWS', 'Data Science', 'Machine Learning',
+          'Cyber Security', 'Android Dev', 'SQL', 'Spring Boot', 'TensorFlow', 'Docker', 'Figma',
+        ].map((tech, i) => (
+          <span
+            key={`${repeat}-${i}`}
+            className="text-slate-500 text-[11px] font-semibold whitespace-nowrap px-4 sm:px-5"
+            style={{ letterSpacing: '.05em' }}
+          >
+            <span className="text-slate-700 mr-4 sm:mr-5">◆</span>{tech}
+          </span>
+        ))
+      )}
+    </div>
+  </div>
+
+  {/* Wave */}
+  <svg
+    viewBox="0 0 1440 48"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-full block"
+    style={{ position: 'relative', zIndex: 2 }}
+  >
+    <path d="M0,24 C360,0 1080,52 1440,18 L1440,48 L0,48 Z" fill="rgba(255,255,255,0.04)" />
+    <path d="M0,32 C400,6 1040,56 1440,24 L1440,48 L0,48 Z" fill="white" />
+  </svg>
+</section>
+
 
       {/* ── SECTION 3: COURSE GRID ───────────────────────────────────────────── */}
       <section className="py-16 px-6 bg-gray-50">

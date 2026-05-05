@@ -282,26 +282,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Side floating buttons */}
-        <button className='hidden md:block fixed text-white px-2 py-1 bg-red-500 rotate-90 left-[-60px] top-1/2 -translate-y-1/2 z-30 text-xs font-semibold'>
-          Assessment Portal
-        </button>
-        <button className='hidden md:block fixed text-white px-2 py-1 bg-green-600 rotate-90 right-[-70px] top-1/2 -translate-y-1/2 z-30 text-xs font-semibold'>
-          Register For Training
-        </button>
-
-        {/* Call & WhatsApp FABs */}
-        <div className="fixed bottom-5 left-5 flex flex-col gap-3 z-50">
-          <a href="tel:+919198483820"
-            className="bg-blue-600 hover:bg-blue-700 p-3 rounded-full text-white text-xl shadow-lg hover:-translate-y-0.5 transition-all">
-            <IoCall />
-          </a>
-          <a href="https://wa.me/919198483820" target="_blank" rel="noreferrer"
-            className="bg-green-600 hover:bg-green-700 p-3 rounded-full text-white text-xl shadow-lg hover:-translate-y-0.5 transition-all">
-            <FaWhatsapp />
-          </a>
-        </div>
-
         {/* Wave bottom */}
         <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block mt-8">
           <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="white" />

@@ -18,6 +18,7 @@ const Notice = () => {
             +91 9720535155
           </a>
         </div>
+        
 
         {/* Mobile buttons (stay here on small screen) */}
         <div className="flex md:hidden items-center gap-3">
@@ -55,6 +56,15 @@ const Notice = () => {
           <FaDownload size={14} />
           <span className="text-sm font-semibold">Brochure</span>
         </div>
+        
+        <div className="flex items-center gap-2 cursor-pointer hover:text-blue-400">
+          <FaDownload size={14} />
+          <span className="text-sm font-semibold">Placement Brochure</span>
+        </div>
+        <div className="flex items-center gap-2 cursor-pointer hover:text-blue-400">
+          <FaDownload size={14} />
+          <span className="text-sm font-semibold">Student Login</span>
+        </div>
       </div>
 
       {/* STYLE */}
@@ -66,12 +76,12 @@ const Notice = () => {
           }
 
           .animate-marquee {
-            animation: marquee 20s linear infinite;
+            animation: marquee 8s linear infinite;
           }
 
           @media (max-width: 768px) {
             .animate-marquee {
-              animation-duration: 14s;
+              animation-duration: 10s;
             }
           }
         `}
