@@ -19,7 +19,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className='sticky top-0 px-6 md:px-10 bg-black z-50'>
+    <div className='sticky top-0 px-6 md:px-10 text-black bg-white z-50'>
       <div className='h-16 w-full flex items-center justify-between'>
 
         {/* Logo */}
@@ -36,7 +36,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "text-blue-600 border-b-2 border-blue-600 font-medium"
-                    : "text-white hover:text-blue-500 font-medium"
+                    : "text-black hover:text-blue-500 font-medium"
                 }
               >
                 {item.name}
@@ -56,7 +56,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden flex flex-col gap-4 bg-black px-6 py-4">
+        <ul className="md:hidden flex flex-col gap-4 bg-white text-black px-6 py-4">
           {navLinks.map((item) => (
             <li key={item.path}>
               <NavLink

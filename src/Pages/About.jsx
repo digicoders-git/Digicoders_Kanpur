@@ -181,7 +181,7 @@ const About = () => {
       </div>
 
       {/* Ghost Year */}
-      <div className="absolute top-6 right-6 text-[100px] font-black text-white/5 tracking-[-4px] font-[Playfair_Display] pointer-events-none select-none hidden md:block">
+      <div className="absolute top-3 right-6 text-[100px] font-black text-white/5 tracking-[-4px] font-[Playfair_Display] pointer-events-none select-none hidden md:block">
         2017
       </div>
 

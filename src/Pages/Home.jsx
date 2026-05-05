@@ -169,7 +169,7 @@ const Home = () => {
       {/* ══════════════════════════════════════════════════════
           HERO SECTION — Dark gradient + animated video slider
           ══════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900">
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-500 via-blue-400 to-gray-400">
 
         {/* Grid texture */}
         <div className="absolute inset-0 opacity-[0.04]"

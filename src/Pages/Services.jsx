@@ -30,7 +30,7 @@ const services = [
   {
     id: 2,
     icon: Briefcase,
-    color: '#10b981', bg: '#ecfdf5',
+    color: '#3b82f6', bg: '#eff6ff',
     title: 'Placement Assistance',
     subtitle: 'Career Launch Service',
     desc: 'End-to-end placement support — from resume building to final offer letters. Our dedicated placement cell has strong ties with 50+ IT companies across India.',
@@ -48,7 +48,7 @@ const services = [
   {
     id: 3,
     icon: Users,
-    color: '#8b5cf6', bg: '#f5f3ff',
+    color: '#3b82f6', bg: '#eff6ff',
     title: 'Summer & Industrial Training',
     subtitle: 'Internship Programme',
     desc: 'Structured 4–6 week industrial training programmes for B.Tech, BCA, and MCA students — fulfilling university internship requirements with a recognised certificate and real project work.',
@@ -66,7 +66,7 @@ const services = [
   {
     id: 4,
     icon: FileText,
-    color: '#f59e0b', bg: '#fffbeb',
+    color: '#3b82f6', bg: '#eff6ff',
     title: 'Project Development Support',
     subtitle: 'Final Year & Research Projects',
     desc: 'Complete end-to-end support for final year projects, mini projects, and research-based assignments. We help you build projects that stand out in your portfolio and impress evaluators.',
@@ -83,7 +83,7 @@ const services = [
   {
     id: 5,
     icon: Monitor,
-    color: '#ef4444', bg: '#fef2f2',
+    color: '#3b82f6', bg: '#eff6ff',
     title: 'Corporate Training Solutions',
     subtitle: 'For Organisations & Teams',
     desc: 'Customised upskilling programmes for corporate teams and organisations. We design training modules aligned with your technology stack, delivered on-site or online.',
@@ -100,7 +100,7 @@ const services = [
   {
     id: 6,
     icon: HeartHandshake,
-    color: '#06b6d4', bg: '#ecfeff',
+    color: '#3b82f6', bg: '#eff6ff',
     title: 'Career Counselling',
     subtitle: 'Free Guidance Session',
     desc: 'Not sure which tech path to choose? Our expert counsellors offer free one-on-one sessions to help you understand your strengths, map career goals, and pick the right course.',
@@ -122,13 +122,6 @@ const process = [
   { num: '02', icon: HeartHandshake, title: 'Free Counselling',      desc: 'Our counsellor understands your background, goals, and recommends the best-fit service or course.' },
   { num: '03', icon: BookOpen,       title: 'Enroll & Start',        desc: 'Complete a quick enrollment, choose your batch timing, and begin your learning journey.' },
   { num: '04', icon: TrendingUp,     title: 'Learn & Get Placed',    desc: 'Complete your training, build real projects, clear interviews, and land your dream job.' },
-]
-
-const stats = [
-  { value: '7+',    label: 'Years Experience',    icon: Clock,      color: '#3b82f6' },
-  { value: '20+',   label: 'Services Offered',    icon: Layers,     color: '#f59e0b' },
-  { value: '50+',   label: 'Hiring Partners',     icon: Globe,      color: '#10b981' },
-  { value: '98%',   label: 'Satisfaction Rate',   icon: Star,       color: '#8b5cf6' },
 ]
 
 const techStack = [
@@ -259,7 +252,7 @@ const Services = () => {
 
       {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden pt-20 pb-0"
+        className="relative overflow-hidden pb-0"
         style={{ background: 'linear-gradient(135deg, #0a0f1e 0%, #0f2a6b 55%, #0a0f1e 100%)' }}
       >
         <div className="absolute inset-0 opacity-[0.04]"
@@ -339,31 +332,8 @@ const Services = () => {
         </svg>
       </section>
 
-      {/* ── SECTION 2: STATS ─────────────────────────────────────────────────── */}
-      <section className="py-12 px-6 bg-white">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {stats.map((s, i) => {
-            const Icon = s.icon
-            return (
-              <div key={i}
-                className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-2xl p-4 hover:shadow-md transition-all duration-300 group"
-                style={{ animation: `fadeUp 0.5s ease both ${i * 0.08}s` }}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                  style={{ backgroundColor: s.color + '18' }}>
-                  <Icon size={18} style={{ color: s.color }} />
-                </div>
-                <div>
-                  <div className="font-black text-gray-900 text-xl leading-none">{s.value}</div>
-                  <div className="text-xs text-gray-500 font-medium mt-0.5">{s.label}</div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      </section>
-
       {/* ── SECTION 3: SERVICE CARDS ─────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-gray-50" ref={cardsRef}>
+      <section className="py-8 px-6 bg-gray-50" ref={cardsRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
