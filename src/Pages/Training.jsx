@@ -273,8 +273,7 @@ const Training = () => {
         }
       `}</style>
 
-      {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
-      {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
+
 {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
 <section className="relative overflow-hidden" style={{ background: '#0a0f1e' }}>
 
