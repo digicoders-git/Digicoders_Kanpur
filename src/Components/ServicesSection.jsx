@@ -253,7 +253,7 @@ function ServicePill({ service }) {
 
 export default function ServicesSection() {
   return (
-    <section className="bg-white text-black min-h-screen px-4 py-12 sm:px-8 md:px-12 lg:px-16">
+    <section className="bg-white text-black px-4 py-10 sm:px-8 md:px-12 lg:px-16">
       <h2 className="text-5xl sm:text-3xl text-center font-bold text-black tracking-widest uppercase mb-2">
         Our Services
       </h2>

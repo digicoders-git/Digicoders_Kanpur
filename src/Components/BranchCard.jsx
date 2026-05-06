@@ -3,13 +3,13 @@ import { MdLocationOn, MdEmail, MdAccessTime } from "react-icons/md";
 
 const BranchCard = ({ image, city, location, contact, email, hours }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-md overflow-hidden w-full max-w-sm mx-auto">
+    <div className="bg-white rounded-2xl shadow-md overflow-hidden w-full max-w-lg mx-auto">
 
       {/* Image */}
       <img
         src={image}
         alt={city}
-        className="w-full h-40 sm:h-44 md:h-48 object-cover"
+        className="w-full h-40 sm:h-44 md:h-62 object-cover"
       />
 
       {/* Content */}
@@ -18,7 +18,7 @@ const BranchCard = ({ image, city, location, contact, email, hours }) => {
           {city} Branch
         </h2>
 
-        <div className="mt-2 h-[2px] w-24 sm:w-28 md:w-32 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-4" />
+        <div className="mt-2 h-[2px] w-24 sm:w-28 md:w-42 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-4" />
 
         {/* Info */}
         <div className="flex flex-col gap-3">

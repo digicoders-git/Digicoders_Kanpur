@@ -291,7 +291,7 @@ const Home = () => {
       {/* ══════════════════════════════════════════════════════
           STATS SECTION
           ══════════════════════════════════════════════════════ */}
-      <section className="py-16 px-6 bg-white" ref={statsRef}>
+      <section className="py-5 px-6 bg-white" ref={statsRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Track Record</span>
@@ -379,7 +379,7 @@ const Home = () => {
       {/* ══════════════════════════════════════════════════════
           WHY CHOOSE US
           ══════════════════════════════════════════════════════ */}
-      <section className="py-16 bg-gray-50" ref={whyRef}>
+      <section className="py-8 bg-gray-50" ref={whyRef}>
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Header */}
@@ -497,10 +497,11 @@ const Home = () => {
         </div>
       </section>
 
+
       {/* ══════════════════════════════════════════════════════
           BRANCHES SECTION
           ══════════════════════════════════════════════════════ */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-5 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Locations</span>
@@ -511,7 +512,7 @@ const Home = () => {
             <div className="mx-auto mt-3 h-[2px] w-40 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
             <p className="text-gray-500 mt-3">Serving students across Uttar Pradesh from two prime locations</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-center gap-4">
             {branches.map((branch) => (
               <BranchCard key={branch.city} {...branch} />
             ))}
@@ -527,7 +528,7 @@ const Home = () => {
       {/* ══════════════════════════════════════════════════════
           FINAL CTA SECTION
           ══════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden py-20 px-6"
+      <section className="relative overflow-hidden py-5 px-6"
         style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%)' }}>
 
         {/* Grid */}

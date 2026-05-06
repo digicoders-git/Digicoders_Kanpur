@@ -110,16 +110,14 @@ const ExpertSection = () => {
   };
 
   return (
-    <section className="bg-white py-10 px-4" id="experts">
+    <section className="bg-white pb-5 px-4" id="experts">
       <div className="max-w-6xl mx-auto">
 
         {/* ✅ CENTERED HEADER */}
-        <div className="text-center mb-6">
-          <span className="flex flex-col items-center justify-center gap-2 text-blue-600 text-sm font-semibold tracking-widest uppercase mb-2">
-            Meet Our Team
-            <div className="mx-auto mt-1 h-[2px] w-26 md:w-32 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+        <div className="text-center mb-6">      
+        <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Meet Our Team</span>
 
-          </span>
+          <div className="mx-auto mt-1 h-[2px] w-26 md:w-32 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
 
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
             Learn from Industry <span className="text-blue-600 italic">Experts</span>
