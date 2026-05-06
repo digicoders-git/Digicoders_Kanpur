@@ -244,104 +244,112 @@ const Placement = () => {
       `}</style>
 
       {/* ── SECTION 1: HERO ───────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 pt-2 pb-0">
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 py-8 md:py-5 lg:py-2 px-6">
+      
+      {/* Background Image with Dark Overlay */}
+      <div 
+        className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat mix-blend-luminosity pointer-events-none"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80')" }}
+      />
 
-        {/* Grid texture */}
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: 'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
+      <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-        {/* Glowing orbs */}
-        <div className="absolute top-10 left-10 w-72 h-72 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
-        <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-15"
-          style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
-
-        <div className="relative max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center gap-12">
-
-          {/* Left text */}
-          <div className="flex-1 text-center md:text-left" style={{ animation: 'slideRight 0.7s ease forwards' }}>
-            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-400/20 rounded-full px-4 py-1.5 mb-6">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-green-300 text-sm font-medium">95% Placement Rate — Batch Ongoing</span>
-            </div>
-
-            <h1 className="text-5xl md:text-6xl font-black text-white leading-tight mb-6">
-              Your Dream Job{' '}
-              <br />
-              <span className="shimmer-text">Starts Here</span>
-            </h1>
-
-            <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg">
-              We don't just train you — we place you. Our dedicated placement cell connects
-              skilled graduates directly with 50+ top IT companies across India.
-            </p>
-
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/10">
-                <TrendingUp size={14} className="text-green-400" />
-                <span className="text-white text-sm font-medium">500+ Placements</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/10">
-                <Building2 size={14} className="text-blue-300" />
-                <span className="text-white text-sm font-medium">50+ Companies</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/10">
-                <Award size={14} className="text-yellow-300" />
-                <span className="text-white text-sm font-medium">8 LPA Highest</span>
-              </div>
-            </div>
-
-            {/* <div className="flex flex-wrap gap-4 justify-center md:justify-start mt-8">
-              <a href="/registration"
-                className="group flex items-center gap-2 px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5">
-                Register Now
-                <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a href="/contact"
-                className="flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all duration-300 hover:-translate-y-0.5 backdrop-blur">
-                Talk to Counsellor
-              </a>
-            </div> */}
+        {/* Left Text Section */}
+        <div className="flex-1 text-center lg:text-left z-10 animate-slide-right">
+          <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-400/20 rounded-full px-4 py-1.5 mb-6">
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+            <span className="text-green-300 text-xs md:text-sm font-medium uppercase tracking-wider">
+              95% Placement Rate — Batch Ongoing
+            </span>
           </div>
 
-          {/* Right visual — floating card */}
-          <div className="flex-shrink-0 relative w-72 h-72" style={{ animation: 'slideLeft 0.8s ease forwards' }}>
-            {/* Pulse ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-blue-400/30"
-              style={{ animation: 'pulse-ring 2s ease-out infinite' }} />
-            {/* Main circle */}
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-2xl"
-              style={{ animation: 'floatY 4s ease-in-out infinite' }}>
-              <div className="text-center">
-                <div className="text-5xl font-black text-white">95%</div>
-                <div className="text-blue-200 text-sm font-medium mt-1">Placement</div>
-                <div className="text-yellow-300 text-sm font-bold">Rate</div>
-              </div>
-            </div>
-            {/* Floating badges */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-6">
+            Your Dream Job{' '}
+            <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              Starts Here
+            </span>
+          </h1>
+
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0">
+            We don't just train you — we place you. Our dedicated placement cell connects
+            skilled graduates directly with 50+ top IT companies across India.
+          </p>
+
+          {/* Stats Badges */}
+          <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
             {[
-              { label: '500+ Placed',    top: '0%',  left: '60%', color: '#fbbf24' },
-              { label: '50+ Companies',  top: '75%', left: '-5%', color: '#34d399' },
-              { label: '8 LPA Highest',  top: '75%', left: '60%', color: '#a78bfa' },
-            ].map((b, i) => (
-              <div key={i}
-                className="absolute bg-white rounded-xl shadow-lg px-3 py-2 flex items-center gap-2 text-xs font-bold"
-                style={{ top: b.top, left: b.left, animation: `floatY ${3.5 + i * 0.5}s ease-in-out infinite ${i * 0.3}s` }}>
-                <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: b.color }} />
-                {b.label}
+              { icon: <TrendingUp size={16} />, label: "500+ Placements", color: "text-green-400" },
+              { icon: <Building2 size={16} />, label: "50+ Companies", color: "text-blue-300" },
+              { icon: <Award size={16} />, label: "8 LPA Highest", color: "text-yellow-300" }
+            ].map((stat, i) => (
+              <div key={i} className="flex items-center gap-2 bg-white/5 backdrop-blur-md rounded-xl px-4 py-2.5 border border-white/10 shadow-lg">
+                <span className={stat.color}>{stat.icon}</span>
+                <span className="text-white text-sm font-semibold whitespace-nowrap">{stat.label}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Wave bottom */}
-        {/* <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
-          <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="white" />
-        </svg> */}
-      </section>
+        {/* Right visual — Responsive 3D Stack */}
+        <div className="flex-1 relative w-full max-w-[500px] aspect-square lg:aspect-auto lg:h-[500px] mt-12 lg:mt-0 animate-slide-left">
+          <div className="relative w-full h-full transform-gpu lg:rotate-y-[-15deg] lg:rotate-x-[10deg] perspective-1000">
+            
+            {/* Image 1 - Top Left */}
+            <div className="absolute top-[5%] left-[5%] w-1/3 aspect-[4/5] rounded-lg overflow-hidden border border-white/20 shadow-xl z-10 -rotate-6">
+              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="Team Session" />
+            </div>
+
+            {/* Image 2 - Center Main */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 aspect-video rounded-xl overflow-hidden border-2 border-white/30 shadow-2xl z-40 hover:scale-105 transition-transform duration-500">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="Students Working" />
+            </div>
+
+            {/* Image 3 - Top Right */}
+            <div className="absolute top-[10%] right-[5%] w-1/3 aspect-square rounded-lg overflow-hidden border border-white/20 shadow-xl z-20 rotate-3">
+              <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="Coding" />
+            </div>
+
+            {/* Image 4 - Bottom Left */}
+            <div className="absolute bottom-[10%] left-[10%] w-1/3 aspect-video rounded-lg overflow-hidden border border-white/20 shadow-xl z-30 -rotate-3">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="Mentor" />
+            </div>
+
+            {/* Image 5 - Bottom Right */}
+            <div className="absolute bottom-[5%] right-[10%] w-2/5 aspect-square rounded-lg overflow-hidden border border-white/20 shadow-xl z-20 rotate-6">
+              <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80" className="w-full h-full object-cover" alt="Workshop" />
+            </div>
+
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 bg-blue-500/20 blur-[100px] -z-10 rounded-full" />
+          </div>
+        </div>
+
+      </div>
+
+      <style jsx>{`
+        .perspective-1000 {
+          perspective: 1200px;
+        }
+        @keyframes slideRight {
+          from { opacity: 0; transform: translateX(-40px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideLeft {
+          from { opacity: 0; transform: translateX(40px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        .animate-slide-right {
+          animation: slideRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-slide-left {
+          animation: slideLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+      `}</style>
+    </section>
 
       {/* ── SECTION 2: STATS ──────────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-white" ref={statsRef}>
+      <section className="py-10 px-6 bg-white" ref={statsRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
