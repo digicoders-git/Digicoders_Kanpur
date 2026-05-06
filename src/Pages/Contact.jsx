@@ -34,96 +34,110 @@ const StatItem = ({ target, suffix, label }) => {
 
 // ─── Section 1: Hero Banner ───────────────────────────────────────
 const ContactHero = () => (
-  <div className="relative bg-[#0a1845] overflow-hidden">
-    {/* Glow blobs */}
-    <div className="absolute -top-20 left-1/3 w-80 h-80 bg-blue-600/25 rounded-full blur-3xl pointer-events-none" />
-    <div className="absolute bottom-0 right-1/4 w-96 h-64 bg-blue-400/15 rounded-full blur-3xl pointer-events-none" />
-    <div className="absolute top-1/3 right-8 w-40 h-40 bg-yellow-400/10 rounded-full blur-2xl pointer-events-none" />
+  <div className="relative bg-[#0a1845] overflow-hidden flex items-center">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 z-0 opacity-40"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80")', // Tech background
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      />
+      
+      {/* Decorative Glows */}
+      <div className="absolute -top-20 left-1/4 w-80 h-80 bg-blue-600/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-64 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
 
-    {/* Floating dots */}
-    <div className="absolute top-6 left-10 w-2.5 h-2.5 bg-yellow-400 rounded-full animate-pulse" />
-    <div className="absolute top-14 right-20 w-1.5 h-1.5 bg-blue-300 rounded-full animate-ping" style={{ animationDuration: "2.5s" }} />
-    <div className="absolute bottom-16 left-1/4 w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{ animationDelay: "0.8s" }} />
-    <div className="absolute top-1/2 left-6 w-1 h-1 bg-yellow-300/60 rounded-full animate-ping" style={{ animationDuration: "3s" }} />
+      <div className="relative z-10 max-w-7xl mx-auto px-10 py-5 lg:py-5 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          
+          {/* LEFT SIDE: Content */}
+          <div className="w-full  lg:w-3/5 text-left" style={{ animation: "fadeUp 0.65s ease both" }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+              Let's Start Your <br />
+              <span className="relative inline-block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400">
+                Success Journey
+                <svg className="absolute -bottom-2 left-0 w-full" height="6" viewBox="0 0 300 6" fill="none">
+                  <path d="M0 3 Q75 0 150 3 Q225 6 300 3" stroke="#FCD34D" strokeWidth="3" strokeLinecap="round" fill="none" />
+                </svg>
+              </span>
+            </h1>
 
-    <div className="relative max-w-5xl mx-auto px-4 pt-2 pb-6 md:pt-7">
-      {/* Heading */}
-      <div className="text-center mb-4" style={{ animation: "fadeUp 0.65s ease 0.08s both" }}>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-white leading-[1.15] tracking-tight">
-          Let's Start Your
-          <br />
-          <span className="relative inline-block mt-2">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400">
-              Success Journey
-            </span>
-            {/* Underline accent */}
-            <svg className="absolute -bottom-2 left-0 w-full" height="6" viewBox="0 0 300 6" fill="none">
-              <path d="M0 3 Q75 0 150 3 Q225 6 300 3" stroke="#FCD34D" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.7" />
-            </svg>
-          </span>
-        </h1>
-      </div>
+            <p className="text-blue-100 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed opacity-90">
+              Questions about training, placement, or IT services? 
+              Our team responds fast — just pick a way to reach us.
+            </p>
 
-      {/* Subtitle */}
-      <p className="text-center text-blue-200/90 text-sm sm:text-base max-w-xl mx-auto mb-10 leading-relaxed"
-        style={{ animation: "fadeUp 0.65s ease 0.16s both" }}>
-        Questions about training, placement, or IT services?
-        Our team responds fast — just pick a way to reach us below.
-      </p>
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 mb-5">
+              <a href="tel:+919198483820" className="flex items-center gap-3 bg-white text-blue-900 font-bold px-6 py-3.5 rounded-2xl hover:bg-yellow-300 transition-all hover:-translate-y-1">
+                <IoCall className="text-xl" /> +91 9198483820
+              </a>
+              <a href="https://wa.me/919198483820" className="flex items-center gap-3 bg-green-500 text-white font-bold px-6 py-3.5 rounded-2xl hover:bg-green-400 transition-all hover:-translate-y-1">
+                <FaWhatsapp className="text-xl" /> WhatsApp
+              </a>
+            </div>
 
-      {/* CTA Buttons */}
-      <div className="flex flex-wrap justify-center gap-3 mb-12" style={{ animation: "fadeUp 0.65s ease 0.24s both" }}>
-        <a href="tel:+919198483820"
-          className="group flex items-center gap-2.5 bg-white text-blue-900 font-bold px-5 py-3 rounded-2xl text-sm shadow-lg hover:bg-yellow-300 hover:text-blue-900 transition-all duration-200 hover:-translate-y-1 hover:shadow-yellow-300/30">
-          <span className="w-7 h-7 bg-blue-100 group-hover:bg-yellow-200 rounded-lg flex items-center justify-center transition-colors shrink-0">
-            <IoCall className="text-blue-600 text-sm" />
-          </span>
-          +91 9198483820
-        </a>
+            {/* Stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-3">
+              <div className="text-white">
+                <p className="text-2xl font-bold text-yellow-400">1000+</p>
+                <p className="text-sm text-blue-200">Students Trained</p>
+              </div>
+              <div className="text-white">
+                <p className="text-2xl font-bold text-yellow-400">7+ Yrs</p>
+                <p className="text-sm text-blue-200">Experience</p>
+              </div>
+              <div className="text-white">
+                <p className="text-2xl font-bold text-yellow-400">500+</p>
+                <p className="text-sm text-blue-200">Placements</p>
+              </div>
+              <div className="text-white">
+                <p className="text-2xl font-bold text-yellow-400">2</p>
+                <p className="text-sm text-blue-200">Branches</p>
+              </div>
+            </div>
+          </div>
 
-        <a href="https://wa.me/919198483820" target="_blank" rel="noreferrer"
-          className="group flex items-center gap-2.5 bg-green-500 text-white font-bold px-5 py-3 rounded-2xl text-sm shadow-lg hover:bg-green-400 transition-all duration-200 hover:-translate-y-1 hover:shadow-green-500/30">
-          <span className="w-7 h-7 bg-green-400 group-hover:bg-green-300 rounded-lg flex items-center justify-center transition-colors shrink-0">
-            <FaWhatsapp className="text-white text-sm" />
-          </span>
-          Chat on WhatsApp
-        </a>
+          {/* RIGHT SIDE: Inquiry Form (New Addition) */}
+          <div className="w-full lg:w-2/5" style={{ animation: "fadeUp 0.65s ease 0.2s both" }}>
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl shadow-2xl">
+              <h3 className="text-2xl font-bold text-white mb-6">Quick Inquiry</h3>
+              <form className="space-y-4">
+                <input 
+                  type="text" 
+                  placeholder="Your Name" 
+                  className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-blue-200 outline-none focus:border-yellow-400 transition-colors"
+                />
+                <input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-blue-200 outline-none focus:border-yellow-400 transition-colors"
+                />
+                <select className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-blue-200 outline-none focus:border-yellow-400 transition-colors">
+                  <option className="text-black">Select Interest</option>
+                  <option className="text-black">Training</option>
+                  <option className="text-black">Placement</option>
+                  <option className="text-black">IT Services</option>
+                </select>
+                <button className="w-full bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold py-4 rounded-xl transition-all active:scale-95">
+                  Send Message Now
+                </button>
+              </form>
+            </div>
+          </div>
 
-        <a href="mailto:info@thedigicoders.com"
-          className="group flex items-center gap-2.5 bg-white/10 border border-white/20 text-white font-bold px-5 py-3 rounded-2xl text-sm hover:bg-white/20 transition-all duration-200 hover:-translate-y-1">
-          <span className="w-7 h-7 bg-white/10 group-hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors shrink-0">
-            <IoMail className="text-blue-200 text-sm" />
-          </span>
-          info@thedigicoders.com
-        </a>
-      </div>
-
-      {/* Stats */}
-      <div className="" style={{ animation: "fadeUp 0.65s ease 0.32s both" }}>
-        <div className="flex flex-wrap justify-center gap-y-4">
-          <StatItem target={1000} suffix="+" label="Students Trained" />
-          <StatItem target={7} suffix="+" label="Years Experience" />
-          <StatItem target={2} suffix="" label="City Branches" />
-          <StatItem target={500} suffix="+" label="Placements Done" />
         </div>
       </div>
+
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </div>
-
-    {/* Wave bottom */}
-    {/* <div className="relative h-12 md:h-16 mt-2">
-      <svg viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg"
-        className="absolute bottom-0 w-full" preserveAspectRatio="none" style={{ display: "block" }}>
-        <path d="M0 64L1440 64L1440 24C1080 64 720 0 360 32C180 48 90 16 0 24Z" fill="white" />
-      </svg>
-    </div> */}
-
-    <style>{`
-      @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(24px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-    `}</style>
-  </div>
 );
 
 // ─── Section 2: Info Cards ────────────────────────────────────────
@@ -177,8 +191,8 @@ const InfoCards = () => (
       {/* Heading */}
       <div className="text-center mb-10">
         <span className="text-xs font-bold tracking-[0.15em] uppercase text-blue-500">Our Offices</span>
-        <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-1">
-          Multiple Ways to <span className="text-blue-600">Connect</span>
+        <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mt-1">
+          Multiple Ways to <span className="text-blue-600 italic">Connect</span>
         </h2>
         <div className="mx-auto mt-3 h-[2px] w-20 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
       </div>
@@ -250,13 +264,13 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-14 px-4">
+    <div className="bg-gray-50 py-5 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-            Send Us a <span className="text-blue-600">Message</span>
+            Send Us a <span className="text-blue-600 italic">Message</span>
           </h2>
-          <div className="mx-auto mt-3 h-[2px] w-32 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+          <div className="mx-auto mt-3 h-[2px] w-42 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
           <p className="text-gray-500 mt-3 text-sm md:text-base">Fill the form below and we'll get back to you shortly.</p>
         </div>
 
@@ -358,8 +372,8 @@ const socialLinks = [
 const SocialCTA = () => (
   <div className="bg-white py-12 px-4 border-t border-gray-100">
     <div className="max-w-4xl mx-auto text-center">
-      <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">Connect on Social Media</h2>
-      <div className="mx-auto mt-3 mb-6 h-[2px] w-28 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+      <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-2">Connect on <span className="text-blue-600 italic"> Social &nbsp;</span> Media</h2>
+      <div className="mx-auto mt-3 mb-6 h-[2px] w-42 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
       <p className="text-gray-500 text-sm mb-8">Follow us for training updates, placement results & tech content.</p>
       <div className="flex flex-wrap justify-center gap-3 mb-12">
         {socialLinks.map((s) => (
