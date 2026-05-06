@@ -125,7 +125,7 @@ const About = () => {
   }, [])
 
   return (
-    <div className="bg-white min-h-screen font-sans">
+    <div className="bg-white min-h-screen">
       <style>{`
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(28px); }
@@ -173,86 +173,96 @@ const About = () => {
       `}</style>
 
       {/* ── SECTION 1: HERO ─────────────────────────────────────────────── */}
-      <section className="relative flex items-stretch min-h-[520px] bg-[#f3f2f0] font-[DM_Sans] overflow-hidden">
+      <section className="relative flex flex-col lg:flex-row items-stretch bg-[#f3f2f0] overflow-hidden">
 
-      {/* Dark Shape (instead of ::before) */}
-      <div className="absolute top-0 right-0 w-[52%] h-full bg-[#061d3d] z-0"
-          style={{ clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0% 100%)" }}>
-      </div>
+        {/* Dark Shape */}
+        <div
+          className="absolute top-0 right-0 w-full lg:w-[42%] h-full bg-blue-600 z-0"
+          style={{
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+          }}
+        />
 
-      {/* Ghost Year */}
-      <div className="absolute top-3 right-6 text-[100px] font-black text-white/5 tracking-[-4px] font-[Playfair_Display] pointer-events-none select-none hidden md:block">
-        2017
-      </div>
+        {/* Desktop shape */}
+        <div
+          className="hidden lg:block absolute top-0 right-0 w-[52%] h-full bg-blue-600 z-0"
+          style={{
+            clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0% 100%)",
+          }}
+        />
 
-      {/* LEFT */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-[6%] py-5 pr-7">
-
-        {/* Tag */}
-        <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.12em] text-blue-500 mb-6">
-          <div className="w-7 h-[1px] bg-[#7c6a4e]" />
-           Lucknow & Kanpur 
+        {/* Ghost Year */}
+        <div className="absolute top- right-4 sm:right-6 text-[60px] sm:text-[80px] lg:text-[100px] font-black text-white/5 tracking-[-4px] font-[Playfair_Display] pointer-events-none select-none hidden md:block">
+          2017
         </div>
 
-        {/* Heading */}
-        <h1 className="font-[Playfair_Display] text-[clamp(38px,4vw,56px)] font-black leading-tight text-[#0e1c2e] mb-2">
-          We Build <br />
-          <em className="italic text-blue-800">Real</em> Careers,<br />
-          Not Just <br />
-          Résumés.
-        </h1>
+        {/* LEFT */}
+        <div className="relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-[6%] py-8 lg:py-5">
 
-        {/* Subtext */}
-        <p className="text-[14px] font-light text-[#5a4f3f] leading-[1.8] max-w-[340px] my-5">
-          7+ years. 1000+ students. One relentless belief — every learner deserves a genuine shot at the industry.
-        </p>
+          <h1 className="font-[Playfair_Display] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] font-black leading-tight text-[#0e1c2e] mb-3">
+            We Build Real<br />
+            <em className="italic text-blue-800"> Careers,</em> Not<br />
+             Just Resume.
+          </h1>
 
-        {/* Pills */}
-        <div className="flex flex-wrap gap-2">
-          <a href="/registration"
-            className="px-4 py-[7px] text-[12px] font-medium rounded hover:bg-white hover:text-black border hover:border-[#d8cfbf] border-[#0e1c2e] bg-[#0e1c2e] text-[#f5f2ec]">
-            Register Now
-          </a>
+          <p className="text-[13px] sm:text-[14px] text-[#5a4f3f] leading-[1.7] max-w-[420px] my-4">
+            7+ years. 1000+ students. One relentless belief — every learner deserves a genuine shot at the industry.
+          </p>
 
-          {["20+ Courses", "ISO Certified", "Placement Guarantee"].map((item, i) => (
-            <span key={i}
-              className="px-4 py-2 text-[12px] font-medium rounded hover:bg-[#0e1c2e] hover:text-white border border-[#d8cfbf] bg-white text-[#0e1c2e]">
-              {item}
-            </span>
+          <div className="flex flex-wrap gap-2">
+            <a
+              href="/registration"
+              className="px-4 py-2 text-[12px] font-medium rounded bg-[#0e1c2e] text-white border border-[#0e1c2e] hover:bg-white hover:text-black transition"
+            >
+              Register Now
+            </a>
+
+            {["20+ Courses", "ISO Certified", "Placement Guarantee"].map((item, i) => (
+              <span
+                key={i}
+                className="px-3 py-2 text-[11px] sm:text-[12px] font-medium rounded border border-[#d8cfbf] bg-white text-[#0e1c2e] hover:bg-[#0e1c2e] hover:text-white transition"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* RIGHT */}
+        <div className="relative z-10 w-full lg:flex-[0_0_42%] flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:pl-12 lg:pr-[5%] py-6 lg:py-5">
+
+          {[
+            { num: '1000', sup: '+', label: 'Students Trained', desc: 'Across both campuses' },
+            { num: '500', sup: '+', label: 'Placements Done', desc: 'In top MNCs & startups' },
+            { num: '7', sup: '+', label: 'Years of Excellence', desc: 'Since 2017' },
+            { num: '50', sup: '+', label: 'Industry Partners', desc: 'Pan-India hiring network' },
+          ].map((s, i) => (
+            <div
+              key={i}
+              className="flex items-start sm:items-center py-3 sm:py-4 border-b border-white/10 first:border-t"
+            >
+
+              <div className="w-20 sm:w-24 flex-shrink-0 font-[Playfair_Display] text-[28px] sm:text-[34px] lg:text-[38px] font-bold text-white">
+                {s.num}
+                <sup className="text-[14px] sm:text-[18px] text-[#c17d3c]">{s.sup}</sup>
+              </div>
+
+              <div className="w-[6px] h-[6px] bg-[#c17d3c] rounded-full mr-3 sm:mr-4 mt-2 sm:mt-0" />
+
+              <div>
+                <div className="text-[12px] sm:text-[13px] font-medium text-white">
+                  {s.label}
+                </div>
+                <div className="text-[10px] sm:text-[11px] text-white/50 mt-1">
+                  {s.desc}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-      </div>
-
-      {/* RIGHT */}
-      <div className="relative z-10 flex-[0_0_42%] flex flex-col justify-center pl-12 pr-[5%] py-5">
-
-      {[
-        { num: '1000', sup: '+', label: 'Students Trained', desc: 'Across both campuses' },
-        { num: '500', sup: '+', label: 'Placements Done', desc: 'In top MNCs & startups' },
-        { num: '7', sup: '+', label: 'Years of Excellence', desc: 'Since 2017' },
-        { num: '50', sup: '+', label: 'Industry Partners', desc: 'Pan-India hiring network' },
-      ].map((s, i) => (
-        <div key={i}
-          className="flex items-center py-4 border-b border-white/10 first:border-t">
-
-          <div className="w-24 flex-shrink-0 font-[Playfair_Display] text-[38px] font-bold text-white">
-            {s.num}
-            <sup className="text-[20px] text-[#c17d3c]">{s.sup}</sup>
-          </div>
-
-          <div className="w-[6px] h-[6px] bg-[#c17d3c] rounded-full mr-4" />
-
-          <div>
-            <div className="text-[13px] font-medium text-white">{s.label}</div>
-            <div className="text-[11px] text-white/40 mt-1">{s.desc}</div>
-          </div>
-        </div>
-      ))}
-      </div>
-
       </section>
       {/* ── SECTION 2: STATS ─────────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-white" ref={statsRef}>
+      <section className="py-10 px-6 bg-white" ref={statsRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
@@ -274,7 +284,7 @@ const About = () => {
       </section>
 
       {/* ── SECTION 3: STORY / TIMELINE ──────────────────────────────────── */}
-      <section className="py-16 px-6 bg-gray-50" ref={timelineRef}>
+      <section className="py-8 px-6 bg-gray-50" ref={timelineRef}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Journey</span>
@@ -318,7 +328,7 @@ const About = () => {
       </section>
 
       {/* ── SECTION 4: VALUES ────────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-white" ref={valuesRef}>
+      <section className="py-8 px-6 bg-white" ref={valuesRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Values</span>
@@ -356,7 +366,7 @@ const About = () => {
       </section>
 
       {/* ── SECTION 5: TEAM ──────────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className="py-10 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Meet the Team</span>

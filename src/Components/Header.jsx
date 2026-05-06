@@ -49,7 +49,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="text-white" /> : <Menu className="text-white" />}
+            {isOpen ? <X className="text-black" /> : <Menu className="text-black" />}
           </button>
         </div>
 
@@ -57,7 +57,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden flex flex-col gap-4 bg-white text-black px-6 py-4">
+        <ul className="md:hidden flex flex-col gap-4 bg-white text-white px-6 py-4">
           {navLinks.map((item) => (
             <li key={item.path}>
               <NavLink
@@ -66,7 +66,7 @@ const Header = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "text-blue-600 border-b-2 border-blue-600 font-medium"
-                    : "text-white hover:text-blue-500 font-medium"
+                    : "text-black hover:text-blue-500 font-medium"
                 }
               >
                 {item.name}

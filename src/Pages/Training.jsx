@@ -296,16 +296,6 @@ const Training = () => {
     }}
   />
 
-  {/* Grid texture */}
-  {/* <div
-    className="absolute inset-0 opacity-[0.04]"
-    style={{
-      backgroundImage:
-        'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)',
-      backgroundSize: '48px 48px',
-    }}
-  /> */}
-
   {/* Left vertical glow line — hidden on mobile */}
   <div
     className="absolute left-0 top-0 w-[3px] h-full hidden md:block"
@@ -321,7 +311,7 @@ const Training = () => {
     <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] xl:grid-cols-[1fr_320px] gap-0">
 
       {/* ── LEFT: Content ── */}
-      <div className="flex flex-col justify-center gap-4 sm:gap-5 py-12 sm:py-14 lg:py-16 lg:pr-10">
+      <div className="flex flex-col justify-center gap-4 sm:gap-5 py-12 sm:py-14 lg:py-8 lg:pr-10">
 
         {/* Eyebrow */}
         <div
@@ -389,7 +379,7 @@ const Training = () => {
 
         {/* CTAs */}
         <div
-          className="flex flex-col xs:flex-row gap-3"
+          className="flex gap-3"
           style={{ animation: 'fadeUp 0.5s ease 0.28s both' }}
         >
           
@@ -420,7 +410,7 @@ const Training = () => {
         </div>
 
         {/* Stats row */}
-        <div
+        {/* <div
           className="grid grid-cols-4 gap-2 sm:flex sm:gap-6 pt-3"
           style={{
             borderTop: '0.5px solid rgba(255,255,255,0.08)',
@@ -445,21 +435,11 @@ const Training = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* ── RIGHT: Course Preview Panel — hidden on mobile, shown lg+ ── */}
       <div className="hidden lg:flex items-center py-8 pl-5 relative">
-
-        {/* Vertical divider */}
-        {/* <div
-          className="absolute left-0 top-[15%] w-px"
-          style={{
-            height: '70%',
-            background: 'linear-gradient(180deg, transparent, rgba(99,102,241,0.4), transparent)',
-          }}
-        /> */}
-
         <div className="w-full flex flex-col gap-2.5">
 
           {/* Panel header */}
@@ -475,8 +455,7 @@ const Training = () => {
             { title: 'Full Stack Web Dev',    dur: '4–6 Months', color: '#3b82f6', fill: 70 },
             { title: 'Data Science & ML',     dur: '4–6 Months', color: '#8b5cf6', fill: 83, badge: 'Hot' },
             { title: 'Cloud Computing (AWS)', dur: '2–3 Months', color: '#ef4444', fill: 47 },
-            { title: 'Python Programming',    dur: '2–3 Months', color: '#f59e0b', fill: 56 },
-            { title: 'Cyber Security',        dur: '3–4 Months', color: '#06b6d4', fill: 42 },
+            // { title: 'Python Programming',    dur: '2–3 Months', color: '#f59e0b', fill: 56 },
           ].map((c, i) => (
             <div
               key={i}
@@ -638,7 +617,7 @@ const Training = () => {
   </div>
 
   {/* Wave */}
-  <svg
+  {/* <svg
     viewBox="0 0 1440 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -647,7 +626,7 @@ const Training = () => {
   >
     <path d="M0,24 C360,0 1080,52 1440,18 L1440,48 L0,48 Z" fill="rgba(255,255,255,0.04)" />
     <path d="M0,32 C400,6 1040,56 1440,24 L1440,48 L0,48 Z" fill="white" />
-  </svg>
+  </svg> */}
 </section>
 
 

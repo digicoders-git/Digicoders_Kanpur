@@ -131,7 +131,7 @@ const Registration = () => {
 
       {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
        
-      <section className="relative overflow-hidden pt-0 pb-0" style={{ minHeight: '580px' }}>
+      <section className="relative overflow-hidden pt-0 pb-0">
 
         {/* === Background Image === */}
         <div
@@ -246,7 +246,7 @@ const Registration = () => {
           </div>
 
           {/* Trust Badges */}
-          <div className="hero-anim-3 flex flex-wrap gap-2 justify-center">
+          {/* <div className="hero-anim-3 flex flex-wrap gap-2 justify-center">
             {[
               { icon: Award,     text: 'ISO Certified' },
               { icon: Users,     text: '1000+ Students Trained' },
@@ -266,10 +266,10 @@ const Registration = () => {
                 <span className="text-slate-300 text-xs font-medium">{text}</span>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Stat Cards */}
-          <div
+          {/* <div
             className="hero-anim-3 grid grid-cols-3 gap-3 w-full"
             style={{ maxWidth: '480px' }}
           >
@@ -296,11 +296,11 @@ const Registration = () => {
                 <div className="text-xs text-slate-400 font-medium mt-1.5">{s.label}</div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Wave bottom */}
-        <svg
+        {/* <svg
           viewBox="0 0 1440 52"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -309,7 +309,7 @@ const Registration = () => {
         >
           <path d="M0,28 C360,4 1080,56 1440,20 L1440,52 L0,52 Z" fill="rgba(255,255,255,0.05)" />
           <path d="M0,36 C400,8 1040,60 1440,28 L1440,52 L0,52 Z" fill="white" />
-        </svg>
+        </svg> */}
       </section>
 
 
