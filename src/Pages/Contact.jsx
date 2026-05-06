@@ -35,16 +35,6 @@ const StatItem = ({ target, suffix, label }) => {
 // ─── Section 1: Hero Banner ───────────────────────────────────────
 const ContactHero = () => (
   <div className="relative bg-[#0a1845] overflow-hidden">
-
-    {/* Grid background */}
-    <div className="absolute inset-0 opacity-[0.07]"
-      style={{
-        backgroundImage: `linear-gradient(rgba(147,197,253,1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(147,197,253,1) 1px, transparent 1px)`,
-        backgroundSize: "48px 48px",
-      }}
-    />
-
     {/* Glow blobs */}
     <div className="absolute -top-20 left-1/3 w-80 h-80 bg-blue-600/25 rounded-full blur-3xl pointer-events-none" />
     <div className="absolute bottom-0 right-1/4 w-96 h-64 bg-blue-400/15 rounded-full blur-3xl pointer-events-none" />
@@ -56,17 +46,7 @@ const ContactHero = () => (
     <div className="absolute bottom-16 left-1/4 w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{ animationDelay: "0.8s" }} />
     <div className="absolute top-1/2 left-6 w-1 h-1 bg-yellow-300/60 rounded-full animate-ping" style={{ animationDuration: "3s" }} />
 
-    <div className="relative max-w-5xl mx-auto px-4 pt-14 pb-6 md:pt-20">
-
-      {/* Badge */}
-      <div className="flex justify-center mb-5" style={{ animation: "fadeUp 0.6s ease both" }}>
-        <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur text-blue-100 text-[11px] font-bold tracking-[0.15em] uppercase px-5 py-2 rounded-full">
-          <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse" />
-          Contact DigiCoders Technologies
-          <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse" />
-        </span>
-      </div>
-
+    <div className="relative max-w-5xl mx-auto px-4 pt-2 pb-6 md:pt-7">
       {/* Heading */}
       <div className="text-center mb-4" style={{ animation: "fadeUp 0.65s ease 0.08s both" }}>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-white leading-[1.15] tracking-tight">
@@ -119,8 +99,8 @@ const ContactHero = () => (
       </div>
 
       {/* Stats */}
-      <div className="border-t border-white/10 pt-8 pb-4" style={{ animation: "fadeUp 0.65s ease 0.32s both" }}>
-        <div className="flex flex-wrap justify-center divide-x divide-white/10 gap-y-4">
+      <div className="" style={{ animation: "fadeUp 0.65s ease 0.32s both" }}>
+        <div className="flex flex-wrap justify-center gap-y-4">
           <StatItem target={1000} suffix="+" label="Students Trained" />
           <StatItem target={7} suffix="+" label="Years Experience" />
           <StatItem target={2} suffix="" label="City Branches" />
@@ -130,12 +110,12 @@ const ContactHero = () => (
     </div>
 
     {/* Wave bottom */}
-    <div className="relative h-12 md:h-16 mt-2">
+    {/* <div className="relative h-12 md:h-16 mt-2">
       <svg viewBox="0 0 1440 64" fill="none" xmlns="http://www.w3.org/2000/svg"
         className="absolute bottom-0 w-full" preserveAspectRatio="none" style={{ display: "block" }}>
         <path d="M0 64L1440 64L1440 24C1080 64 720 0 360 32C180 48 90 16 0 24Z" fill="white" />
       </svg>
-    </div>
+    </div> */}
 
     <style>{`
       @keyframes fadeUp {

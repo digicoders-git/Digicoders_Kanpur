@@ -198,7 +198,7 @@ const Placement = () => {
   }, [])
 
   return (
-    <div className="bg-white min-h-screen font-sans">
+    <div className="bg-white">
       <style>{`
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(28px); }
@@ -244,7 +244,7 @@ const Placement = () => {
       `}</style>
 
       {/* ── SECTION 1: HERO ───────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 pt-20 pb-0">
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 pt-2 pb-0">
 
         {/* Grid texture */}
         <div className="absolute inset-0 opacity-[0.04]"
@@ -256,7 +256,7 @@ const Placement = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-15"
           style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
 
-        <div className="relative max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+        <div className="relative max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center gap-12">
 
           {/* Left text */}
           <div className="flex-1 text-center md:text-left" style={{ animation: 'slideRight 0.7s ease forwards' }}>
@@ -291,7 +291,7 @@ const Placement = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start mt-8">
+            {/* <div className="flex flex-wrap gap-4 justify-center md:justify-start mt-8">
               <a href="/registration"
                 className="group flex items-center gap-2 px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5">
                 Register Now
@@ -301,7 +301,7 @@ const Placement = () => {
                 className="flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all duration-300 hover:-translate-y-0.5 backdrop-blur">
                 Talk to Counsellor
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Right visual — floating card */}
@@ -335,9 +335,9 @@ const Placement = () => {
         </div>
 
         {/* Wave bottom */}
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
+        {/* <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
           <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="white" />
-        </svg>
+        </svg> */}
       </section>
 
       {/* ── SECTION 2: STATS ──────────────────────────────────────────────── */}
@@ -363,7 +363,7 @@ const Placement = () => {
       </section>
 
       {/* ── SECTION 3: HIRING COMPANIES MARQUEE ──────────────────────────── */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className="py-2 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Network</span>
@@ -398,7 +398,7 @@ const Placement = () => {
       </section>
 
       {/* ── SECTION 4: PLACEMENT PROCESS ─────────────────────────────────── */}
-      <section className="py-16 px-6 bg-white" ref={processRef}>
+      <section className="py-8 px-6 bg-white" ref={processRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">How It Works</span>
@@ -451,7 +451,7 @@ const Placement = () => {
       </section>
 
       {/* ── SECTION 5: PLACEMENT SERVICES ────────────────────────────────── */}
-      <section className="py-16 px-6 bg-gray-50" ref={servicesRef}>
+      <section className="py-8 px-6 bg-gray-50" ref={servicesRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">What We Offer</span>
@@ -500,7 +500,7 @@ const Placement = () => {
       </section>
 
       {/* ── SECTION 6: STUDENT SUCCESS STORIES ───────────────────────────── */}
-      <section className="py-16 px-6 bg-white" ref={testimonialsRef}>
+      <section className="py-5 px-6 bg-white" ref={testimonialsRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Success Stories</span>

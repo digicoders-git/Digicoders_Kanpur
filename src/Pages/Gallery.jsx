@@ -166,7 +166,7 @@ const Gallery = () => {
       `}</style>
 
       {/* ── SECTION 1: HERO ───────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 pt-20 pb-0">
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 pt-2 pb-0">
 
         {/* Grid texture */}
         <div className="absolute inset-0 opacity-[0.04]"
@@ -244,9 +244,9 @@ const Gallery = () => {
         </div>
 
         {/* Wave */}
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
+        {/* <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
           <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="white" />
-        </svg>
+        </svg> */}
       </section>
 
       {/* ── SECTION 2: CATEGORY FILTER + GRID ────────────────────────────── */}

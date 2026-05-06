@@ -262,7 +262,7 @@ const Services = () => {
         <div className="absolute bottom-0 right-10 w-72 h-72 rounded-full blur-3xl opacity-15"
           style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
 
-        <div className="relative max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+        <div className="relative max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center gap-12">
 
           {/* Left */}
           <div className="flex-1 text-center md:text-left">
@@ -327,9 +327,9 @@ const Services = () => {
         </div>
 
         {/* Wave */}
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
+        {/* <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
           <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="white" />
-        </svg>
+        </svg> */}
       </section>
 
       {/* ── SECTION 3: SERVICE CARDS ─────────────────────────────────────────── */}

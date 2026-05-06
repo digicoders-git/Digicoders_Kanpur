@@ -631,7 +631,7 @@ const Training = () => {
 
 
       {/* ── SECTION 3: COURSE GRID ───────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className="py-10 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
@@ -693,7 +693,7 @@ const Training = () => {
       </section>
 
       {/* ── SECTION 4: WHY US ────────────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-white" ref={whyRef}>
+      <section className="py-5 px-6 bg-white" ref={whyRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
@@ -729,7 +729,7 @@ const Training = () => {
       </section>
 
       {/* ── SECTION 5: TESTIMONIAL STRIP ─────────────────────────────────────── */}
-      <section className="py-14 px-6 bg-gray-50">
+      <section className="py-8 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
