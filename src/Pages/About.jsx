@@ -3,11 +3,20 @@ import { Award, Users, BookOpen, Target, Zap, Globe, ChevronRight, Star, Trendin
 
 // ── Data ────────────────────────────────────────────────────────────────────
 const stats = [
-  { value: 1000, suffix: '+', label: 'Students Trained', icon: Users, color: '#3b82f6' },
-  { value: 7, suffix: '+', label: 'Years of Excellence', icon: Clock, color: '#f59e0b' },
-  { value: 500, suffix: '+', label: 'Placements Done', icon: TrendingUp, color: '#10b981' },
-  { value: 50, suffix: '+', label: 'Industry Partners', icon: Globe, color: '#8b5cf6' },
-]
+  { num: "1000", sup: "+", label: "Students Trained", desc: "Across both campuses", icon: "👥", bg: "bg-blue-500/20", text: "text-blue-200" },
+  { num: "500", sup: "+", label: "Placements Done", desc: "In top MNCs & startups", icon: "💼", bg: "bg-amber-400/20", text: "text-amber-300" },
+  { num: "7", sup: "+", label: "Years of Excellence", desc: "Trusted since 2017", icon: "🏆", bg: "bg-teal-400/20", text: "text-teal-300" },
+  { num: "50", sup: "+", label: "Industry Partners", desc: "Pan-India hiring network", icon: "🏢", bg: "bg-purple-400/20", text: "text-purple-300" },
+];
+
+const images = [
+  "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400&q=85",
+  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&q=85",
+  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=85",
+  "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=85",
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=85",
+  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=85",
+];
 
 const values = [
   {
@@ -173,93 +182,106 @@ const About = () => {
       `}</style>
 
       {/* ── SECTION 1: HERO ─────────────────────────────────────────────── */}
-      <section className="relative flex flex-col lg:flex-row items-stretch bg-[#f3f2f0] overflow-hidden">
+      <style>{`
+        .text-shadow-strong { text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+        .text-shadow-soft { text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+        .backdrop-blur-card { backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+      `}</style>
 
-        {/* Dark Shape */}
-        <div
-          className="absolute top-0 right-0 w-full lg:w-[42%] h-full bg-blue-600 z-0"
-          style={{
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-          }}
-        />
+      <section className="relative overflow-hidden grid grid-cols-1 lg:grid-cols-2">
 
-        {/* Desktop shape */}
-        <div
-          className="hidden lg:block absolute top-0 right-0 w-[52%] h-full bg-blue-600 z-0"
-          style={{
-            clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0% 100%)",
-          }}
-        />
+        {/* ── Background collage ── */}
+        <div className="absolute inset-0 grid grid-cols-2 grid-rows-3 sm:grid-cols-3 sm:grid-rows-2 z-0">
+          {images.map((src, i) => (
+            <div key={i} className="overflow-hidden">
+              <img src={src} alt="" className="w-full h-full object-cover block" />
+            </div>
+          ))}
+        </div>
 
-        {/* Ghost Year */}
-        <div className="absolute top- right-4 sm:right-6 text-[60px] sm:text-[80px] lg:text-[100px] font-black text-white/5 tracking-[-4px] font-[Playfair_Display] pointer-events-none select-none hidden md:block">
+        {/* ── Center divider (desktop only) ── */}
+        <div className="hidden lg:block absolute left-1/2 top-[8%] h-[84%] w-px bg-white/15 z-10" />
+
+        {/* ── Ghost year ── */}
+        <div className="font-playfair absolute bottom-2 left-8 text-[40px] sm:text-[56px] lg:text-[80px] font-black text-white/[0.06] tracking-[-4px] pointer-events-none select-none z-10 leading-none">
           2017
         </div>
 
-        {/* LEFT */}
-        <div className="relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-[6%] py-8 lg:py-5">
+        {/* ══ LEFT PANEL ══ */}
+        <div className="relative z-20 flex flex-col justify-center px-5 pt-10 pb-7 sm:px-8 sm:pt-12 sm:pb-8 lg:px-10 lg:py-7">
 
-          <h1 className="font-[Playfair_Display] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[56px] font-black leading-tight text-[#0e1c2e] mb-3">
+          {/* Badges */}
+          <div className="flex flex-wrap gap-2 mb-5">
+            <span className="text-[10px] font-semibold tracking-widest uppercase px-3 py-1 rounded bg-blue-300/25 border border-blue-300/60 text-white">
+              ISO Certified
+            </span>
+            <span className="text-[10px] font-semibold tracking-widest uppercase px-3 py-1 rounded bg-amber-300/20 border border-amber-300/55 text-amber-300">
+              Since 2017
+            </span>
+          </div>
+
+          {/* Accent bar */}
+          <div className="w-9 h-[3px] bg-blue-500 rounded-full mb-5" />
+
+          {/* Title */}
+          <h1 className="font-playfair text-[26px] sm:text-[32px] lg:text-[40px] font-black leading-[1.12] text-white mb-4 text-shadow-strong">
             We Build Real<br />
-            <em className="italic text-blue-800"> Careers,</em> Not<br />
-             Just Resume.
+            <em className="italic text-amber-300">Careers,</em> Not<br />
+            Just Resumes.
           </h1>
 
-          <p className="text-[13px] sm:text-[14px] text-[#5a4f3f] leading-[1.7] max-w-[420px] my-4">
+          {/* Subtitle */}
+          <p className="text-md text-white leading-[1.75] max-w-[340px] mb-7 text-shadow-soft">
             7+ years. 1000+ students. One relentless belief — every learner deserves a genuine shot at the industry.
           </p>
 
-          <div className="flex flex-wrap gap-2">
-            <a
-              href="/registration"
-              className="px-4 py-2 text-[12px] font-medium rounded bg-[#0e1c2e] text-white border border-[#0e1c2e] hover:bg-white hover:text-black transition"
-            >
-              Register Now
-            </a>
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-2 items-center">
+            <button className="px-5 py-2.5 text-xs font-semibold rounded-md bg-blue-500 text-white border-none cursor-pointer hover:bg-blue-700 transition-colors">
+              Register Now →
+            </button>
+            <button className="px-4 py-2 text-[11px] font-medium rounded-md bg-white/15 text-white border border-white/35 cursor-pointer hover:bg-blue-700 transition-colors">
+              20+ Courses
+            </button>
+            <button className="px-4 py-2 text-[11px] font-medium rounded-md bg-white/15 text-white border border-white/35 cursor-pointer hover:bg-blue-700 transition-colors">
+              Placement Guarantee
+            </button>
+          </div>
 
-            {["20+ Courses", "ISO Certified", "Placement Guarantee"].map((item, i) => (
-              <span
-                key={i}
-                className="px-3 py-2 text-[11px] sm:text-[12px] font-medium rounded border border-[#d8cfbf] bg-white text-[#0e1c2e] hover:bg-[#0e1c2e] hover:text-white transition"
-              >
-                {item}
-              </span>
-            ))}
+          {/* Est line */}
+          <div className="flex items-center gap-2 mt-6">
+            <div className="w-[5px] h-[5px] rounded-full bg-amber-300 flex-shrink-0" />
+            <span className="text-[10px] text-white/50 tracking-[1.4px] uppercase">
+              Established 2017 · Varanasi
+            </span>
           </div>
         </div>
 
-        {/* RIGHT */}
-        <div className="relative z-10 w-full lg:flex-[0_0_42%] flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:pl-12 lg:pr-[5%] py-6 lg:py-5">
-
-          {[
-            { num: '1000', sup: '+', label: 'Students Trained', desc: 'Across both campuses' },
-            { num: '500', sup: '+', label: 'Placements Done', desc: 'In top MNCs & startups' },
-            { num: '7', sup: '+', label: 'Years of Excellence', desc: 'Since 2017' },
-            { num: '50', sup: '+', label: 'Industry Partners', desc: 'Pan-India hiring network' },
-          ].map((s, i) => (
+        {/* ══ RIGHT PANEL ══ */}
+        <div className="relative z-20 flex flex-col justify-center gap-2.5 px-5 pb-10 sm:px-8 sm:pb-12 lg:pl-5 lg:pr-10 lg:py-11">
+          {stats.map((s, i) => (
             <div
               key={i}
-              className="flex items-start sm:items-center py-3 sm:py-4 border-b border-white/10 first:border-t"
+              className="flex items-center gap-10 px-4 py-3 rounded-xl border border-white/20 bg-black/[0.28] backdrop-blur-card hover:bg-black/[0.42] transition-colors"
             >
-
-              <div className="w-20 sm:w-24 flex-shrink-0 font-[Playfair_Display] text-[28px] sm:text-[34px] lg:text-[38px] font-bold text-white">
-                {s.num}
-                <sup className="text-[14px] sm:text-[18px] text-[#c17d3c]">{s.sup}</sup>
+              {/* Icon */}
+              <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 text-lg ${s.bg} ${s.text}`}>
+                {s.icon}
               </div>
 
-              <div className="w-[6px] h-[6px] bg-[#c17d3c] rounded-full mr-3 sm:mr-4 mt-2 sm:mt-0" />
-
-              <div>
-                <div className="text-[12px] sm:text-[13px] font-medium text-white">
-                  {s.label}
+              {/* Info */}
+              <div className="flex-1">
+                <div className="font-playfair text-2xl lg:text-[28px] font-bold text-white leading-none">
+                  {s.num}
+                  <sup className="text-[13px] text-amber-300 align-super">{s.sup}</sup>
                 </div>
-                <div className="text-[10px] sm:text-[11px] text-white/50 mt-1">
-                  {s.desc}
-                </div>
+                <div className="text-[12px] font-medium text-white/90 mt-0.5">{s.label}</div>
+                <div className="text-[10px] text-white/45 mt-0.5">{s.desc}</div>
               </div>
             </div>
           ))}
         </div>
+
       </section>
       {/* ── SECTION 2: STATS ─────────────────────────────────────────────── */}
       <section className="py-10 px-6 bg-white" ref={statsRef}>
