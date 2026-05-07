@@ -96,6 +96,127 @@ const Home = () => {
         </div>
       </div>
 
+      
+        {/* ANOTHER HERO */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900">
+
+        {/* Grid texture */}
+        <div className="absolute inset-0 opacity-[0.04]"
+          style={{ backgroundImage: 'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
+
+        {/* Glow orbs */}
+        <div className="absolute top-10 left-10 w-72 h-72 rounded-full blur-3xl opacity-20"
+          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
+        <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-15"
+          style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
+
+        <div className="relative max-w-6xl mx-auto px-6 pt-16 pb-0 flex flex-col lg:flex-row items-center gap-12">
+
+          {/* LEFT: Text content */}
+          <div className="flex-1 text-center lg:text-left z-10" style={{ animation: 'slideRight 0.7s ease forwards' }}>
+
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-400/20 rounded-full px-4 py-1.5 mb-6">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              <span className="text-blue-300 text-sm font-medium">Admissions Open — Batch 2025–26</span>
+            </div>
+
+            {/* Slide content with fade */}
+            <div className="min-h-[180px] mb-6">
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className={`transition-all duration-700 ${index === current ? 'opacity-100' : 'opacity-0 absolute'}`}
+                  style={{ display: index === current ? 'block' : 'none' }}
+                >
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
+                    {slide.title.split(' ').slice(0, 3).join(' ')}{' '}
+                    <span className="shimmer-text">
+                      {slide.title.split(' ').slice(3).join(' ')}
+                    </span>
+                  </h1>
+                  <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
+                    {slide.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Slide dots */}
+            <div className="flex gap-2 justify-center lg:justify-start mb-8">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === current ? 'w-8 h-2 bg-blue-500' : 'w-2 h-2 bg-white/30 hover:bg-white/60'
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <a href="/services"
+                className="group flex items-center gap-2 px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5">
+                Explore Services
+                <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="/training"
+                className="flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all duration-300 hover:-translate-y-0.5 backdrop-blur">
+                Join Training
+              </a>
+            </div>
+
+            {/* Trust badges */}
+            <div className="flex flex-wrap gap-3 mt-8 justify-center lg:justify-start">
+              {[
+                { icon: Award, label: 'ISO Certified',    color: '#fbbf24' },
+                { icon: BookOpen, label: '20+ Courses',   color: '#34d399' },
+                { icon: Globe, label: '2 City Branches',  color: '#a78bfa' },
+              ].map(({ icon: Icon, label, color }, i) => (
+                <div key={i} className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/10">
+                  <Icon size={14} style={{ color }} />
+                  <span className="text-white text-sm font-medium">{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT: Floating visual circle */}
+          <div className="flex-shrink-0 relative w-72 h-72 hidden lg:block" style={{ animation: 'slideLeft 0.8s ease forwards' }}>
+            <div className="absolute inset-0 rounded-full border-2 border-blue-400/30"
+              style={{ animation: 'pulse-ring 2s ease-out infinite' }} />
+            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-2xl"
+              style={{ animation: 'floatY 4s ease-in-out infinite' }}>
+              <div className="text-center">
+                <GraduationCap size={40} className="text-white mx-auto mb-2" />
+                <div className="text-2xl font-black text-white">1000+</div>
+                <div className="text-blue-200 text-xs font-medium">Students</div>
+                <div className="text-yellow-300 text-xs font-bold">Trained</div>
+              </div>
+            </div>
+            {[
+              { label: '95% Placement',  top: '0%',  left: '58%', color: '#fbbf24' },
+              { label: '7+ Years',       top: '74%', left: '-5%', color: '#34d399' },
+              { label: '50+ Companies',  top: '74%', left: '58%', color: '#a78bfa' },
+            ].map((b, i) => (
+              <div key={i}
+                className="absolute bg-white rounded-xl shadow-lg px-3 py-2 flex items-center gap-2 text-xs font-bold"
+                style={{ top: b.top, left: b.left, animation: `floatY ${3.5 + i * 0.5}s ease-in-out infinite ${i * 0.3}s` }}>
+                <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: b.color }} />
+                {b.label}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Wave bottom */}
+        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block mt-8">
+          <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="white" />
+        </svg>
+      </section>
+
       {/* RECENT PLACEMENT */}
       <div className="w-full px-4 md:px-10 py-6 bg-gray-100 overflow-hidden">
 
