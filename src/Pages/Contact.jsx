@@ -264,7 +264,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-5 px-4">
+    <div className="bg-gray-50 py-5 px-4" id="registration">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">

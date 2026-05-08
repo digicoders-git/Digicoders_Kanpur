@@ -56,10 +56,19 @@ const FooterHeading = ({ title }) => (
   </h4>
 );
 
+ // ✅ Scroll Top Function
+  const handleScrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
+  
 const FooterNavLink = ({ label, path }) => (
   <li>
     <NavLink
-      to={path}
+      to={path} onClick={handleScrollTop}
       className="flex items-center gap-1.5 text-sm text-gray-400 font-medium
         hover:text-blue-400 hover:pl-1 transition-all duration-200 group py-0.5"
     >
@@ -91,6 +100,8 @@ const Footer = () => {
       setFormData({ name: "", email: "" });
     }, 3000);
   };
+
+  
 
   return (
     <footer className="font-sans" style={{ background: 'linear-gradient(180deg, #0f172a 0%, #0a1128 100%)' }}>

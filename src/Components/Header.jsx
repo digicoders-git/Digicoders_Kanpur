@@ -19,6 +19,14 @@ const navLinks = [
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
+  // ✅ Scroll Top Function
+  const handleScrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <div className='sticky top-0 px-6 md:px-10 text-black bg-white z-50 '>
       <div className='h-16 w-full flex items-center border-t-1 border-gray-500 justify-between'>
@@ -34,6 +42,7 @@ const Header = () => {
             <li key={item.path}>
               <NavLink
                 to={item.path}
+                onClick={handleScrollTop}
                 className={({ isActive }) =>
                   isActive
                     ? "text-blue-600 border-b-2 border-blue-600 font-medium"
@@ -62,7 +71,10 @@ const Header = () => {
             <li key={item.path}>
               <NavLink
                 to={item.path}
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false)
+                  handleScrollTop()
+                }}
                 className={({ isActive }) =>
                   isActive
                     ? "text-blue-600 border-b-2 border-blue-600 font-medium"

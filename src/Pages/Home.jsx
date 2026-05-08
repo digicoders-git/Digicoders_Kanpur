@@ -482,7 +482,7 @@ const Home = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center mb-8">
-            <a href="/registration"
+            <a href="/contact#registration"
               className="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 flex items-center gap-2">
               Register Now
               <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
