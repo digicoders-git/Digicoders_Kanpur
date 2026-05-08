@@ -4,7 +4,7 @@ const services = [
   {
     name: "Summer Training",
     color: "#f59e0b",
-    desc: "Garmiyiyon mein intensive short-term training. Industry projects aur live exposure ke saath.",
+    desc: "Intensive short-term training during summer vacations with industry projects and live exposure.",
     tags: ["2–6 Weeks", "Certificate", "Internship Letter"],
     tagBg: "bg-amber-100",
     tagText: "text-amber-800",
@@ -12,7 +12,7 @@ const services = [
   {
     name: "Winter Training",
     color: "#6366f1",
-    desc: "Sardi ki chutti mein skill development. Core subjects ke saath practical workshops.",
+    desc: "Skill development program during winter vacations with practical workshops and core subjects.",
     tags: ["2–4 Weeks", "Certificate", "Live Projects"],
     tagBg: "bg-indigo-100",
     tagText: "text-indigo-800",
@@ -20,7 +20,7 @@ const services = [
   {
     name: "Industrial Training",
     color: "#10b981",
-    desc: "Real industry environment mein 6-month ya 1-year ki training. College requirement fulfill kare.",
+    desc: "6-month or 1-year training in a real industry environment to fulfill college requirements.",
     tags: ["6 Months", "Industry Exposure", "Stipend*"],
     tagBg: "bg-emerald-100",
     tagText: "text-emerald-800",
@@ -28,7 +28,7 @@ const services = [
   {
     name: "Internship Training",
     color: "#ef4444",
-    desc: "Practical work experience ke saath mentorship. CV strong banane ke liye best option.",
+    desc: "Practical work experience with mentorship to strengthen your resume and career opportunities.",
     tags: ["1–3 Months", "Certificate", "Mentorship"],
     tagBg: "bg-red-100",
     tagText: "text-red-800",
@@ -36,7 +36,7 @@ const services = [
   {
     name: "Apprenticeship Training",
     color: "#8b5cf6",
-    desc: "Long-term skill development program. Kaam karo aur seekho ek saath.",
+    desc: "Long-term skill development program where you can learn and work at the same time.",
     tags: ["6–12 Months", "Paid", "Govt. Approved"],
     tagBg: "bg-violet-100",
     tagText: "text-violet-800",
@@ -44,7 +44,7 @@ const services = [
   {
     name: "Project Training",
     color: "#06b6d4",
-    desc: "Real-world projects par kaam karo aur portfolio banao. Client-based assignments bhi milenge.",
+    desc: "Work on real-world projects and build a strong portfolio with client-based assignments.",
     tags: ["Live Projects", "Portfolio", "Team Work"],
     tagBg: "bg-cyan-100",
     tagText: "text-cyan-800",
@@ -52,7 +52,7 @@ const services = [
   {
     name: "Vocational Training",
     color: "#ec4899",
-    desc: "Job-oriented skill training jo directly employment ke liye prepare kare.",
+    desc: "Job-oriented skill training designed to prepare students directly for employment.",
     tags: ["Skill-Based", "Job Ready", "Certificate"],
     tagBg: "bg-pink-100",
     tagText: "text-pink-800",
@@ -60,7 +60,7 @@ const services = [
   {
     name: "Syllabus Training",
     color: "#f97316",
-    desc: "University syllabus ke according customized training. Exams mein better performance ke liye.",
+    desc: "Customized training based on university syllabus to improve academic performance.",
     tags: ["University Aligned", "Doubt Sessions", "Notes"],
     tagBg: "bg-orange-100",
     tagText: "text-orange-800",
@@ -68,7 +68,7 @@ const services = [
   {
     name: "Python Training",
     color: "#6366f1",
-    desc: "Python programming basics se advanced tak. Data Science, ML, aur automation bhi cover hoga.",
+    desc: "Learn Python programming from basics to advanced including Data Science, ML, and automation.",
     tags: ["Beginner–Advanced", "Projects", "Certification"],
     tagBg: "bg-indigo-100",
     tagText: "text-indigo-800",
@@ -76,7 +76,7 @@ const services = [
   {
     name: "ASP.NET Training",
     color: "#10b981",
-    desc: "Microsoft ASP.NET framework se web apps banao. C# ke saath full-stack development.",
+    desc: "Build web applications using Microsoft ASP.NET framework and C# for full-stack development.",
     tags: ["C#", "Web Dev", "MVC Pattern"],
     tagBg: "bg-emerald-100",
     tagText: "text-emerald-800",
@@ -84,7 +84,7 @@ const services = [
   {
     name: "Java Training",
     color: "#ef4444",
-    desc: "Core Java se Spring Boot tak poora Java ecosystem. OOP concepts clearly samjhaye jayenge.",
+    desc: "Complete Java ecosystem training from Core Java to Spring Boot with strong OOP concepts.",
     tags: ["Core + Advanced", "Spring Boot", "Projects"],
     tagBg: "bg-red-100",
     tagText: "text-red-800",
@@ -92,7 +92,7 @@ const services = [
   {
     name: "PHP Training",
     color: "#3b82f6",
-    desc: "PHP se dynamic websites aur web apps develop karo. MySQL ke saath backend development.",
+    desc: "Develop dynamic websites and web applications using PHP and MySQL backend development.",
     tags: ["PHP + MySQL", "CMS", "Live Projects"],
     tagBg: "bg-blue-100",
     tagText: "text-blue-800",
@@ -100,7 +100,7 @@ const services = [
   {
     name: "Flutter Training",
     color: "#8b5cf6",
-    desc: "Google ke Flutter framework se Android aur iOS dono ke liye apps banao ek hi code se.",
+    desc: "Create Android and iOS applications using Google Flutter with a single codebase.",
     tags: ["Dart", "Cross-Platform", "UI Design"],
     tagBg: "bg-violet-100",
     tagText: "text-violet-800",
@@ -108,7 +108,7 @@ const services = [
   {
     name: "Android Training",
     color: "#22c55e",
-    desc: "Android app development Kotlin/Java mein. Play Store pe publish karna bhi sikhaya jayega.",
+    desc: "Learn Android app development using Kotlin or Java with Play Store publishing guidance.",
     tags: ["Kotlin/Java", "Play Store", "API Integration"],
     tagBg: "bg-green-100",
     tagText: "text-green-800",
@@ -116,7 +116,7 @@ const services = [
   {
     name: "MERN Stack Training",
     color: "#f43f5e",
-    desc: "MongoDB, Express, React aur Node.js — full stack web development ek jagah.",
+    desc: "Full-stack web development using MongoDB, Express, React, and Node.js.",
     tags: ["Full Stack", "REST API", "Deployment"],
     tagBg: "bg-rose-100",
     tagText: "text-rose-800",
@@ -124,7 +124,7 @@ const services = [
   {
     name: "AI ML Training",
     color: "#06b6d4",
-    desc: "Artificial Intelligence aur Machine Learning concepts. Real datasets par hands-on practice.",
+    desc: "Learn Artificial Intelligence and Machine Learning concepts with real dataset practice.",
     tags: ["Python", "TensorFlow", "Projects"],
     tagBg: "bg-cyan-100",
     tagText: "text-cyan-800",
@@ -132,16 +132,15 @@ const services = [
   {
     name: "CAD Mechanical Training",
     color: "#f97316",
-    desc: "AutoCAD, SolidWorks ya CATIA se mechanical parts design karo. Industry standard tools.",
+    desc: "Design mechanical parts using industry-standard tools like AutoCAD, SolidWorks, and CATIA.",
     tags: ["AutoCAD", "SolidWorks", "2D/3D"],
     tagBg: "bg-orange-100",
     tagText: "text-orange-800",
   },
   {
     name: "CAD Civil Training",
-  
     color: "#8b5cf6",
-    desc: "Civil engineering drawing aur design ke liye AutoCAD training. Structural drawings banana.",
+    desc: "Learn civil engineering drawing and structural design using AutoCAD.",
     tags: ["AutoCAD", "Structural", "Site Plans"],
     tagBg: "bg-violet-100",
     tagText: "text-violet-800",
@@ -149,7 +148,7 @@ const services = [
   {
     name: "CAD Electrical Training",
     color: "#22c55e",
-    desc: "Electrical circuit design aur wiring diagrams ke liye CAD training. PCB design bhi included.",
+    desc: "Learn electrical circuit design, wiring diagrams, and PCB design using CAD tools.",
     tags: ["AutoCAD Electrical", "PCB", "Wiring"],
     tagBg: "bg-green-100",
     tagText: "text-green-800",
@@ -157,7 +156,7 @@ const services = [
   {
     name: "Graphic Designing Training",
     color: "#f43f5e",
-    desc: "Adobe Photoshop, Illustrator aur CorelDRAW sikho. Logo, poster, branding sab kuch.",
+    desc: "Learn Adobe Photoshop, Illustrator, and CorelDRAW for branding, posters, and logo design.",
     tags: ["Photoshop", "Illustrator", "Portfolio"],
     tagBg: "bg-rose-100",
     tagText: "text-rose-800",
@@ -165,7 +164,7 @@ const services = [
   {
     name: "Digital Marketing Training",
     color: "#3b82f6",
-    desc: "SEO, SMM, Google Ads aur content marketing seekho. Freelancing bhi kar sako ge.",
+    desc: "Learn SEO, social media marketing, Google Ads, and content marketing for freelancing and jobs.",
     tags: ["SEO/SEM", "Social Media", "Google Ads"],
     tagBg: "bg-blue-100",
     tagText: "text-blue-800",
@@ -173,7 +172,7 @@ const services = [
   {
     name: "Data Analytics Training",
     color: "#22c55e",
-    desc: "Excel, Power BI aur Python se data analyse karna seekho. Dashboard banana aur insights.",
+    desc: "Learn data analysis using Excel, Power BI, and Python with dashboard creation and insights.",
     tags: ["Power BI", "Excel", "Python"],
     tagBg: "bg-green-100",
     tagText: "text-green-800",

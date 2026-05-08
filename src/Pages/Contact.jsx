@@ -16,7 +16,7 @@ const useCounter = (target, duration = 1800) => {
       else setCount(Math.floor(start));
     }, 16);
     return () => clearInterval(timer);
-  }, [target, duration]);
+  }, [target, duration = 1500]);
   return count;
 };
 

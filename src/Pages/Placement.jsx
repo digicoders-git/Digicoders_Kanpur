@@ -255,7 +255,7 @@ const Placement = () => {
       <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
         {/* Left Text Section */}
-        <div className="flex-1 text-center lg:text-left z-10 animate-slide-right">
+        <div className="flex-1 text-center px-7 lg:text-left z-10 animate-slide-right">
           <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-400/20 rounded-full px-4 py-1.5 mb-6">
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
             <span className="text-green-300 text-xs md:text-sm font-medium uppercase tracking-wider">

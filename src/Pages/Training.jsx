@@ -247,31 +247,6 @@ const Training = () => {
 
   return (
     <div className="bg-white min-h-screen font-sans">
-      <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(24px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes shimmer {
-          0%   { background-position: -200% center; }
-          100% { background-position:  200% center; }
-        }
-        @keyframes floatY {
-          0%, 100% { transform: translateY(0); }
-          50%       { transform: translateY(-10px); }
-        }
-        @keyframes pulse-ring {
-          0%   { transform: scale(1);   opacity: 0.5; }
-          100% { transform: scale(1.6); opacity: 0; }
-        }
-        .shimmer-text {
-          background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa, #3b82f6, #1e40af);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shimmer 3s linear infinite;
-        }
-      `}</style>
 
 
 {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
@@ -408,34 +383,6 @@ const Training = () => {
             Free Demo Class
           </a>
         </div>
-
-        {/* Stats row */}
-        {/* <div
-          className="grid grid-cols-4 gap-2 sm:flex sm:gap-6 pt-3"
-          style={{
-            borderTop: '0.5px solid rgba(255,255,255,0.08)',
-            animation: 'fadeUp 0.5s ease 0.38s both',
-          }}
-        >
-          {[
-            { n: '20+',   l: 'Courses',  c: '#60a5fa' },
-            { n: '1000+', l: 'Students', c: '#a78bfa' },
-            { n: '500+',  l: 'Placed',   c: '#34d399' },
-            { n: '4.8★',  l: 'Rating',   c: '#fbbf24' },
-          ].map((s, i) => (
-            <div key={i} className="text-center">
-              <div
-                className="font-black leading-none text-lg sm:text-xl"
-                style={{ color: s.c }}
-              >
-                {s.n}
-              </div>
-              <div className="text-[9px] sm:text-[10px] text-slate-500 mt-1 font-semibold uppercase tracking-wider">
-                {s.l}
-              </div>
-            </div>
-          ))}
-        </div> */}
       </div>
 
       {/* ── RIGHT: Course Preview Panel — hidden on mobile, shown lg+ ── */}

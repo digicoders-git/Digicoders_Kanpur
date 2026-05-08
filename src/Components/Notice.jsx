@@ -34,7 +34,7 @@ const Notice = () => {
       </div>
 
       {/* TICKER */}
-      {/* <div className="overflow-hidden w-full md:flex-1">
+      <div className="overflow-hidden w-full md:flex-1">
         <span className="whitespace-nowrap inline-block animate-marquee">
           Registrations Open for Training Session 2026–27 &nbsp;•&nbsp;
           Toll Free: 1800-200-5802 &nbsp;•&nbsp;
@@ -43,7 +43,7 @@ const Notice = () => {
           Aliganj, Lucknow &nbsp;•&nbsp;
           Yasodha Nagar, Kanpur
         </span>
-      </div> */}
+      </div>
 
       {/* RIGHT SECTION (Desktop Only) */}
       <div className="hidden md:flex items-center gap-4 md:ml-auto">

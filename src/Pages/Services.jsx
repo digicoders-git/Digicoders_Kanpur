@@ -263,36 +263,6 @@ const Services = () => {
 
   return (
     <div className="bg-white min-h-screen font-sans">
-      <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(24px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes shimmer {
-          0%   { background-position: -200% center; }
-          100% { background-position:  200% center; }
-        }
-        @keyframes floatY {
-          0%, 100% { transform: translateY(0); }
-          50%       { transform: translateY(-10px); }
-        }
-        @keyframes pulse-ring {
-          0%   { transform: scale(1);   opacity: 0.5; }
-          100% { transform: scale(1.6); opacity: 0; }
-        }
-        @keyframes marquee {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
-        }
-        .shimmer-text {
-          background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa, #3b82f6, #1e40af);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shimmer 3s linear infinite;
-        }
-        .marquee-track { animation: marquee 22s linear infinite; }
-      `}</style>
 
       {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
       <style>{`
@@ -550,11 +520,11 @@ const Services = () => {
           {/* Quick contact */}
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="tel:+911234567890" className="flex items-center gap-2 text-sm text-blue-300 hover:text-blue-200 transition-colors font-medium">
-              <Phone size={14} /> +91 12345 67890
+              <Phone size={14} /> +91 9720535155
             </a>
             <span className="text-gray-600 hidden sm:block">·</span>
             <a href="mailto:info@institute.com" className="flex items-center gap-2 text-sm text-blue-300 hover:text-blue-200 transition-colors font-medium">
-              <Mail size={14} /> info@institute.com
+              <Mail size={14} /> sudheer@gmail.com
             </a>
           </div>
         </div>

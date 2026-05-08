@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Award, Users, BookOpen, Target, Zap, Globe, ChevronRight, Star, TrendingUp, Shield, Clock, Heart } from 'lucide-react'
+import { NavLink } from 'react-router-dom';
 
 // ── Data ────────────────────────────────────────────────────────────────────
 const stats = [
@@ -59,11 +60,35 @@ const team = [
 ]
 
 const timeline = [
-  { year: '2017', title: 'The Beginning', desc: 'Started from a small classroom with just 12 students and one big dream — to transform careers.', side: 'left' },
-  { year: '2018', title: 'First 100 Placements', desc: 'Within the first year, we successfully placed 100+ students in top companies across the country.', side: 'right' },
-  { year: '2020', title: 'Online Expansion', desc: 'Even during the pandemic, we kept moving — launched a full online training program to keep learning alive.', side: 'left' },
-  { year: '2022', title: 'Second Branch', desc: 'After Kanpur, we expanded to Lucknow — growing our family and reaching more aspiring students.', side: 'right' },
-  { year: '2024', title: '1000+ Alumni', desc: 'Over a thousand alumni now making their mark across the industry — and the number keeps growing.', side: 'left' },
+  { 
+    year: '2017', 
+    title: 'The Beginning', 
+    desc: 'Started from a small classroom with just 12 students and one big dream — to transform careers.', 
+    side: 'left' 
+  },
+  { 
+    year: '2018', 
+    title: 'First 100 Placements', 
+    desc: 'Within the first year, we successfully placed 100+ students in top companies across the country.', 
+    side: 'right' 
+  },
+  { year: '2020', 
+    title: 'Online Expansion', 
+    desc: 'Even during the pandemic, we kept moving — launched a full online training program to keep learning alive.', 
+    side: 'left' 
+  },
+  { 
+    year: '2022', 
+    title: 'Second Branch', 
+    desc: 'After Kanpur, we expanded to Lucknow — growing our family and reaching more aspiring students.', 
+    side: 'right' 
+  },
+  { 
+    year: '2024', 
+    title: '1000+ Alumni', 
+    desc: 'Over a thousand alumni now making their mark across the industry — and the number keeps growing.', 
+    side: 'left' 
+  },
 ]
 
 // ── Animated Counter ────────────────────────────────────────────────────────
@@ -81,35 +106,6 @@ function useCounter(target, duration = 2000, start = false) {
     requestAnimationFrame(step)
   }, [start, target, duration])
   return count
-}
-
-function StatCard({ stat, index, inView }) {
-  const count = useCounter(stat.value, 1800, inView)
-  const Icon = stat.icon
-  return (
-    <div
-      className="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 overflow-hidden group"
-      style={{
-        animation: inView ? `fadeUp 0.5s ease forwards ${index * 0.1}s` : 'none',
-        opacity: 0,
-      }}
-    >
-      {/* background blob */}
-      <div className="absolute -right-4 -bottom-4 w-24 h-24 rounded-full opacity-10 transition-all duration-500 group-hover:opacity-20 group-hover:scale-110"
-        style={{ backgroundColor: stat.color }} />
-      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-        style={{ backgroundColor: stat.color + '18' }}>
-        <Icon size={22} style={{ color: stat.color }} />
-      </div>
-      <div className="text-4xl font-black text-gray-900 tracking-tight">
-        {count}{stat.suffix}
-      </div>
-      <div className="text-sm text-gray-500 font-medium mt-1">{stat.label}</div>
-      {/* bottom accent */}
-      <div className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500 rounded-b-2xl"
-        style={{ backgroundColor: stat.color }} />
-    </div>
-  )
 }
 
 // ── Main Component ──────────────────────────────────────────────────────────
@@ -137,52 +133,6 @@ const About = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(28px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideRight {
-          from { opacity: 0; transform: translateX(-30px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes slideLeft {
-          from { opacity: 0; transform: translateX(30px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes pulse-ring {
-          0%   { transform: scale(1); opacity: 0.6; }
-          100% { transform: scale(1.6); opacity: 0; }
-        }
-        @keyframes floatY {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-12px); }
-        }
-        @keyframes shimmer {
-          0%   { background-position: -200% center; }
-          100% { background-position: 200% center; }
-        }
-        .shimmer-text {
-          background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa, #3b82f6, #1e40af);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shimmer 3s linear infinite;
-        }
-        .timeline-line::before {
-          content: '';
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          top: 0; bottom: 0;
-          width: 2px;
-          background: linear-gradient(to bottom, #3b82f6, #93c5fd, #3b82f6);
-        }
-        @media (max-width: 768px) {
-          .timeline-line::before { left: 20px; }
-        }
-      `}</style>
-
       {/* ── SECTION 1: HERO ─────────────────────────────────────────────── */}
       <style>{`
         .text-shadow-strong { text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
@@ -254,7 +204,7 @@ const About = () => {
           <div className="flex items-center gap-2 mt-6">
             <div className="w-[5px] h-[5px] rounded-full bg-amber-300 flex-shrink-0" />
             <span className="text-[10px] text-white/50 tracking-[1.4px] uppercase">
-              Established 2017 · Varanasi
+              Established 2017 · 
             </span>
           </div>
         </div>
@@ -431,15 +381,15 @@ const About = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="/registration"
+            <NavLink to="/registration"
               className="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 flex items-center gap-2">
               Register Now
               <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a href="/contact"
+            </NavLink>
+            <NavLink to="/contact"
               className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all duration-300 hover:-translate-y-0.5 backdrop-blur">
               Contact Us
-            </a>
+            </NavLink>
           </div>
         </div>
       </section>
