@@ -6,6 +6,8 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* ───────── MARQUEE ───────── */
+
 @keyframes marquee {
   0% {
     transform: translateX(100%);
@@ -14,11 +16,12 @@ body {
     transform: translateX(-100%);
   }
 }
+
 .animate-marquee {
   animation: marquee 10s linear infinite;
 }
 
-/* ANIMATION */
+/* ───────── SLIDE ANIMATION ───────── */
 
 @keyframes slide {
   0% {
@@ -32,6 +35,7 @@ body {
 .animate-slide {
   animation: slide 20s linear infinite;
 }
+
 .animate-slide:hover {
   animation-play-state: paused;
   cursor: pointer;
@@ -43,7 +47,8 @@ body {
   }
 }
 
-/* training page */
+/* ───────── TICKER ───────── */
+
 @keyframes ticker {
   0% {
     transform: translateX(0);
@@ -53,59 +58,7 @@ body {
   }
 }
 
-/* Fadeup  */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-@keyframes floatY {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-@keyframes pulse-ring {
-  0% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1.6);
-    opacity: 0;
-  }
-}
-.shimmer-text {
-  background: linear-gradient(
-    90deg,
-    #1e40af,
-    #3b82f6,
-    #60a5fa,
-    #3b82f6,
-    #1e40af
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 3s linear infinite;
-}
+/* ───────── FADE UP ───────── */
 
 @keyframes fadeUp {
   from {
@@ -117,6 +70,9 @@ body {
     transform: translateY(0);
   }
 }
+
+/* ───────── SLIDE LEFT / RIGHT ───────── */
+
 @keyframes slideRight {
   from {
     opacity: 0;
@@ -127,6 +83,7 @@ body {
     transform: translateX(0);
   }
 }
+
 @keyframes slideLeft {
   from {
     opacity: 0;
@@ -137,25 +94,9 @@ body {
     transform: translateX(0);
   }
 }
-@keyframes pulse-ring {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  100% {
-    transform: scale(1.6);
-    opacity: 0;
-  }
-}
-@keyframes floatY {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
+
+/* ───────── SHIMMER ───────── */
+
 @keyframes shimmer {
   0% {
     background-position: -200% center;
@@ -164,6 +105,7 @@ body {
     background-position: 200% center;
   }
 }
+
 .shimmer-text {
   background: linear-gradient(
     90deg,
@@ -173,21 +115,62 @@ body {
     #3b82f6,
     #1e40af
   );
+
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
   animation: shimmer 3s linear infinite;
 }
+
+/* ───────── FLOAT ───────── */
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ───────── PULSE RING ───────── */
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* ───────── TIMELINE ───────── */
+
 .timeline-line::before {
   content: "";
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
   top: 0;
   bottom: 0;
+
   width: 2px;
-  background: linear-gradient(to bottom, #3b82f6, #93c5fd, #3b82f6);
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    to bottom,
+    #3b82f6,
+    #93c5fd,
+    #3b82f6
+  );
 }
+
 @media (max-width: 768px) {
   .timeline-line::before {
     left: 20px;

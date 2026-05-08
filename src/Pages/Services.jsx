@@ -263,6 +263,36 @@ const Services = () => {
 
   return (
     <div className="bg-white min-h-screen font-sans">
+      <style>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(24px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes shimmer {
+          0%   { background-position: -200% center; }
+          100% { background-position:  200% center; }
+        }
+        @keyframes floatY {
+          0%, 100% { transform: translateY(0); }
+          50%       { transform: translateY(-10px); }
+        }
+        @keyframes pulse-ring {
+          0%   { transform: scale(1);   opacity: 0.5; }
+          100% { transform: scale(1.6); opacity: 0; }
+        }
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+        .shimmer-text {
+          background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa, #3b82f6, #1e40af);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmer 3s linear infinite;
+        }
+        .marquee-track { animation: marquee 22s linear infinite; }
+      `}</style>
 
       {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
       <style>{`
@@ -394,7 +424,7 @@ const Services = () => {
       </section>
 
       {/* ── SECTION 5: HOW IT WORKS ──────────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-gray-50" ref={processRef}>
+      <section className="py-5 px-6 bg-gray-50" ref={processRef}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
@@ -431,7 +461,7 @@ const Services = () => {
       </section>
 
       {/* ── SECTION 6: COMPARISON TABLE ──────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-10 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">

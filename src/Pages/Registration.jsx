@@ -77,57 +77,6 @@ const Registration = () => {
 
   return (
     <div className="bg-white min-h-screen font-sans">
-      <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(24px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideRight {
-          from { opacity: 0; transform: translateX(-28px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes slideLeft {
-          from { opacity: 0; transform: translateX(28px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes floatY {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-10px); }
-        }
-        @keyframes shimmer {
-          0%   { background-position: -200% center; }
-          100% { background-position:  200% center; }
-        }
-        @keyframes scaleIn {
-          from { opacity: 0; transform: scale(0.85); }
-          to   { opacity: 1; transform: scale(1); }
-        }
-        @keyframes pulse-ring {
-          0%   { transform: scale(1);   opacity: 0.5; }
-          100% { transform: scale(1.6); opacity: 0; }
-        }
-        .shimmer-text {
-          background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa, #3b82f6, #1e40af);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shimmer 3s linear infinite;
-        }
-        .hero-anim { animation: fadeUp 0.7s ease both; }
-        .hero-anim-1 { animation: fadeUp 0.7s ease 0.1s both; }
-        .hero-anim-2 { animation: fadeUp 0.7s ease 0.2s both; }
-        .hero-anim-3 { animation: fadeUp 0.7s ease 0.3s both; }
-        .float { animation: floatY 4s ease-in-out infinite; }
-        .step-line::after {
-          content: '';
-          position: absolute;
-          top: 20px; left: calc(100% + 8px);
-          width: calc(100% - 16px);
-          height: 2px;
-          background: linear-gradient(90deg, #3b82f6, #93c5fd);
-          border-radius: 99px;
-        }
-      `}</style>
 
       {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
        
@@ -346,7 +295,7 @@ const Registration = () => {
       </section>
 
       {/* ── SECTION 3: MAIN FORM + PERKS ─────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className="py-5 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">

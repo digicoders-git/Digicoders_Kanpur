@@ -320,7 +320,7 @@ const About = () => {
       </section>
 
       {/* ── SECTION 5: TEAM ──────────────────────────────────────────────── */}
-      <section className="py-10 px-6 bg-gray-50">
+      <section className="py-5 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Meet the Team</span>
