@@ -171,10 +171,10 @@ const Arrow = () => (
 // ── ServiceRow ─────────────────────────────────────────────────────────────
 const ServiceRow = ({ num, title, sub, i }) => (
   <li
-    className="group flex items-center gap-4 px-6 py-4 border-b border-white/[0.06] hover:bg-[#e85d26]/10 transition-colors duration-200 cursor-default"
+    className="group flex items-center gap-7 px-6 py-4 border-b border-white/[0.06] hover:bg-[#e85d26]/10 transition-colors duration-200 cursor-default"
     style={{ animation: `fadeRow 0.5s ease ${i * 0.05 + 0.05}s both` }}
   >
-    <span className="w-5 font-mono text-[10px] text-white/20 shrink-0">{num}</span>
+    <span className="w-5 font-mono text-sm text-white/100 shrink-0">{num}</span>
     <div className="flex-1 min-w-0">
       <p className="text-[13px] font-bold text-[#f0ece6] tracking-tight">{title}</p>
       <p className="text-[11px] font-light text-white/35 mt-0.5">{sub}</p>
@@ -363,7 +363,7 @@ const Services = () => {
           </div>
 
           {/* Right — dark panel */}
-          <div className="hatch relative flex flex-col bg-gray-900 pe-10">
+          <div className="hatch relative flex flex-col bg-gray-700 pe-10">
             <div className="relative z-10 border-b border-white/[0.06] px-6 py-5 text-[10px] uppercase tracking-[0.12em] text-white/30">
               Our 6 core services
             </div>
