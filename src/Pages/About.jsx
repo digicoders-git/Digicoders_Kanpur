@@ -18,6 +18,8 @@ const images = [
   "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=85",
 ];
 
+
+
 const values = [
   {
     icon: Target,
@@ -283,27 +285,7 @@ const About = () => {
         </div>
 
       </section>
-      {/* ── SECTION 2: STATS ─────────────────────────────────────────────── */}
-      <section className="py-10 px-6 bg-white" ref={statsRef}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
-              Numbers That{' '}
-              <span className="text-blue-600 relative">
-                Speak
-                <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 100 8" preserveAspectRatio="none">
-                  <path d="M0,6 Q50,0 100,6" stroke="#3b82f6" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                </svg>
-              </span>
-              {' '}for Themselves
-            </h2>
-            <p className="text-gray-500 max-w-md mx-auto">Not just claims — this is our proven track record</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {stats.map((s, i) => <StatCard key={i} stat={s} index={i} inView={statsInView} />)}
-          </div>
-        </div>
-      </section>
+
 
       {/* ── SECTION 3: STORY / TIMELINE ──────────────────────────────────── */}
       <section className="py-8 px-6 bg-gray-50" ref={timelineRef}>

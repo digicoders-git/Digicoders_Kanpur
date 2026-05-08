@@ -8,6 +8,8 @@ import {
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
+
+// OUR SERVICES START
 const services = [
   {
     id: 1,
@@ -116,6 +118,7 @@ const services = [
     tag: 'Free',
   },
 ]
+// OUR SERVICES END
 
 const process = [
   { num: '01', icon: Phone,          title: 'Enquire or Register',   desc: 'Call us, fill the online form, or walk in to any branch — our team responds within 24 hours.' },
@@ -138,6 +141,47 @@ const techStack = [
   { name: 'Machine Learning', color: '#8b5cf6' },
   { name: 'UI/UX Design', color: '#ec4899' },
 ]
+
+// HERO SECTION 
+const SERVICES = [
+  { num: "01", title: "Technical Training",   sub: "Full Stack, Cloud, DevOps & more"      },
+  { num: "02", title: "Placement Assistance",  sub: "Resume, mock interviews & referrals"   },
+  { num: "03", title: "Live Project Support",  sub: "Real-world portfolio projects"          },
+  { num: "04", title: "Career Counselling",    sub: "Free 1-on-1 path planning"              },
+  { num: "05", title: "Certification Prep",    sub: "AWS, Azure, GCP guided prep"            },
+  { num: "06", title: "Mentorship Program",    sub: "Industry mentors, weekly sessions"      },
+];
+
+const STATS = [
+  { num: "5k+", label: "Students Placed"  },
+  { num: "50+", label: "Hiring Partners"  },
+  { num: "98%", label: "Satisfaction"     },
+  { num: "7+",  label: "Years Trusted"    },
+];
+
+
+
+// ── Icons ──────────────────────────────────────────────────────────────────
+const Arrow = () => (
+  <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+  </svg>
+);
+
+// ── ServiceRow ─────────────────────────────────────────────────────────────
+const ServiceRow = ({ num, title, sub, i }) => (
+  <li
+    className="group flex items-center gap-4 px-6 py-4 border-b border-white/[0.06] hover:bg-[#e85d26]/10 transition-colors duration-200 cursor-default"
+    style={{ animation: `fadeRow 0.5s ease ${i * 0.05 + 0.05}s both` }}
+  >
+    <span className="w-5 font-mono text-[10px] text-white/20 shrink-0">{num}</span>
+    <div className="flex-1 min-w-0">
+      <p className="text-[13px] font-bold text-[#f0ece6] tracking-tight">{title}</p>
+      <p className="text-[11px] font-light text-white/35 mt-0.5">{sub}</p>
+    </div>
+    <Arrow className="text-white/15 group-hover:text-[#e85d26] group-hover:translate-x-0.5 transition-all duration-200" />
+  </li>
+);
 
 // ── Service Card ──────────────────────────────────────────────────────────────
 
@@ -251,85 +295,85 @@ const Services = () => {
       `}</style>
 
       {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
-      <section
-        className="relative overflow-hidden pb-0"
-        style={{ background: 'linear-gradient(135deg, #0a0f1e 0%, #0f2a6b 55%, #0a0f1e 100%)' }}
-      >
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: 'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
-        <div className="absolute top-10 left-16 w-80 h-80 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
-        <div className="absolute bottom-0 right-10 w-72 h-72 rounded-full blur-3xl opacity-15"
-          style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
+      <style>{`
+        @keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes fadeRow { from{opacity:0;transform:translateX(10px)} to{opacity:1;transform:translateY(0)} }
+        .anim-up { animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) both; }
+        .outline-word { color:transparent; -webkit-text-stroke:2px #0d0d0d; }
+        .noise::before {
+          content:''; position:absolute; inset:0; pointer-events:none; z-index:0; opacity:0.4;
+          background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+        .hatch::before {
+          content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+          background:repeating-linear-gradient(-45deg,transparent,transparent 18px,rgba(255,255,255,.018) 18px,rgba(255,255,255,.018) 19px);
+        }
+        .font-bricolage { font-family:'Bricolage Grotesque',sans-serif; }
+      `}</style>
 
-        <div className="relative max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center gap-12">
+      <section className="noise relative w-full overflow-hidden bg-blue-600/50 font-bricolage">
+
+        {/* Body */}
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_500px]">
 
           {/* Left */}
-          <div className="flex-1 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-400/20 rounded-full px-4 py-1.5 mb-6"
-              style={{ animation: 'fadeUp 0.6s ease both' }}>
-              <Layers size={13} className="text-blue-300" />
-              <span className="text-blue-300 text-sm font-medium">6 Core Services — One Destination</span>
+          <div className="flex flex-col justify-between gap-10 border-b border-black/[0.08] px-5 py-10 sm:px-8 sm:py-10 md:px-10 md:py-8 lg:border-b-0 lg:border-r">
+            <div>
+              {/* Eyebrow */}
+              <div className="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.1em] text-gray-800">
+                <span className="h-px w-6 bg-[#e85d26]" />
+                IT Training &amp; Placement
+              </div>
+
+              {/* Headline */}
+              <h1 className="anim-up mb-4 text-[40px] font-extrabold leading-[1.02] tracking-[-0.03em] text-[#0d0d0d] sm:text-[52px] lg:text-[62px]">
+                Build Skills.<br />
+                <span className="outline-word">Get</span>
+                <span className="text-[#e85d26]"> Hired.</span>
+              </h1>
+
+              {/* Description */}
+              <div className="flex items-stretch gap-5">
+                <div className="w-px shrink-0 bg-[#0d0d0d]" />
+                <p className="max-w-md text-[14px] font-light leading-[1.75] text-gray-800  sm:text-[15px]">
+                  End-to-end career development — training, live projects, placement
+                  assistance and counselling. 6 services, one destination.
+                </p>
+              </div>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-black text-white leading-tight mb-5"
-              style={{ animation: 'fadeUp 0.6s ease 0.1s both' }}>
-              Everything You Need to{' '}
-              <span className="shimmer-text">Succeed</span>
-            </h1>
+            <div className="flex flex-col gap-8">
+              {/* CTA */}
+              <button className="group w-fit flex items-center gap-2 rounded-md bg-blue-700 px-6 py-3.5 text-[13px] font-bold tracking-wide text-[#f5f2ee] transition-all duration-200 hover:bg-[#e85d26] hover:-translate-y-0.5">
+                <Arrow /> Explore Services
+              </button>
 
-            <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-lg"
-              style={{ animation: 'fadeUp 0.6s ease 0.2s both' }}>
-              From technical training and placement assistance to project support and career
-              counselling — we provide complete end-to-end career development services.
-            </p>
-
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start"
-              style={{ animation: 'fadeUp 0.6s ease 0.3s both' }}>
-              {[
-                { icon: Shield,   text: 'ISO Certified',        color: '#fbbf24' },
-                { icon: Zap,      text: 'Industry-Led Training', color: '#34d399' },
-                { icon: Award,    text: '7+ Years Trusted',      color: '#60a5fa' },
-              ].map(({ icon: Icon, text, color }, i) => (
-                <div key={i} className="flex items-center gap-2 bg-white/10 backdrop-blur rounded-xl px-4 py-2 border border-white/10">
-                  <Icon size={14} style={{ color }} />
-                  <span className="text-white text-sm font-medium">{text}</span>
-                </div>
-              ))}
+              {/* Stats */}
+              <div className="flex flex-wrap gap-6 sm:gap-8">
+                {STATS.map(({ num, label }) => (
+                  <div key={label} className="flex flex-col gap-0.5">
+                    <span className="text-[22px] font-extrabold tracking-[-0.03em] text-[#0d0d0d]">
+                      {num.slice(0, -1)}<em className="not-italic text-[#e85d26]">{num.slice(-1)}</em>
+                    </span>
+                    <span className="text-[10px] uppercase tracking-[0.06em] text-gray-800">{label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Right visual */}
-          <div className="flex-shrink-0 relative w-64 h-64">
-            <div className="absolute inset-0 rounded-full border-2 border-blue-400/25"
-              style={{ animation: 'pulse-ring 2.2s ease-out infinite' }} />
-            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-blue-600 to-blue-900 flex items-center justify-center shadow-2xl"
-              style={{ animation: 'floatY 4s ease-in-out infinite' }}>
-              <div className="text-center">
-                <Cpu size={36} className="text-white mx-auto mb-2" />
-                <div className="text-3xl font-black text-white">6+</div>
-                <div className="text-blue-200 text-xs font-medium mt-1">Services</div>
-              </div>
+          {/* Right — dark panel */}
+          <div className="hatch relative flex flex-col bg-gray-900 pe-10">
+            <div className="relative z-10 border-b border-white/[0.06] px-6 py-5 text-[10px] uppercase tracking-[0.12em] text-white/30">
+              Our 6 core services
             </div>
-            {[
-              { label: 'Free Counselling', top: '-4%',  left: '52%', color: '#fbbf24', delay: '0s'   },
-              { label: '50+ Partners',     top: '78%',  left: '-8%', color: '#34d399', delay: '0.4s' },
-              { label: '98% Satisfaction', top: '78%',  left: '55%', color: '#a78bfa', delay: '0.8s' },
-            ].map((b, i) => (
-              <div key={i}
-                className="absolute bg-white rounded-xl shadow-lg px-3 py-1.5 flex items-center gap-2 text-xs font-bold whitespace-nowrap"
-                style={{ top: b.top, left: b.left, animation: `floatY ${3.5 + i * 0.4}s ease-in-out infinite ${b.delay}` }}>
-                <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: b.color }} />
-                {b.label}
-              </div>
-            ))}
+            <ul className="relative z-10 flex-1">
+              {SERVICES.map((s, i) => <ServiceRow key={s.num} {...s} i={i} />)}
+            </ul>
           </div>
+
         </div>
 
-        {/* Wave */}
-        {/* <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
-          <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z" fill="white" />
-        </svg> */}
       </section>
 
       {/* ── SECTION 3: SERVICE CARDS ─────────────────────────────────────────── */}
