@@ -63,7 +63,7 @@ const TrainingCard = ({ icon, title, audience, description, featured, btnVariant
     {featured && <Badge />}
     <IconBox>{icon}</IconBox>
 
-    <h3 className="text-lg font-bold mb-2 transition-colors duration-300 group-hover:text-white" style={{ color: '#1a1a1a' }}>
+    <h3 className="text-lg font-bold mb-2 text-[#1a1a1a] transition-colors duration-300 group-hover:text-white">  
       {title}
     </h3>
 
