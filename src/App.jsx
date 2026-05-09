@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Services from './Pages/Services'
@@ -32,12 +32,12 @@ const App = () => {
         </Routes>
         <Footer/>
         {/* Side floating buttons */}
-        <button className='hidden md:block fixed text-white px-2 py-1 bg-orange-600 rotate-90 left-[-57px] top-1/2 -translate-y-1/2 z-30 text-sm font-semibold'>
+        <NavLink to='' className='hidden md:block fixed text-white px-2 py-1 bg-orange-600 rotate-90 left-[-57px] top-1/2 -translate-y-1/2 z-30 text-sm font-semibold'>
           Assessment Portal
-        </button>
-        <button className='hidden md:block fixed text-white px-2 py-1 bg-green-600 rotate-90 right-[-63px] top-1/2 -translate-y-1/2 z-30 text-sm font-semibold'>
+        </NavLink>
+        <NavLink to='' className='hidden md:block fixed text-white px-2 py-1 bg-green-600 rotate-90 right-[-63px] top-1/2 -translate-y-1/2 z-30 text-sm font-semibold'>
           Register For Training
-        </button>
+        </NavLink>
 
         {/* Call & WhatsApp FABs */}
         <div className="fixed bottom-5 left-5 flex flex-col gap-3 z-50">
