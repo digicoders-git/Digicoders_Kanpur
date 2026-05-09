@@ -54,25 +54,26 @@ function StatCard({ stat, index, inView }) {
   )
 }
 
+// ── Stats: Orange = primary CTA, Green = success/placement, Navy = trust
 const statsData = [
-  { value: 1000, suffix: '+', label: 'Students Trained',  icon: Users,         color: '#3b82f6' },
-  { value: 7,    suffix: '+', label: 'Years Experience',  icon: Clock,         color: '#f59e0b' },
-  { value: 500,  suffix: '+', label: 'Placements Done',   icon: TrendingUp,    color: '#10b981' },
-  { value: 50,   suffix: '+', label: 'Hiring Partners',   icon: Building2,     color: '#8b5cf6' },
+  { value: 1000, suffix: '+', label: 'Students Trained',  icon: Users,      color: '#ff8c00' },
+  { value: 7,    suffix: '+', label: 'Years Experience',  icon: Clock,      color: '#0d1b2a' },
+  { value: 500,  suffix: '+', label: 'Placements Done',   icon: TrendingUp, color: '#2e7d32' },
+  { value: 50,   suffix: '+', label: 'Hiring Partners',   icon: Building2,  color: '#e65100' },
 ]
 
 // ── Companies Marquee Data ────────────────────────────────────────
 const companies = [
-  { name: 'TCS',           color: '#3b82f6' },
-  { name: 'Infosys',       color: '#8b5cf6' },
-  { name: 'Wipro',         color: '#10b981' },
-  { name: 'Accenture',     color: '#f59e0b' },
-  { name: 'HCL',           color: '#ef4444' },
-  { name: 'Cognizant',     color: '#06b6d4' },
-  { name: 'Tech Mahindra', color: '#6366f1' },
-  { name: 'Capgemini',     color: '#ec4899' },
-  { name: 'Mphasis',       color: '#14b8a6' },
-  { name: 'Persistent',    color: '#f97316' },
+  { name: 'TCS',           color: '#ff8c00' },
+  { name: 'Infosys',       color: '#2e7d32' },
+  { name: 'Wipro',         color: '#e65100' },
+  { name: 'Accenture',     color: '#0d1b2a' },
+  { name: 'HCL',           color: '#ff8c00' },
+  { name: 'Cognizant',     color: '#2e7d32' },
+  { name: 'Tech Mahindra', color: '#e65100' },
+  { name: 'Capgemini',     color: '#0d1b2a' },
+  { name: 'Mphasis',       color: '#ff8c00' },
+  { name: 'Persistent',    color: '#2e7d32' },
 ]
 
 const Home = () => {
@@ -84,7 +85,6 @@ const Home = () => {
   const [whyInView,    setWhyInView]    = useState(false)
   const [aboutInView,  setAboutInView]  = useState(false)
 
-  // Hero auto-slide
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -92,7 +92,6 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Scroll reveal observers
   useEffect(() => {
     const pairs = [
       { ref: statsRef,  setter: setStatsInView },
@@ -122,41 +121,10 @@ const Home = () => {
           from { opacity: 0; transform: translateX(30px); }
           to   { opacity: 1; transform: translateX(0); }
         }
-        @keyframes floatY {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-12px); }
-        }
-        @keyframes pulse-ring {
-          0%   { transform: scale(1);   opacity: 0.6; }
-          100% { transform: scale(1.6); opacity: 0; }
-        }
-        @keyframes shimmer {
-          0%   { background-position: -200% center; }
-          100% { background-position:  200% center; }
-        }
         @keyframes marquee {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        @keyframes slide-bg {
-          0%   { transform: translateX(100%); opacity: 0; }
-          10%  { transform: translateX(0); opacity: 1; }
-          90%  { transform: translateX(0); opacity: 1; }
-          100% { transform: translateX(-100%); opacity: 0; }
-        }
-        .shimmer-text {
-          background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa, #3b82f6, #1e40af);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: shimmer 3s linear infinite;
-        }
-        .marquee-track {
-          display: flex;
-          width: max-content;
-          animation: marquee 28s linear infinite;
-        }
-        .marquee-track:hover { animation-play-state: paused; }
         @keyframes animate-slide {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -164,13 +132,39 @@ const Home = () => {
         .animate-slide {
           animation: animate-slide 20s linear infinite;
         }
+        .marquee-track {
+          display: flex;
+          width: max-content;
+          animation: marquee 28s linear infinite;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+
+        /* Shimmer using brand orange */
+        @keyframes shimmer {
+          0%   { background-position: -200% center; }
+          100% { background-position:  200% center; }
+        }
+        .shimmer-text {
+          background: linear-gradient(90deg, #e65100, #ff8c00, #ffb74d, #ff8c00, #e65100);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmer 3s linear infinite;
+        }
+
+        /* Why choose us card hover bar */
+        .why-card:hover .why-bar {
+          width: 80px;
+        }
+        .why-bar {
+          transition: width 0.3s ease;
+        }
       `}</style>
 
       {/* ══════════════════════════════════════════════════════
-          HERO SECTION — Dark gradient + animated video slider
+          HERO SECTION
           ══════════════════════════════════════════════════════ */}
       <div className="relative w-full h-[60vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
-        
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -187,26 +181,58 @@ const Home = () => {
               className="w-full h-full object-cover"
             />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center px-4 md:px-10 text-white">
-              
-              <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
+            {/* Dark overlay with subtle navy tint */}
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 md:px-10 text-white"
+              style={{ background: 'linear-gradient(135deg, rgba(13,27,42,0.82) 0%, rgba(13,27,42,0.65) 100%)' }}>
+
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full border text-xs font-bold uppercase tracking-widest"
+                style={{ background: 'rgba(255,140,0,0.15)', borderColor: 'rgba(255,140,0,0.4)', color: '#ffb74d' }}>
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
+                UP's #1 IT Training Company
+              </div>
+
+              <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 leading-tight">
                 {slide.title}
               </h1>
 
-              <p className="text-sm md:text-lg lg:text-xl mb-4 md:mb-6 max-w-xl">
+              <p className="text-sm md:text-lg lg:text-xl mb-6 max-w-xl text-gray-200">
                 {slide.desc}
               </p>
 
-              <div className='flex flex-col sm:flex-row gap-3 md:gap-5'>
-                <button className="bg-blue-600 hover:bg-blue-800 px-4 md:px-6 py-2 md:py-3 font-bold rounded-lg">
+              <div className='flex flex-col sm:flex-row gap-3 md:gap-4'>
+                <button
+                  className="px-6 py-3 font-bold rounded-xl text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                  style={{ background: '#ff8c00', boxShadow: '0 0 0 0 transparent' }}
+                  onMouseEnter={e => e.target.style.background = '#e65100'}
+                  onMouseLeave={e => e.target.style.background = '#ff8c00'}
+                >
                   Explore Services
                 </button>
-                <button className="bg-blue-600 hover:bg-blue-800 px-4 md:px-6 py-2 md:py-3 font-bold rounded-lg">
+                <button
+                  className="px-6 py-3 font-bold rounded-xl text-white transition-all duration-300 hover:-translate-y-0.5 border-2"
+                  style={{ background: 'transparent', borderColor: '#4caf50', color: '#81c784' }}
+                  onMouseEnter={e => { e.target.style.background = '#4caf50'; e.target.style.color = 'white'; }}
+                  onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.color = '#81c784'; }}
+                >
                   Join Training
                 </button>
               </div>
 
+              {/* Slide dots */}
+              <div className="absolute bottom-6 flex gap-2">
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className="h-1.5 rounded-full transition-all duration-300"
+                    style={{
+                      width: i === current ? '24px' : '8px',
+                      background: i === current ? '#ff8c00' : 'rgba(255,255,255,0.4)'
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         ))}
@@ -215,16 +241,19 @@ const Home = () => {
       {/* ══════════════════════════════════════════════════════
           STATS SECTION
           ══════════════════════════════════════════════════════ */}
-      <section className="py-5 px-6 bg-white" ref={statsRef}>
+      <section className="py-14 px-6 bg-white" ref={statsRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Track Record</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ background: '#fff3e0', color: '#e65100' }}>
+              Our Track Record
+            </span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
               Numbers That{' '}
-              <span className="text-blue-600 relative">
+              <span className="relative" style={{ color: '#ff8c00' }}>
                 Speak
                 <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 100 8" preserveAspectRatio="none">
-                  <path d="M0,6 Q50,0 100,6" stroke="#3b82f6" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                  <path d="M0,6 Q50,0 100,6" stroke="#ff8c00" strokeWidth="2.5" fill="none" strokeLinecap="round" />
                 </svg>
               </span>
               {' '}for Themselves
@@ -240,26 +269,30 @@ const Home = () => {
       {/* ══════════════════════════════════════════════════════
           RECENT PLACEMENTS — marquee slider
           ══════════════════════════════════════════════════════ */}
-      <section className="py-14 bg-gray-50 overflow-hidden">
+      <section className="py-14 overflow-hidden" style={{ background: '#f9f5f0' }}>
         <div className="max-w-6xl mx-auto px-6 mb-10 text-center">
-          <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Placements</span>
+          <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+            style={{ background: '#e8f5e9', color: '#2e7d32' }}>
+            Placements
+          </span>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900">
             Recent{' '}
-            <span className="text-blue-600">Placement</span>
+            <span style={{ color: '#2e7d32' }}>Placement</span>
             {' '}Highlights
           </h2>
-          <div className="mx-auto mt-3 h-[2px] w-40 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+          <div className="mx-auto mt-3 h-[2px] w-40 rounded-full"
+            style={{ background: 'linear-gradient(to right, #2e7d32, transparent)' }} />
         </div>
 
         <div className="relative overflow-hidden">
           <div className="absolute left-0 top-0 bottom-0 w-20 z-10"
-            style={{ background: 'linear-gradient(to right, #f8fafc, transparent)' }} />
+            style={{ background: 'linear-gradient(to right, #f9f5f0, transparent)' }} />
           <div className="absolute right-0 top-0 bottom-0 w-20 z-10"
-            style={{ background: 'linear-gradient(to left, #f8fafc, transparent)' }} />
+            style={{ background: 'linear-gradient(to left, #f9f5f0, transparent)' }} />
 
           <div className="flex w-max animate-slide gap-6 px-4">
             {[about, hero2, hero3, about, hero2, hero3, about, hero2].map((src, i) => (
-              <div key={i} className="flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-white">
+              <div key={i} className="flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-orange-100 bg-white">
                 <img src={src} className="h-36 w-56 object-cover" alt={`placement ${i}`} />
               </div>
             ))}
@@ -269,9 +302,9 @@ const Home = () => {
         {/* Companies marquee */}
         <div className="relative overflow-hidden mt-10">
           <div className="absolute left-0 top-0 bottom-0 w-16 z-10"
-            style={{ background: 'linear-gradient(to right, #f8fafc, transparent)' }} />
+            style={{ background: 'linear-gradient(to right, #f9f5f0, transparent)' }} />
           <div className="absolute right-0 top-0 bottom-0 w-16 z-10"
-            style={{ background: 'linear-gradient(to left, #f8fafc, transparent)' }} />
+            style={{ background: 'linear-gradient(to left, #f9f5f0, transparent)' }} />
 
           <div className="marquee-track gap-4 py-3">
             {[...companies, ...companies].map((c, i) => (
@@ -303,35 +336,38 @@ const Home = () => {
       {/* ══════════════════════════════════════════════════════
           WHY CHOOSE US
           ══════════════════════════════════════════════════════ */}
-      <section className="py-8 bg-gray-50" ref={whyRef}>
+      <section className="py-14" ref={whyRef} style={{ background: '#f9f5f0' }}>
         <div className="max-w-7xl mx-auto px-6">
-
-          {/* Header */}
           <div className="text-center mb-14">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Why DigiCoders</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ background: '#fff3e0', color: '#e65100' }}>
+              Why DigiCoders
+            </span>
             <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight mb-4">
               Why Choose{' '}
-              <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text text-transparent italic">Us</span>
+              <span style={{ color: '#ff8c00', fontStyle: 'italic' }}>Us</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Engineering tomorrow, today. We architect digital advantage for ambitious students and businesses.
             </p>
           </div>
 
-          {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group bg-white border border-gray-100 shadow-sm hover:border-blue-500/50 rounded-tl-3xl rounded-br-3xl rounded-tr-none rounded-bl-none hover:rounded-tl-none hover:rounded-br-none hover:rounded-tr-3xl hover:rounded-bl-3xl p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/10"
-                style={whyInView ? { animation: `fadeUp 0.5s ease forwards ${index * 0.1}s`, opacity: 0 } : { opacity: 0 }}
+                className="why-card group bg-white border border-gray-100 shadow-sm p-8 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl cursor-pointer"
+                style={whyInView ? { animation: `fadeUp 0.5s ease forwards ${index * 0.1}s`, opacity: 0, borderRadius: '24px 4px 24px 4px' } : { opacity: 0, borderRadius: '24px 4px 24px 4px' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,140,0,0.4)'; e.currentTarget.style.borderRadius = '4px 24px 4px 24px'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = '#f3f4f6'; e.currentTarget.style.borderRadius = '24px 4px 24px 4px'; }}
               >
                 <div className="text-5xl mb-6 transition-transform group-hover:scale-110 duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-black">{feature.title}</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-400 text-justify leading-relaxed">{feature.desc}</p>
-                <div className="mt-8 h-1 w-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full group-hover:w-20 transition-all duration-300" />
+                <div className="why-bar mt-8 h-1 w-12 rounded-full"
+                  style={{ background: 'linear-gradient(to right, #ff8c00, #2e7d32)' }} />
               </div>
             ))}
           </div>
@@ -351,10 +387,11 @@ const Home = () => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img src={about} alt="About DigiCoders" className="w-full h-auto md:h-[420px] object-cover" />
-              {/* Floating badge */}
+              {/* Floating badge — navy bg with orange accent */}
               <div className="absolute bottom-5 left-5 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <Zap size={20} className="text-blue-600" />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center"
+                  style={{ background: '#fff3e0' }}>
+                  <Zap size={20} style={{ color: '#ff8c00' }} />
                 </div>
                 <div>
                   <div className="text-xs text-gray-500 font-medium">Trusted Since</div>
@@ -369,12 +406,16 @@ const Home = () => {
             className="w-full md:w-1/2"
             style={aboutInView ? { animation: 'slideLeft 0.7s ease forwards 0.1s', opacity: 0 } : { opacity: 0 }}
           >
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">About Us</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ background: '#fff3e0', color: '#e65100' }}>
+              About Us
+            </span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
               About DigiCoders{' '}
-              <span className="text-blue-600">Technologies</span>
+              <span style={{ color: '#2e7d32' }}>Technologies</span>
             </h2>
-            <div className="mt-3 mb-5 h-[2px] w-32 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+            <div className="mt-3 mb-5 h-[2px] w-32 rounded-full"
+              style={{ background: 'linear-gradient(to right, #ff8c00, transparent)' }} />
 
             <p className="text-gray-500 leading-relaxed mb-6 text-justify">
               DigiCoders Technologies is Uttar Pradesh's leading software training company, empowering
@@ -392,7 +433,7 @@ const Home = () => {
                 'Digital Services',
               ].map((item) => (
                 <p key={item} className="flex items-center gap-2 font-semibold text-gray-700">
-                  <FaCircleArrowRight className="text-blue-500 shrink-0" />
+                  <FaCircleArrowRight style={{ color: '#ff8c00' }} className="shrink-0" />
                   {item}
                 </p>
               ))}
@@ -400,7 +441,8 @@ const Home = () => {
 
             <div className="flex flex-wrap gap-3 mb-8">
               {['ISO Certified', 'MOU Partner', '7+ Years', 'Govt. Approved'].map((badge) => (
-                <span key={badge} className="bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1.5 rounded-full border border-blue-100">
+                <span key={badge} className="text-xs font-bold px-3 py-1.5 rounded-full border"
+                  style={{ background: '#e8f5e9', color: '#2e7d32', borderColor: '#c8e6c9' }}>
                   {badge}
                 </span>
               ))}
@@ -408,7 +450,11 @@ const Home = () => {
 
             <div className="flex flex-wrap gap-3">
               <a href="/services"
-                className="group flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5">
+                className="group flex items-center gap-2 px-6 py-3 font-bold rounded-xl text-white transition-all duration-300 hover:-translate-y-0.5"
+                style={{ background: '#ff8c00' }}
+                onMouseEnter={e => e.currentTarget.style.background = '#e65100'}
+                onMouseLeave={e => e.currentTarget.style.background = '#ff8c00'}
+              >
                 Our Services
                 <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </a>
@@ -421,19 +467,22 @@ const Home = () => {
         </div>
       </section>
 
-
       {/* ══════════════════════════════════════════════════════
           BRANCHES SECTION
           ══════════════════════════════════════════════════════ */}
-      <section className="py-5 bg-gray-50">
+      <section className="py-14" style={{ background: '#f9f5f0' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Locations</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ background: '#e8f5e9', color: '#2e7d32' }}>
+              Our Locations
+            </span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900">
               Our{' '}
-              <span className="text-blue-600">Branches</span>
+              <span style={{ color: '#ff8c00' }}>Branches</span>
             </h2>
-            <div className="mx-auto mt-3 h-[2px] w-40 bg-gradient-to-r from-blue-500 to-transparent rounded-full" />
+            <div className="mx-auto mt-3 h-[2px] w-40 rounded-full"
+              style={{ background: 'linear-gradient(to right, #ff8c00, transparent)' }} />
             <p className="text-gray-500 mt-3">Serving students across Uttar Pradesh from two prime locations</p>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
@@ -452,23 +501,24 @@ const Home = () => {
       {/* ══════════════════════════════════════════════════════
           FINAL CTA SECTION
           ══════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden py-5 px-6"
-        style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%)' }}>
+      <section className="relative overflow-hidden py-14 px-6"
+        style={{ background: 'linear-gradient(135deg, #0d1b2a 0%, #1a2f1a 50%, #0d1b2a 100%)' }}>
 
-        {/* Grid */}
-        <div className="absolute inset-0 opacity-[0.05]"
-          style={{ backgroundImage: 'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)', backgroundSize: '40px 40px' }} />
+        {/* Subtle dot grid */}
+        <div className="absolute inset-0 opacity-[0.04]"
+          style={{ backgroundImage: 'radial-gradient(circle, #ff8c00 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
-        {/* Orbs */}
-        <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full blur-3xl opacity-15"
-          style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
+        {/* Glow orbs using brand colors */}
+        <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full opacity-15 pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #ff8c00, transparent)', filter: 'blur(60px)' }} />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full opacity-15 pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #4caf50, transparent)', filter: 'blur(60px)' }} />
 
         <div className="relative max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-            <span className="text-yellow-300 text-sm font-medium">New Batch Starting Soon — Limited Seats</span>
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 border"
+            style={{ background: 'rgba(255,140,0,0.1)', borderColor: 'rgba(255,140,0,0.25)' }}>
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ff8c00' }} />
+            <span className="text-sm font-medium" style={{ color: '#ffb74d' }}>New Batch Starting Soon — Limited Seats</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-black text-white mb-5 leading-tight">
@@ -483,26 +533,33 @@ const Home = () => {
 
           <div className="flex flex-wrap gap-4 justify-center mb-8">
             <a href="/contact#registration"
-              className="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 flex items-center gap-2">
+              className="group relative px-8 py-4 font-bold rounded-xl text-white transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2"
+              style={{ background: '#ff8c00' }}
+              onMouseEnter={e => e.currentTarget.style.background = '#e65100'}
+              onMouseLeave={e => e.currentTarget.style.background = '#ff8c00'}
+            >
               Register Now
               <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="/contact"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all duration-300 hover:-translate-y-0.5 backdrop-blur">
+              className="px-8 py-4 font-bold rounded-xl border text-white transition-all duration-300 hover:-translate-y-0.5"
+              style={{ background: 'rgba(76,175,80,0.12)', borderColor: 'rgba(76,175,80,0.35)', color: '#81c784' }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#4caf50'; e.currentTarget.style.color = 'white'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(76,175,80,0.12)'; e.currentTarget.style.color = '#81c784'; }}
+            >
               Contact Us
             </a>
           </div>
 
-          {/* Contact strip */}
           <div className="flex flex-wrap gap-6 justify-center">
             <a href="tel:+919198483820"
               className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm">
-              <IoCall className="text-blue-400" />
+              <IoCall style={{ color: '#ff8c00' }} />
               +91 9198483820
             </a>
             <a href="https://wa.me/919198483820" target="_blank" rel="noreferrer"
               className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm">
-              <FaWhatsapp className="text-green-400" />
+              <FaWhatsapp style={{ color: '#4caf50' }} />
               WhatsApp Us
             </a>
           </div>

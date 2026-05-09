@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import ExpertCard from "./ExpertCard";
 
-// ── Data ──────────────────────────────────────────────────────────
 const expertsData = [
   {
     id: 1,
@@ -59,18 +58,30 @@ const expertsData = [
   },
 ];
 
-// ── Arrow Button ──────────────────────────────────────────────────
 const ArrowBtn = ({ direction, onClick, disabled }) => (
   <button
     onClick={onClick}
     disabled={disabled}
-    className={`
-      w-11 h-11 rounded-full border flex items-center justify-center transition-all duration-200
-      ${disabled
-        ? "border-gray-200 text-gray-300  bg-white"
-        : "border-blue-200 text-blue-600 bg-white hover:bg-blue-600 hover:text-white hover:border-blue-600 shadow-sm"
+    className="w-11 h-11 rounded-full border flex items-center justify-center transition-all duration-200"
+    style={
+      disabled
+        ? { borderColor: '#e5e7eb', color: '#d1d5db', background: 'white' }
+        : { borderColor: '#ffcc80', color: '#ff8c00', background: 'white' }
+    }
+    onMouseEnter={e => {
+      if (!disabled) {
+        e.currentTarget.style.background = '#ff8c00';
+        e.currentTarget.style.color = 'white';
+        e.currentTarget.style.borderColor = '#ff8c00';
       }
-    `}
+    }}
+    onMouseLeave={e => {
+      if (!disabled) {
+        e.currentTarget.style.background = 'white';
+        e.currentTarget.style.color = '#ff8c00';
+        e.currentTarget.style.borderColor = '#ffcc80';
+      }
+    }}
   >
     {direction === "left" ? (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
@@ -84,11 +95,11 @@ const ArrowBtn = ({ direction, onClick, disabled }) => (
   </button>
 );
 
-// ── Main ExpertSection Component ──────────────────────────────────
 const ExpertSection = () => {
   const sliderRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollLeft,  setCanScrollLeft]  = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeIndex,    setActiveIndex]    = useState(0);
 
   const SCROLL_AMOUNT = 310;
 
@@ -97,30 +108,31 @@ const ExpertSection = () => {
     if (!el) return;
     setCanScrollLeft(el.scrollLeft > 0);
     setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+    setActiveIndex(Math.round(el.scrollLeft / SCROLL_AMOUNT));
   };
 
-  const scrollLeft = () => {
-    sliderRef.current?.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
-    setTimeout(updateArrows, 300);
-  };
-
-  const scrollRight = () => {
-    sliderRef.current?.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" });
-    setTimeout(updateArrows, 300);
-  };
+  const scrollLeft  = () => { sliderRef.current?.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" }); setTimeout(updateArrows, 300); };
+  const scrollRight = () => { sliderRef.current?.scrollBy({ left:  SCROLL_AMOUNT, behavior: "smooth" }); setTimeout(updateArrows, 300); };
 
   return (
     <section className="bg-white pb-5 px-4" id="experts">
       <div className="max-w-6xl mx-auto">
 
-        {/* ✅ CENTERED HEADER */}
-        <div className="text-center mb-6">      
-        <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Meet Our Team</span>
+        {/* Header */}
+        <div className="text-center mb-6">
+          <span
+            className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+            style={{ background: '#fff3e0', color: '#e65100' }}
+          >
+            Meet Our Team
+          </span>
 
-          <div className="mx-auto mt-1 h-[2px] w-26 md:w-32 bg-gradient-to-r from-blue-500 to-transparent rounded-full"></div>
+          <div className="mx-auto mt-1 h-[2px] w-28 md:w-32 rounded-full"
+            style={{ background: 'linear-gradient(to right, #ff8c00, transparent)' }} />
 
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
-            Learn from Industry <span className="text-blue-600 italic">Experts</span>
+            Learn from Industry{' '}
+            <span style={{ color: '#ff8c00', fontStyle: 'italic' }}>Experts</span>
           </h2>
 
           <p className="text-gray-400 mt-2 text-sm md:text-base">
@@ -128,20 +140,15 @@ const ExpertSection = () => {
           </p>
         </div>
 
-        {/* ✅ SLIDER WITH OVERLAY ARROWS */}
+        {/* Slider */}
         <div className="relative">
-
-          {/* LEFT ARROW */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
             <ArrowBtn direction="left" onClick={scrollLeft} disabled={!canScrollLeft} />
           </div>
-
-          {/* RIGHT ARROW */}
           <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
             <ArrowBtn direction="right" onClick={scrollRight} disabled={!canScrollRight} />
           </div>
 
-          {/* SLIDER */}
           <div
             ref={sliderRef}
             onScroll={updateArrows}
@@ -154,17 +161,19 @@ const ExpertSection = () => {
           </div>
         </div>
 
-        {/* DOTS */}
+        {/* Dots */}
         <div className="flex justify-center gap-2 mt-6">
           {expertsData.map((_, i) => (
             <span
               key={i}
-              className="w-2 h-2 rounded-full bg-gray-200"
-              style={{ background: i === 0 ? "#2563eb" : undefined }}
+              className="h-2 rounded-full transition-all duration-300"
+              style={{
+                width: i === activeIndex ? '20px' : '8px',
+                background: i === activeIndex ? '#ff8c00' : '#e5e7eb',
+              }}
             />
           ))}
         </div>
-
       </div>
     </section>
   );
