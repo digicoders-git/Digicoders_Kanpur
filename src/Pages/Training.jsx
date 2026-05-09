@@ -13,7 +13,7 @@ const categories = ['All', 'Web', 'Programming', 'Data', 'Cloud & Security', 'Mo
 const courses = [
   {
     id: 1, cat: 'Web',
-    icon: Monitor, color: '#3b82f6', bg: '#eff6ff',
+    icon: Monitor, color: '#ff8c00', bg: '#fff7ed',
     title: 'Full Stack Web Development',
     desc: 'Master HTML, CSS, JavaScript, React, Node.js and build complete production-ready web applications.',
     duration: '4–6 Months', level: 'Beginner to Advanced', seats: 20, filled: 14,
@@ -23,7 +23,7 @@ const courses = [
   },
   {
     id: 2, cat: 'Programming',
-    icon: Code, color: '#f59e0b', bg: '#fffbeb',
+    icon: Code, color: '#2e7d32', bg: '#f0fdf4',
     title: 'Python Programming',
     desc: 'From basics to advanced Python — scripting, automation, OOP, and real-world project development.',
     duration: '2–3 Months', level: 'Beginner', seats: 18, filled: 10,
@@ -33,7 +33,7 @@ const courses = [
   },
   {
     id: 3, cat: 'Programming',
-    icon: Code, color: '#10b981', bg: '#ecfdf5',
+    icon: Code, color: '#ff8c00', bg: '#fff7ed',
     title: 'Java & Spring Boot',
     desc: 'Core Java, OOP, data structures, and Spring Boot for backend development and enterprise apps.',
     duration: '3–5 Months', level: 'Beginner to Intermediate', seats: 15, filled: 9,
@@ -43,7 +43,7 @@ const courses = [
   },
   {
     id: 4, cat: 'Data',
-    icon: BarChart2, color: '#8b5cf6', bg: '#f5f3ff',
+    icon: BarChart2, color: '#2e7d32', bg: '#f0fdf4',
     title: 'Data Science & Machine Learning',
     desc: 'Statistics, Python, data visualisation, ML algorithms and end-to-end data science pipelines.',
     duration: '4–6 Months', level: 'Intermediate', seats: 12, filled: 10,
@@ -53,7 +53,7 @@ const courses = [
   },
   {
     id: 5, cat: 'Cloud & Security',
-    icon: Cloud, color: '#ef4444', bg: '#fef2f2',
+    icon: Cloud, color: '#ff8c00', bg: '#fff7ed',
     title: 'Cloud Computing (AWS)',
     desc: 'AWS core services, cloud architecture, deployment, and preparation for AWS certification exams.',
     duration: '2–3 Months', level: 'Intermediate', seats: 15, filled: 7,
@@ -63,7 +63,7 @@ const courses = [
   },
   {
     id: 6, cat: 'Cloud & Security',
-    icon: Shield, color: '#06b6d4', bg: '#ecfeff',
+    icon: Shield, color: '#2e7d32', bg: '#f0fdf4',
     title: 'Cyber Security',
     desc: 'Ethical hacking, network security, penetration testing, and cybersecurity best practices.',
     duration: '3–4 Months', level: 'Intermediate', seats: 12, filled: 5,
@@ -73,7 +73,7 @@ const courses = [
   },
   {
     id: 7, cat: 'Mobile',
-    icon: Smartphone, color: '#f97316', bg: '#fff7ed',
+    icon: Smartphone, color: '#ff8c00', bg: '#fff7ed',
     title: 'Android Development',
     desc: 'Build native Android apps with Java/Kotlin, UI design, API integration, and Play Store deployment.',
     duration: '3–4 Months', level: 'Beginner to Intermediate', seats: 15, filled: 8,
@@ -83,7 +83,7 @@ const courses = [
   },
   {
     id: 8, cat: 'Data',
-    icon: Database, color: '#64748b', bg: '#f8fafc',
+    icon: Database, color: '#2e7d32', bg: '#f0fdf4',
     title: 'SQL & Database Management',
     desc: 'Relational databases, advanced SQL queries, stored procedures, indexing and performance tuning.',
     duration: '1–2 Months', level: 'Beginner', seats: 20, filled: 11,
@@ -93,7 +93,7 @@ const courses = [
   },
   {
     id: 9, cat: 'Special',
-    icon: GraduationCap, color: '#84cc16', bg: '#f7fee7',
+    icon: GraduationCap, color: '#ff8c00', bg: '#fff7ed',
     title: 'Summer Training Program',
     desc: 'Intensive 4–6 week summer training with live industry projects and an internship letter.',
     duration: '4–6 Weeks', level: 'All Levels', seats: 25, filled: 18,
@@ -104,7 +104,7 @@ const courses = [
   },
   {
     id: 10, cat: 'Web',
-    icon: Layers, color: '#ec4899', bg: '#fdf2f8',
+    icon: Layers, color: '#2e7d32', bg: '#f0fdf4',
     title: 'UI/UX & Frontend Design',
     desc: 'Figma, design thinking, responsive CSS, Tailwind, and component-based frontend development.',
     duration: '2–3 Months', level: 'Beginner', seats: 15, filled: 6,
@@ -115,19 +115,19 @@ const courses = [
 ]
 
 const stats = [
-  { value: '20+', label: 'Courses Available',  icon: BookOpen,     color: '#3b82f6' },
-  { value: '1000+', label: 'Students Trained', icon: Users,        color: '#f59e0b' },
-  { value: '500+', label: 'Placed Successfully',icon: Briefcase,   color: '#10b981' },
-  { value: '4.8★', label: 'Average Rating',    icon: Star,         color: '#8b5cf6' },
+  { value: '20+',   label: 'Courses Available',   icon: BookOpen,  color: '#ff8c00' },
+  { value: '1000+', label: 'Students Trained',     icon: Users,     color: '#2e7d32' },
+  { value: '500+',  label: 'Placed Successfully',  icon: Briefcase, color: '#ff8c00' },
+  { value: '4.8★',  label: 'Average Rating',       icon: Star,      color: '#2e7d32' },
 ]
 
 const whyUs = [
-  { icon: Zap,         title: 'Live Projects',          desc: 'Every course includes real industry projects — not just theory exercises.',        color: '#3b82f6' },
-  { icon: Users,       title: 'Small Batches',          desc: 'Maximum 20 students per batch for personalised attention and better learning.',     color: '#f59e0b' },
-  { icon: Award,       title: 'Recognised Certificate', desc: 'Industry-recognised certificates accepted by top IT companies and recruiters.',     color: '#10b981' },
-  { icon: Briefcase,   title: 'Placement Support',      desc: 'Dedicated placement cell with resume building, mock interviews, and HR connects.', color: '#8b5cf6' },
-  { icon: TrendingUp,  title: 'Updated Curriculum',     desc: 'Syllabus updated every 6 months to stay aligned with current industry demands.',   color: '#ef4444' },
-  { icon: Globe,       title: 'Flexible Timings',       desc: 'Morning, evening, and weekend batches available for working professionals.',        color: '#06b6d4' },
+  { icon: Zap,        title: 'Live Projects',          desc: 'Every course includes real industry projects — not just theory exercises.',        color: '#ff8c00' },
+  { icon: Users,      title: 'Small Batches',          desc: 'Maximum 20 students per batch for personalised attention and better learning.',     color: '#2e7d32' },
+  { icon: Award,      title: 'Recognised Certificate', desc: 'Industry-recognised certificates accepted by top IT companies and recruiters.',     color: '#ff8c00' },
+  { icon: Briefcase,  title: 'Placement Support',      desc: 'Dedicated placement cell with resume building, mock interviews, and HR connects.', color: '#2e7d32' },
+  { icon: TrendingUp, title: 'Updated Curriculum',     desc: 'Syllabus updated every 6 months to stay aligned with current industry demands.',   color: '#ff8c00' },
+  { icon: Globe,      title: 'Flexible Timings',       desc: 'Morning, evening, and weekend batches available for working professionals.',        color: '#2e7d32' },
 ]
 
 // ── Sub-components ────────────────────────────────────────────────────────────
@@ -248,345 +248,284 @@ const Training = () => {
   return (
     <div className="bg-white min-h-screen font-sans">
 
+      <style>{`
+        @keyframes fadeUp  { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes ticker  { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+        .shimmer-text {
+          background: linear-gradient(90deg, #ff8c00, #fbbf24, #ff8c00);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmerAnim 3s linear infinite;
+        }
+        @keyframes shimmerAnim { to { background-position: 200% center; } }
+      `}</style>
 
-{/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
-<section className="relative overflow-hidden" style={{ background: '#0a0f1e' }}>
+      {/* ── SECTION 1: HERO ──────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden" style={{ background: '#0d1b2a' }}>
 
-  {/* BG Image */}
-  <div
-    className="absolute inset-0"
-    style={{
-      backgroundImage: `url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center 25%',
-      filter: 'brightness(0.18) saturate(1.2)',
-    }}
-  />
-
-  {/* Gradient overlay */}
-  <div
-    className="absolute inset-0"
-    style={{
-      background: 'linear-gradient(135deg, rgba(10,10,10,.97) 0%, rgba(15,42,100,.70) 70%, rgba(10,15,30,.92) 100%)',
-    }}
-  />
-
-  {/* Left vertical glow line — hidden on mobile */}
-  <div
-    className="absolute left-0 top-0 w-[3px] h-full hidden md:block"
-    style={{ background: 'linear-gradient(180deg, transparent, #3b82f6, #6366f1, transparent)' }}
-  />
-
-  {/* MAIN CONTENT */}
-  <div
-    className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8"
-    style={{ zIndex: 2 }}
-  >
-    {/* Grid: stacked on mobile, side-by-side on lg+ */}
-    <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] xl:grid-cols-[1fr_320px] gap-0">
-
-      {/* ── LEFT: Content ── */}
-      <div className="flex flex-col justify-center gap-4 sm:gap-5 py-12 sm:py-14 lg:py-8 lg:pr-10">
-
-        {/* Eyebrow */}
+        {/* BG Image */}
         <div
-          className="flex items-center gap-3"
-          style={{ animation: 'fadeUp 0.5s ease 0.08s both' }}
-        >
-          <div
-            className="w-[3px] h-6 sm:h-7 rounded-sm flex-shrink-0"
-            style={{ background: 'linear-gradient(180deg, #3b82f6, #6366f1)' }}
-          />
-          <span className="text-blue-300 text-[10px] sm:text-[11px] font-bold tracking-[.12em] sm:tracking-[.15em] uppercase">
-            Professional IT Training Institute
-          </span>
-        </div>
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 25%',
+            filter: 'brightness(0.18) saturate(1.2)',
+          }}
+        />
 
-        {/* Headline */}
-        <div style={{ animation: 'fadeUp 0.5s ease 0.18s both' }}>
-          <h1
-            className="font-black text-slate-100 leading-[1.1] m-0"
-            style={{
-              fontSize: 'clamp(30px, 5vw, 46px)',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            Learn. Build.<br />
-            <span className="shimmer-text">Get Placed.</span>
-          </h1>
-        </div>
-
-        {/* Description */}
-        <p
-          className="text-slate-400 text-sm leading-[1.75] m-0 max-w-full sm:max-w-[480px] lg:max-w-[420px]"
-          style={{ animation: 'fadeUp 0.5s ease 0.18s both' }}
-        >
-          Hands-on training programs designed with industry experts — from beginner
-          to job-ready in weeks, not years. Real projects, real skills, real results.
-        </p>
-
-        {/* Feature pills */}
+        {/* Gradient overlay — navy tint */}
         <div
-          className="flex flex-wrap gap-2"
-          style={{ animation: 'fadeUp 0.5s ease 0.28s both' }}
-        >
-          {[
-            { dot: '#fbbf24', text: 'Certified Trainers' },
-            { dot: '#34d399', text: 'Live Project Training' },
-            { dot: '#60a5fa', text: 'Placement Guarantee' },
-          ].map(({ dot, text }, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-2 rounded-full px-3 sm:px-3.5 py-1.5"
-              style={{
-                background: 'rgba(255,255,255,0.07)',
-                border: '0.5px solid rgba(255,255,255,0.12)',
-              }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                style={{ backgroundColor: dot }}
-              />
-              <span className="text-slate-200 text-[11px] sm:text-xs font-medium">{text}</span>
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(135deg, rgba(13,27,42,.97) 0%, rgba(13,50,30,.70) 70%, rgba(13,27,42,.92) 100%)' }}
+        />
+
+        {/* Left vertical glow line */}
+        <div
+          className="absolute left-0 top-0 w-[3px] h-full hidden md:block"
+          style={{ background: 'linear-gradient(180deg, transparent, #ff8c00, #2e7d32, transparent)' }}
+        />
+
+        {/* MAIN CONTENT */}
+        <div className="relative max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8" style={{ zIndex: 2 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] xl:grid-cols-[1fr_320px] gap-0">
+
+            {/* ── LEFT: Content ── */}
+            <div className="flex flex-col justify-center gap-4 sm:gap-5 py-12 sm:py-14 lg:py-8 lg:pr-10">
+
+              {/* Eyebrow */}
+              <div className="flex items-center gap-3" style={{ animation: 'fadeUp 0.5s ease 0.08s both' }}>
+                <div className="w-[3px] h-6 sm:h-7 rounded-sm flex-shrink-0"
+                  style={{ background: 'linear-gradient(180deg, #ff8c00, #2e7d32)' }} />
+                <span className="text-[10px] sm:text-[11px] font-bold tracking-[.12em] sm:tracking-[.15em] uppercase"
+                  style={{ color: '#ffb347' }}>
+                  Professional IT Training Institute
+                </span>
+              </div>
+
+              {/* Headline */}
+              <div style={{ animation: 'fadeUp 0.5s ease 0.18s both' }}>
+                <h1
+                  className="font-black text-slate-100 leading-[1.1] m-0"
+                  style={{ fontSize: 'clamp(30px, 5vw, 46px)', letterSpacing: '-0.02em' }}
+                >
+                  Learn. Build.<br />
+                  <span className="shimmer-text">Get Placed.</span>
+                </h1>
+              </div>
+
+              {/* Description */}
+              <p
+                className="text-slate-400 text-sm leading-[1.75] m-0 max-w-full sm:max-w-[480px] lg:max-w-[420px]"
+                style={{ animation: 'fadeUp 0.5s ease 0.18s both' }}
+              >
+                Hands-on training programs designed with industry experts — from beginner
+                to job-ready in weeks, not years. Real projects, real skills, real results.
+              </p>
+
+              {/* Feature pills */}
+              <div className="flex flex-wrap gap-2" style={{ animation: 'fadeUp 0.5s ease 0.28s both' }}>
+                {[
+                  { dot: '#fbbf24', text: 'Certified Trainers' },
+                  { dot: '#2e7d32', text: 'Live Project Training' },
+                  { dot: '#ff8c00', text: 'Placement Guarantee' },
+                ].map(({ dot, text }, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-2 rounded-full px-3 sm:px-3.5 py-1.5"
+                    style={{ background: 'rgba(255,255,255,0.07)', border: '0.5px solid rgba(255,255,255,0.12)' }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: dot }} />
+                    <span className="text-slate-200 text-[11px] sm:text-xs font-medium">{text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTAs */}
+              <div className="flex gap-3" style={{ animation: 'fadeUp 0.5s ease 0.28s both' }}>
+                <a href="#courses"
+                  className="group flex items-center justify-center gap-2 font-bold text-white rounded-xl transition-all duration-300 hover:-translate-y-0.5 text-center"
+                  style={{
+                    padding: '12px 28px',
+                    background: 'linear-gradient(135deg, #ff8c00, #e67e00)',
+                    fontSize: '13px',
+                    boxShadow: '0 4px 20px rgba(255,140,0,.4)',
+                  }}
+                >
+                  Explore Courses
+                  <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+                <a href="#demo"
+                  className="flex items-center justify-center font-medium text-slate-200 rounded-xl transition-all duration-300 hover:-translate-y-0.5 text-center"
+                  style={{
+                    padding: '12px 22px',
+                    background: 'rgba(255,255,255,0.08)',
+                    fontSize: '13px',
+                    border: '0.5px solid rgba(255,255,255,0.2)',
+                  }}
+                >
+                  Free Demo Class
+                </a>
+              </div>
             </div>
-          ))}
-        </div>
 
-        {/* CTAs */}
-        <div
-          className="flex gap-3"
-          style={{ animation: 'fadeUp 0.5s ease 0.28s both' }}
-        >
-          
-          <a  href="#courses"
-            className="group flex items-center justify-center gap-2 font-bold text-white rounded-xl transition-all duration-300 hover:-translate-y-0.5 text-center"
-            style={{
-              padding: '12px 28px',
-              background: 'linear-gradient(135deg, #2563eb, #4f46e5)',
-              fontSize: '13px',
-              boxShadow: '0 4px 20px rgba(79,70,229,.4)',
-            }}
-          >
-            Explore Courses
-            <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform" />
-          </a>
-          
-          <a  href="#demo"
-            className="flex items-center justify-center font-medium text-slate-200 rounded-xl transition-all duration-300 hover:-translate-y-0.5 text-center"
-            style={{
-              padding: '12px 22px',
-              background: 'rgba(255,255,255,0.08)',
-              fontSize: '13px',
-              border: '0.5px solid rgba(255,255,255,0.2)',
-            }}
-          >
-            Free Demo Class
-          </a>
-        </div>
-      </div>
+            {/* ── RIGHT: Course Preview Panel — desktop only ── */}
+            <div className="hidden lg:flex items-center py-8 pl-5 relative">
+              <div className="w-full flex flex-col gap-2.5">
 
-      {/* ── RIGHT: Course Preview Panel — hidden on mobile, shown lg+ ── */}
-      <div className="hidden lg:flex items-center py-8 pl-5 relative">
-        <div className="w-full flex flex-col gap-2.5">
+                {/* Panel header */}
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-slate-400 text-[10px] font-bold tracking-widest uppercase">Top Courses</span>
+                  <span className="text-[10px] font-semibold" style={{ color: '#ff8c00' }}>20+ Available →</span>
+                </div>
 
-          {/* Panel header */}
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-slate-400 text-[10px] font-bold tracking-widest uppercase">
-              Top Courses
-            </span>
-            <span className="text-blue-500 text-[10px] font-semibold">20+ Available →</span>
+                {/* Course mini cards */}
+                {[
+                  { title: 'Full Stack Web Dev',    dur: '4–6 Months', color: '#ff8c00', fill: 70 },
+                  { title: 'Data Science & ML',     dur: '4–6 Months', color: '#2e7d32', fill: 83, badge: 'Hot' },
+                  { title: 'Cloud Computing (AWS)', dur: '2–3 Months', color: '#ff8c00', fill: 47 },
+                ].map((c, i) => (
+                  <div
+                    key={i}
+                    className="rounded-xl p-2.5"
+                    style={{
+                      background: 'rgba(255,255,255,0.05)',
+                      border: '0.5px solid rgba(255,255,255,0.1)',
+                      animation: `fadeUp 0.4s ease both ${0.1 + i * 0.07}s`,
+                    }}
+                  >
+                    <div className="flex items-center justify-between mb-1.5">
+                      <div>
+                        <div className="text-slate-100 text-[11px] font-bold leading-tight">{c.title}</div>
+                        <div className="text-slate-500 text-[10px] mt-0.5">{c.dur}</div>
+                      </div>
+                      {c.badge && (
+                        <span
+                          className="text-[9px] font-bold rounded-full px-2 py-0.5 flex-shrink-0"
+                          style={{
+                            background: 'rgba(255,140,0,.15)',
+                            color: '#ffb347',
+                            border: '0.5px solid rgba(255,140,0,.3)',
+                          }}
+                        >
+                          {c.badge}
+                        </span>
+                      )}
+                    </div>
+                    <div className="h-[2px] rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                      <div className="h-full rounded-full" style={{ width: `${c.fill}%`, backgroundColor: c.color }} />
+                    </div>
+                    <div className="flex justify-between mt-1">
+                      <span className="text-slate-500 text-[9px]">Seats filled</span>
+                      <span className="text-[9px] font-bold" style={{ color: c.color }}>{c.fill}%</span>
+                    </div>
+                  </div>
+                ))}
+
+                {/* View all */}
+                <a href="#courses"
+                  className="rounded-xl p-2.5 text-center block transition-all hover:opacity-80"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255,140,0,.2), rgba(46,125,50,.2))',
+                    border: '0.5px solid rgba(255,140,0,.35)',
+                  }}
+                >
+                  <span className="text-[11px] font-bold" style={{ color: '#ffb347' }}>
+                    View All 20+ Courses →
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            {/* ── MOBILE: Horizontal course scroll strip ── */}
+            <div className="lg:hidden pb-8 -mx-4 px-4" style={{ animation: 'fadeUp 0.5s ease 0.45s both' }}>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-slate-400 text-[10px] font-bold tracking-widest uppercase">Popular Courses</span>
+                <a href="#courses" className="text-[10px] font-semibold" style={{ color: '#ff8c00' }}>View All →</a>
+              </div>
+              <div className="flex gap-3 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none' }}>
+                {[
+                  { title: 'Full Stack Web Dev', color: '#ff8c00', fill: 70,  dur: '4–6 Mo' },
+                  { title: 'Data Science & ML',  color: '#2e7d32', fill: 83,  dur: '4–6 Mo', badge: 'Hot' },
+                  { title: 'AWS Cloud',          color: '#ff8c00', fill: 47,  dur: '2–3 Mo' },
+                  { title: 'Python',             color: '#2e7d32', fill: 56,  dur: '2–3 Mo' },
+                  { title: 'Cyber Security',     color: '#ff8c00', fill: 42,  dur: '3–4 Mo' },
+                ].map((c, i) => (
+                  <div
+                    key={i}
+                    className="flex-shrink-0 rounded-xl p-3"
+                    style={{ width: '140px', background: 'rgba(255,255,255,0.06)', border: '0.5px solid rgba(255,255,255,0.12)' }}
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <div className="w-[3px] rounded-full mr-2 mt-1 flex-shrink-0" style={{ minHeight: '28px', backgroundColor: c.color }} />
+                      <div className="flex-1">
+                        <div className="text-slate-100 text-[11px] font-bold leading-tight">{c.title}</div>
+                        <div className="text-slate-500 text-[10px] mt-0.5">{c.dur}</div>
+                      </div>
+                      {c.badge && (
+                        <span
+                          className="text-[8px] font-bold rounded-full px-1.5 py-0.5 ml-1 flex-shrink-0"
+                          style={{ background: 'rgba(255,140,0,.15)', color: '#ffb347', border: '0.5px solid rgba(255,140,0,.3)' }}
+                        >
+                          {c.badge}
+                        </span>
+                      )}
+                    </div>
+                    <div className="h-[2px] rounded-full overflow-hidden mt-2" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                      <div className="h-full rounded-full" style={{ width: `${c.fill}%`, backgroundColor: c.color }} />
+                    </div>
+                    <div className="text-right mt-1">
+                      <span className="text-[9px] font-bold" style={{ color: c.color }}>{c.fill}% full</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
+        </div>
 
-          {/* Course mini cards */}
-          {[
-            { title: 'Full Stack Web Dev',    dur: '4–6 Months', color: '#3b82f6', fill: 70 },
-            { title: 'Data Science & ML',     dur: '4–6 Months', color: '#8b5cf6', fill: 83, badge: 'Hot' },
-            { title: 'Cloud Computing (AWS)', dur: '2–3 Months', color: '#ef4444', fill: 47 },
-            // { title: 'Python Programming',    dur: '2–3 Months', color: '#f59e0b', fill: 56 },
-          ].map((c, i) => (
-            <div
-              key={i}
-              className="rounded-xl p-2.5"
-              style={{
-                background: 'rgba(255,255,255,0.05)',
-                border: '0.5px solid rgba(255,255,255,0.1)',
-                animation: `fadeUp 0.4s ease both ${0.1 + i * 0.07}s`,
-              }}
-            >
-              <div className="flex items-center justify-between mb-1.5">
-                <div>
-                  <div className="text-slate-100 text-[11px] font-bold leading-tight">{c.title}</div>
-                  <div className="text-slate-500 text-[10px] mt-0.5">{c.dur}</div>
-                </div>
-                {c.badge && (
-                  <span
-                    className="text-[9px] font-bold rounded-full px-2 py-0.5 flex-shrink-0"
-                    style={{
-                      background: 'rgba(239,68,68,.15)',
-                      color: '#fca5a5',
-                      border: '0.5px solid rgba(239,68,68,.3)',
-                    }}
-                  >
-                    {c.badge}
-                  </span>
-                )}
-              </div>
-              <div
-                className="h-[2px] rounded-full overflow-hidden"
-                style={{ background: 'rgba(255,255,255,0.08)' }}
-              >
-                <div
-                  className="h-full rounded-full"
-                  style={{ width: `${c.fill}%`, backgroundColor: c.color }}
-                />
-              </div>
-              <div className="flex justify-between mt-1">
-                <span className="text-slate-500 text-[9px]">Seats filled</span>
-                <span className="text-[9px] font-bold" style={{ color: c.color }}>
-                  {c.fill}%
+        {/* Scrolling Tech Ticker */}
+        <div
+          className="relative overflow-hidden py-2"
+          style={{
+            zIndex: 2,
+            borderTop: '0.5px solid rgba(255,255,255,0.07)',
+            borderBottom: '0.5px solid rgba(255,255,255,0.07)',
+            background: 'rgba(0,0,0,0.2)',
+          }}
+        >
+          <div className="flex w-max" style={{ animation: 'ticker 18s linear infinite' }}>
+            {[...Array(2)].map((_, repeat) =>
+              ['React', 'Node.js', 'Python', 'Java', 'AWS', 'Data Science', 'Machine Learning',
+                'Cyber Security', 'Android Dev', 'SQL', 'Spring Boot', 'TensorFlow', 'Docker', 'Figma',
+              ].map((tech, i) => (
+                <span
+                  key={`${repeat}-${i}`}
+                  className="text-slate-500 text-[11px] font-semibold whitespace-nowrap px-4 sm:px-5"
+                  style={{ letterSpacing: '.05em' }}
+                >
+                  <span className="mr-4 sm:mr-5" style={{ color: '#ff8c0050' }}>◆</span>{tech}
                 </span>
-              </div>
-            </div>
-          ))}
-
-          {/* View all */}
-          
-          <a  href="#courses"
-            className="rounded-xl p-2.5 text-center block transition-all hover:opacity-80"
-            style={{
-              background: 'linear-gradient(135deg, rgba(37,99,235,.2), rgba(79,70,229,.2))',
-              border: '0.5px solid rgba(99,102,241,.35)',
-            }}
-          >
-            <span className="text-indigo-300 text-[11px] font-bold">
-              View All 20+ Courses →
-            </span>
-          </a>
+              ))
+            )}
+          </div>
         </div>
-      </div>
-
-      {/* ── MOBILE ONLY: Horizontal course scroll strip ── */}
-      <div className="lg:hidden pb-8 -mx-4 px-4" style={{ animation: 'fadeUp 0.5s ease 0.45s both' }}>
-        <div className="flex items-center justify-between mb-3">
-          <span className="text-slate-400 text-[10px] font-bold tracking-widest uppercase">
-            Popular Courses
-          </span>
-          <a href="#courses" className="text-blue-400 text-[10px] font-semibold">
-            View All →
-          </a>
-        </div>
-        <div className="flex gap-3 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none' }}>
-          {[
-            { title: 'Full Stack Web Dev',  color: '#3b82f6', fill: 70,  dur: '4–6 Mo' },
-            { title: 'Data Science & ML',   color: '#8b5cf6', fill: 83,  dur: '4–6 Mo', badge: 'Hot' },
-            { title: 'AWS Cloud',           color: '#ef4444', fill: 47,  dur: '2–3 Mo' },
-            { title: 'Python',              color: '#f59e0b', fill: 56,  dur: '2–3 Mo' },
-            { title: 'Cyber Security',      color: '#06b6d4', fill: 42,  dur: '3–4 Mo' },
-          ].map((c, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 rounded-xl p-3"
-              style={{
-                width: '140px',
-                background: 'rgba(255,255,255,0.06)',
-                border: '0.5px solid rgba(255,255,255,0.12)',
-              }}
-            >
-              <div className="flex items-start justify-between mb-2">
-                <div
-                  className="w-1.5 h-full rounded-full mr-2 mt-1 flex-shrink-0"
-                  style={{ minHeight: '28px', backgroundColor: c.color, width: '3px' }}
-                />
-                <div className="flex-1">
-                  <div className="text-slate-100 text-[11px] font-bold leading-tight">{c.title}</div>
-                  <div className="text-slate-500 text-[10px] mt-0.5">{c.dur}</div>
-                </div>
-                {c.badge && (
-                  <span
-                    className="text-[8px] font-bold rounded-full px-1.5 py-0.5 ml-1 flex-shrink-0"
-                    style={{
-                      background: 'rgba(239,68,68,.15)',
-                      color: '#fca5a5',
-                      border: '0.5px solid rgba(239,68,68,.3)',
-                    }}
-                  >
-                    {c.badge}
-                  </span>
-                )}
-              </div>
-              <div
-                className="h-[2px] rounded-full overflow-hidden mt-2"
-                style={{ background: 'rgba(255,255,255,0.08)' }}
-              >
-                <div
-                  className="h-full rounded-full"
-                  style={{ width: `${c.fill}%`, backgroundColor: c.color }}
-                />
-              </div>
-              <div className="text-right mt-1">
-                <span className="text-[9px] font-bold" style={{ color: c.color }}>
-                  {c.fill}% full
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  {/* ── Scrolling Tech Ticker ── */}
-  <div
-    className="relative overflow-hidden py-2"
-    style={{
-      zIndex: 2,
-      borderTop: '0.5px solid rgba(255,255,255,0.07)',
-      borderBottom: '0.5px solid rgba(255,255,255,0.07)',
-      background: 'rgba(0,0,0,0.2)',
-    }}
-  >
-    <div className="flex w-max" style={{ animation: 'ticker 18s linear infinite' }}>
-      {[...Array(2)].map((_, repeat) =>
-        ['React', 'Node.js', 'Python', 'Java', 'AWS', 'Data Science', 'Machine Learning',
-          'Cyber Security', 'Android Dev', 'SQL', 'Spring Boot', 'TensorFlow', 'Docker', 'Figma',
-        ].map((tech, i) => (
-          <span
-            key={`${repeat}-${i}`}
-            className="text-slate-500 text-[11px] font-semibold whitespace-nowrap px-4 sm:px-5"
-            style={{ letterSpacing: '.05em' }}
-          >
-            <span className="text-slate-700 mr-4 sm:mr-5">◆</span>{tech}
-          </span>
-        ))
-      )}
-    </div>
-  </div>
-
-  {/* Wave */}
-  {/* <svg
-    viewBox="0 0 1440 48"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-full block"
-    style={{ position: 'relative', zIndex: 2 }}
-  >
-    <path d="M0,24 C360,0 1080,52 1440,18 L1440,48 L0,48 Z" fill="rgba(255,255,255,0.04)" />
-    <path d="M0,32 C400,6 1040,56 1440,24 L1440,48 L0,48 Z" fill="white" />
-  </svg> */}
-</section>
+      </section>
 
 
       {/* ── SECTION 3: COURSE GRID ───────────────────────────────────────────── */}
-      <section className="py-10 px-6 bg-gray-50">
+      <section className="py-10 px-6 bg-gray-50" id="courses">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ backgroundColor: '#fff7ed', color: '#ff8c00' }}>
               Our Programs
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2">
               Find Your{' '}
-              <span className="text-blue-600">Perfect Course</span>
+              <span style={{ color: '#ff8c00' }}>Perfect Course</span>
             </h2>
             <p className="text-gray-500 text-sm">Filter by category or search by technology</p>
           </div>
@@ -601,7 +540,10 @@ const Training = () => {
                 placeholder="Search courses or tech..."
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                className="w-full bg-white border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-sm text-gray-700 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
+                className="w-full bg-white border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-sm text-gray-700 outline-none transition-all"
+                style={{}}
+                onFocus={e => { e.target.style.borderColor = '#ff8c00'; e.target.style.boxShadow = '0 0 0 3px rgba(255,140,0,0.12)' }}
+                onBlur={e => { e.target.style.borderColor = '#e5e7eb'; e.target.style.boxShadow = 'none' }}
               />
             </div>
 
@@ -611,11 +553,19 @@ const Training = () => {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border ${
-                    activeCategory === cat
-                      ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-200'
-                      : 'bg-white text-gray-600 border-gray-200 hover:border-blue-300 hover:text-blue-600'
-                  }`}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border`}
+                  style={activeCategory === cat ? {
+                    background: 'linear-gradient(135deg, #ff8c00, #e67e00)',
+                    color: 'white',
+                    borderColor: '#ff8c00',
+                    boxShadow: '0 4px 12px rgba(255,140,0,0.3)',
+                  } : {
+                    backgroundColor: 'white',
+                    color: '#4b5563',
+                    borderColor: '#e5e7eb',
+                  }}
+                  onMouseEnter={e => { if (activeCategory !== cat) { e.currentTarget.style.borderColor = '#ff8c00'; e.currentTarget.style.color = '#ff8c00' } }}
+                  onMouseLeave={e => { if (activeCategory !== cat) { e.currentTarget.style.borderColor = '#e5e7eb'; e.currentTarget.style.color = '#4b5563' } }}
                 >
                   {cat}
                 </button>
@@ -643,12 +593,13 @@ const Training = () => {
       <section className="py-5 px-6 bg-white" ref={whyRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ backgroundColor: '#f0fdf4', color: '#2e7d32' }}>
               Why Train With Us
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900">
               Training That Actually{' '}
-              <span className="text-blue-600">Works</span>
+              <span style={{ color: '#2e7d32' }}>Works</span>
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -679,22 +630,25 @@ const Training = () => {
       <section className="py-8 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ backgroundColor: '#fff7ed', color: '#ff8c00' }}>
               Student Reviews
             </span>
             <h2 className="text-3xl font-black text-gray-900">
               What Our{' '}
-              <span className="text-blue-600">Students Say</span>
+              <span style={{ color: '#ff8c00' }}>Students Say</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-5">
             {[
-              { name: 'Riya Sharma',  role: 'Placed at TCS',      course: 'Full Stack Web Dev', review: 'The live project experience was game-changing. I went from zero to full-stack developer in 5 months. The faculty is incredibly supportive.', rating: 5, initials: 'RS', color: '#3b82f6' },
-              { name: 'Mohit Verma',  role: 'Placed at Infosys',  course: 'Python Programming', review: 'Best decision of my life. The course content was very practical and up-to-date. Got placed within 2 months of completing the course.', rating: 5, initials: 'MV', color: '#f59e0b' },
-              { name: 'Priya Singh',  role: 'Placed at Wipro',    course: 'Data Science & ML',  review: 'Amazing mentors who know the industry inside out. The projects I built here made my resume stand out in every interview.', rating: 5, initials: 'PS', color: '#10b981' },
+              { name: 'Riya Sharma', role: 'Placed at TCS',     course: 'Full Stack Web Dev', review: 'The live project experience was game-changing. I went from zero to full-stack developer in 5 months. The faculty is incredibly supportive.', rating: 5, initials: 'RS', color: '#ff8c00' },
+              { name: 'Mohit Verma', role: 'Placed at Infosys', course: 'Python Programming', review: 'Best decision of my life. The course content was very practical and up-to-date. Got placed within 2 months of completing the course.', rating: 5, initials: 'MV', color: '#2e7d32' },
+              { name: 'Priya Singh', role: 'Placed at Wipro',   course: 'Data Science & ML',  review: 'Amazing mentors who know the industry inside out. The projects I built here made my resume stand out in every interview.', rating: 5, initials: 'PS', color: '#ff8c00' },
             ].map((t, i) => (
-              <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-all duration-300"
+              <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-all duration-300 relative overflow-hidden"
                 style={{ animation: `fadeUp 0.5s ease both ${i * 0.1}s` }}>
+                {/* top accent */}
+                <div className="absolute top-0 left-0 right-0 h-0.5" style={{ backgroundColor: t.color }} />
                 <div className="flex gap-0.5 mb-3">
                   {[...Array(t.rating)].map((_, j) => (
                     <Star key={j} size={13} className="fill-yellow-400 text-yellow-400" />
@@ -720,19 +674,20 @@ const Training = () => {
       {/* ── SECTION 6: CTA ───────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden py-20 px-6"
-        style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #0d1b2a 0%, #1a3a2a 50%, #0d1b2a 100%)' }}
       >
         <div className="absolute inset-0 opacity-[0.05]"
-          style={{ backgroundImage: 'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)', backgroundSize: '40px 40px' }} />
+          style={{ backgroundImage: 'linear-gradient(#ff8c00 1px,transparent 1px),linear-gradient(90deg,#ff8c00 1px,transparent 1px)', backgroundSize: '40px 40px' }} />
         <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
+          style={{ background: 'radial-gradient(circle, #ff8c00, transparent)' }} />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full blur-3xl opacity-15"
-          style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
+          style={{ background: 'radial-gradient(circle, #2e7d32, transparent)' }} />
 
         <div className="relative max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-            <span className="text-yellow-300 text-sm font-medium">New Batch Starting Soon — Limited Seats</span>
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6"
+            style={{ backgroundColor: 'rgba(255,140,0,0.1)', border: '1px solid rgba(255,140,0,0.2)' }}>
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#ff8c00' }} />
+            <span className="text-sm font-medium" style={{ color: '#ffb347' }}>New Batch Starting Soon — Limited Seats</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-5 leading-tight">
             Ready to{' '}
@@ -744,12 +699,16 @@ const Training = () => {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="/registration"
-              className="group px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 flex items-center gap-2">
+              className="group px-8 py-4 text-white font-bold rounded-xl transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2"
+              style={{ background: 'linear-gradient(135deg, #ff8c00, #e67e00)', boxShadow: '0 4px 15px rgba(255,140,0,0.4)' }}>
               Enroll Now
               <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="/contact"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all duration-300 hover:-translate-y-0.5 backdrop-blur">
+              className="px-8 py-4 font-bold rounded-xl border transition-all duration-300 hover:-translate-y-0.5 text-white"
+              style={{ backgroundColor: 'rgba(46,125,50,0.2)', borderColor: 'rgba(46,125,50,0.4)' }}
+              onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgba(46,125,50,0.35)'}
+              onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgba(46,125,50,0.2)'}>
               Talk to Counsellor
             </a>
           </div>

@@ -161,9 +161,7 @@ const Home = () => {
         }
       `}</style>
 
-      {/* ══════════════════════════════════════════════════════
-          HERO SECTION
-          ══════════════════════════════════════════════════════ */}
+      {/* HERO SECTION */}
       <div className="relative w-full h-[60vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
         {slides.map((slide, index) => (
           <div
@@ -238,9 +236,7 @@ const Home = () => {
         ))}
       </div>
 
-      {/* ══════════════════════════════════════════════════════
-          STATS SECTION
-          ══════════════════════════════════════════════════════ */}
+      {/* STATS SECTION */}
       <section className="py-14 px-6 bg-white" ref={statsRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -266,9 +262,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════
-          RECENT PLACEMENTS — marquee slider
-          ══════════════════════════════════════════════════════ */}
+      {/* RECENT PLACEMENTS — marquee slider */}
       <section className="py-14 overflow-hidden" style={{ background: '#f9f5f0' }}>
         <div className="max-w-6xl mx-auto px-6 mb-10 text-center">
           <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
@@ -285,11 +279,8 @@ const Home = () => {
         </div>
 
         <div className="relative overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-20 z-10"
-            style={{ background: 'linear-gradient(to right, #f9f5f0, transparent)' }} />
-          <div className="absolute right-0 top-0 bottom-0 w-20 z-10"
-            style={{ background: 'linear-gradient(to left, #f9f5f0, transparent)' }} />
-
+          <div className="absolute left-0 top-0 bottom-0 w-20 z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 z-10"/>
           <div className="flex w-max animate-slide gap-6 px-4">
             {[about, hero2, hero3, about, hero2, hero3, about, hero2].map((src, i) => (
               <div key={i} className="flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-orange-100 bg-white">
@@ -300,13 +291,10 @@ const Home = () => {
         </div>
 
         {/* Companies marquee */}
-        <div className="relative overflow-hidden mt-10">
-          <div className="absolute left-0 top-0 bottom-0 w-16 z-10"
-            style={{ background: 'linear-gradient(to right, #f9f5f0, transparent)' }} />
-          <div className="absolute right-0 top-0 bottom-0 w-16 z-10"
-            style={{ background: 'linear-gradient(to left, #f9f5f0, transparent)' }} />
-
-          <div className="marquee-track gap-4 py-3">
+        <div className="relative overflow-hidden mt-10 ">
+          <div className="absolute left-0 top-0 bottom-0 w-16 z-10"/>
+          <div className="absolute right-0 top-0 bottom-0 w-16 z-10"/>
+          <div className="marquee-track gap-4 py-3 ">
             {[...companies, ...companies].map((c, i) => (
               <div key={i}
                 className="flex-shrink-0 flex items-center gap-2 bg-white rounded-xl border px-5 py-3 shadow-sm font-bold text-sm mx-2 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
@@ -319,16 +307,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════
-          EXPERT SECTION
-          ══════════════════════════════════════════════════════ */}
+      {/* EXPERT SECTION */}
+      
       <div className='px-4 md:px-10 bg-white'>
         <ExpertSection />
       </div>
 
-      {/* ══════════════════════════════════════════════════════
-          TRAINING CARDS SECTION
-          ══════════════════════════════════════════════════════ */}
+      {/* TRAINING CARDS SECTION */}
       <div className='px-4 md:px-10 pt-10 bg-white'>
         <CardSection />
       </div>

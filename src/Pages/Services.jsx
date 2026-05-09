@@ -8,13 +8,12 @@ import {
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
-
 // OUR SERVICES START
 const services = [
   {
     id: 1,
     icon: GraduationCap,
-    color: '#3b82f6', bg: '#eff6ff',
+    color: '#ff8c00', bg: '#fff4e0',
     title: 'Technical Training Programs',
     subtitle: 'Core Learning Service',
     desc: 'Comprehensive, industry-aligned training in the latest technologies — from web development to data science and cloud computing. Delivered by certified experts with 10+ years of industry experience.',
@@ -32,7 +31,7 @@ const services = [
   {
     id: 2,
     icon: Briefcase,
-    color: '#3b82f6', bg: '#eff6ff',
+    color: '#2e7d32', bg: '#e8f5e9',
     title: 'Placement Assistance',
     subtitle: 'Career Launch Service',
     desc: 'End-to-end placement support — from resume building to final offer letters. Our dedicated placement cell has strong ties with 50+ IT companies across India.',
@@ -50,7 +49,7 @@ const services = [
   {
     id: 3,
     icon: Users,
-    color: '#3b82f6', bg: '#eff6ff',
+    color: '#ff8c00', bg: '#fff4e0',
     title: 'Summer & Industrial Training',
     subtitle: 'Internship Programme',
     desc: 'Structured 4–6 week industrial training programmes for B.Tech, BCA, and MCA students — fulfilling university internship requirements with a recognised certificate and real project work.',
@@ -68,7 +67,7 @@ const services = [
   {
     id: 4,
     icon: FileText,
-    color: '#3b82f6', bg: '#eff6ff',
+    color: '#2e7d32', bg: '#e8f5e9',
     title: 'Project Development Support',
     subtitle: 'Final Year & Research Projects',
     desc: 'Complete end-to-end support for final year projects, mini projects, and research-based assignments. We help you build projects that stand out in your portfolio and impress evaluators.',
@@ -85,7 +84,7 @@ const services = [
   {
     id: 5,
     icon: Monitor,
-    color: '#3b82f6', bg: '#eff6ff',
+    color: '#ff8c00', bg: '#fff4e0',
     title: 'Corporate Training Solutions',
     subtitle: 'For Organisations & Teams',
     desc: 'Customised upskilling programmes for corporate teams and organisations. We design training modules aligned with your technology stack, delivered on-site or online.',
@@ -102,7 +101,7 @@ const services = [
   {
     id: 6,
     icon: HeartHandshake,
-    color: '#3b82f6', bg: '#eff6ff',
+    color: '#2e7d32', bg: '#e8f5e9',
     title: 'Career Counselling',
     subtitle: 'Free Guidance Session',
     desc: 'Not sure which tech path to choose? Our expert counsellors offer free one-on-one sessions to help you understand your strengths, map career goals, and pick the right course.',
@@ -128,21 +127,21 @@ const process = [
 ]
 
 const techStack = [
-  { name: 'Python',       color: '#3b82f6' },
-  { name: 'Java',         color: '#f59e0b' },
-  { name: 'React',        color: '#06b6d4' },
-  { name: 'Node.js',      color: '#10b981' },
-  { name: 'AWS',          color: '#ef4444' },
-  { name: 'Data Science', color: '#8b5cf6' },
-  { name: 'SQL',          color: '#f97316' },
-  { name: 'Android',      color: '#84cc16' },
-  { name: 'Cyber Security', color: '#06b6d4' },
-  { name: 'Spring Boot',  color: '#10b981' },
-  { name: 'Machine Learning', color: '#8b5cf6' },
-  { name: 'UI/UX Design', color: '#ec4899' },
+  { name: 'Python',          color: '#ff8c00' },
+  { name: 'Java',            color: '#2e7d32' },
+  { name: 'React',           color: '#ff8c00' },
+  { name: 'Node.js',         color: '#2e7d32' },
+  { name: 'AWS',             color: '#ff8c00' },
+  { name: 'Data Science',    color: '#2e7d32' },
+  { name: 'SQL',             color: '#ff8c00' },
+  { name: 'Android',         color: '#2e7d32' },
+  { name: 'Cyber Security',  color: '#ff8c00' },
+  { name: 'Spring Boot',     color: '#2e7d32' },
+  { name: 'Machine Learning',color: '#ff8c00' },
+  { name: 'UI/UX Design',    color: '#2e7d32' },
 ]
 
-// HERO SECTION 
+// HERO SECTION
 const SERVICES = [
   { num: "01", title: "Technical Training",   sub: "Full Stack, Cloud, DevOps & more"      },
   { num: "02", title: "Placement Assistance",  sub: "Resume, mock interviews & referrals"   },
@@ -159,8 +158,6 @@ const STATS = [
   { num: "7+",  label: "Years Trusted"    },
 ];
 
-
-
 // ── Icons ──────────────────────────────────────────────────────────────────
 const Arrow = () => (
   <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -171,7 +168,7 @@ const Arrow = () => (
 // ── ServiceRow ─────────────────────────────────────────────────────────────
 const ServiceRow = ({ num, title, sub, i }) => (
   <li
-    className="group flex items-center gap-7 px-6 py-4 border-b border-white/[0.06] hover:bg-[#e85d26]/10 transition-colors duration-200 cursor-default"
+    className="group flex items-center gap-7 px-6 py-4 border-b border-white/[0.06] hover:bg-[#ff8c00]/10 transition-colors duration-200 cursor-default"
     style={{ animation: `fadeRow 0.5s ease ${i * 0.05 + 0.05}s both` }}
   >
     <span className="w-5 font-mono text-sm text-white/100 shrink-0">{num}</span>
@@ -179,7 +176,7 @@ const ServiceRow = ({ num, title, sub, i }) => (
       <p className="text-[13px] font-bold text-[#f0ece6] tracking-tight">{title}</p>
       <p className="text-[11px] font-light text-white/35 mt-0.5">{sub}</p>
     </div>
-    <Arrow className="text-white/15 group-hover:text-[#e85d26] group-hover:translate-x-0.5 transition-all duration-200" />
+    <Arrow className="text-white/15 group-hover:text-[#ff8c00] group-hover:translate-x-0.5 transition-all duration-200" />
   </li>
 );
 
@@ -285,7 +282,7 @@ const Services = () => {
           to   { transform: translateX(-50%); }
         }
         .shimmer-text {
-          background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa, #3b82f6, #1e40af);
+          background: linear-gradient(90deg, #ff8c00, #ffb347, #ff8c00, #2e7d32, #ff8c00);
           background-size: 200% auto;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -311,7 +308,8 @@ const Services = () => {
         .font-bricolage { font-family:'Bricolage Grotesque',sans-serif; }
       `}</style>
 
-      <section className="noise relative w-full overflow-hidden bg-blue-600/50 font-bricolage">
+      {/* Hero — light orange tint background */}
+      <section className="noise relative w-full overflow-hidden font-bricolage" style={{ background: '#fff4e0' }}>
 
         {/* Body */}
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_500px]">
@@ -321,7 +319,7 @@ const Services = () => {
             <div>
               {/* Eyebrow */}
               <div className="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.1em] text-gray-800">
-                <span className="h-px w-6 bg-[#e85d26]" />
+                <span className="h-px w-6" style={{ background: '#ff8c00' }} />
                 IT Training &amp; Placement
               </div>
 
@@ -329,13 +327,13 @@ const Services = () => {
               <h1 className="anim-up mb-4 text-[40px] font-extrabold leading-[1.02] tracking-[-0.03em] text-[#0d0d0d] sm:text-[52px] lg:text-[62px]">
                 Build Skills.<br />
                 <span className="outline-word">Get</span>
-                <span className="text-[#e85d26]"> Hired.</span>
+                <span style={{ color: '#ff8c00' }}> Hired.</span>
               </h1>
 
               {/* Description */}
               <div className="flex items-stretch gap-5">
                 <div className="w-px shrink-0 bg-[#0d0d0d]" />
-                <p className="max-w-md text-[14px] font-light leading-[1.75] text-gray-800  sm:text-[15px]">
+                <p className="max-w-md text-[14px] font-light leading-[1.75] text-gray-800 sm:text-[15px]">
                   End-to-end career development — training, live projects, placement
                   assistance and counselling. 6 services, one destination.
                 </p>
@@ -344,7 +342,10 @@ const Services = () => {
 
             <div className="flex flex-col gap-8">
               {/* CTA */}
-              <button className="group w-fit flex items-center gap-2 rounded-md bg-blue-700 px-6 py-3.5 text-[13px] font-bold tracking-wide text-[#f5f2ee] transition-all duration-200 hover:bg-[#e85d26] hover:-translate-y-0.5">
+              <button
+                className="group w-fit flex items-center gap-2 rounded-md px-6 py-3.5 text-[13px] font-bold tracking-wide text-white transition-all duration-200 hover:-translate-y-0.5"
+                style={{ background: 'linear-gradient(135deg, #ff8c00, #e07800)' }}
+              >
                 <Arrow /> Explore Services
               </button>
 
@@ -353,7 +354,7 @@ const Services = () => {
                 {STATS.map(({ num, label }) => (
                   <div key={label} className="flex flex-col gap-0.5">
                     <span className="text-[22px] font-extrabold tracking-[-0.03em] text-[#0d0d0d]">
-                      {num.slice(0, -1)}<em className="not-italic text-[#e85d26]">{num.slice(-1)}</em>
+                      {num.slice(0, -1)}<em className="not-italic" style={{ color: '#ff8c00' }}>{num.slice(-1)}</em>
                     </span>
                     <span className="text-[10px] uppercase tracking-[0.06em] text-gray-800">{label}</span>
                   </div>
@@ -362,8 +363,8 @@ const Services = () => {
             </div>
           </div>
 
-          {/* Right — dark panel */}
-          <div className="hatch relative flex flex-col bg-gray-700 pe-10">
+          {/* Right — navy dark panel */}
+          <div className="hatch relative flex flex-col" style={{ background: '#0d1b2a' }}>
             <div className="relative z-10 border-b border-white/[0.06] px-6 py-5 text-[10px] uppercase tracking-[0.12em] text-white/30">
               Our 6 core services
             </div>
@@ -380,12 +381,15 @@ const Services = () => {
       <section className="py-8 px-6 bg-gray-50" ref={cardsRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            <span
+              className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ background: '#fff4e0', color: '#ff8c00' }}
+            >
               What We Offer
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2">
               Our Core{' '}
-              <span className="text-blue-600">Services</span>
+              <span style={{ color: '#ff8c00' }}>Services</span>
             </h2>
             <p className="text-gray-500 text-sm max-w-md mx-auto">
               Every service is designed to take you from where you are to where you want to be.
@@ -413,7 +417,19 @@ const Services = () => {
             <div className="marquee-track flex gap-3 pr-3">
               {[...techStack, ...techStack].map((t, i) => (
                 <div key={i}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm font-bold text-gray-700 flex-shrink-0 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 cursor-default">
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm font-bold text-gray-700 flex-shrink-0 transition-all duration-200 cursor-default"
+                  style={{ '--hover-border': '#ff8c00' }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = '#ff8c00'
+                    e.currentTarget.style.background = '#fff4e0'
+                    e.currentTarget.style.color = '#ff8c00'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = ''
+                    e.currentTarget.style.background = ''
+                    e.currentTarget.style.color = ''
+                  }}
+                >
                   <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: t.color }} />
                   {t.name}
                 </div>
@@ -427,19 +443,23 @@ const Services = () => {
       <section className="py-5 px-6 bg-gray-50" ref={processRef}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            <span
+              className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ background: '#fff4e0', color: '#ff8c00' }}
+            >
               Our Process
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2">
               How We{' '}
-              <span className="text-blue-600">Work</span>
+              <span style={{ color: '#ff8c00' }}>Work</span>
             </h2>
             <p className="text-gray-500 text-sm">Simple, transparent, and student-first — every step of the way</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6 relative">
             {/* Connector */}
-            <div className="hidden md:block absolute top-8 left-[calc(12.5%+16px)] right-[calc(12.5%+16px)] h-[2px] bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 rounded-full" />
+            <div className="hidden md:block absolute top-8 left-[calc(12.5%+16px)] right-[calc(12.5%+16px)] h-[2px] rounded-full"
+              style={{ background: 'linear-gradient(to right, #ff8c00, #2e7d32, #ff8c00)' }} />
 
             {process.map((step, i) => {
               const Icon = step.icon
@@ -447,10 +467,13 @@ const Services = () => {
                 <div key={i}
                   className="relative z-10 text-center group"
                   style={processInView ? { animation: `fadeUp 0.5s ease both ${i * 0.12}s`, opacity: 0 } : { opacity: 0 }}>
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-400 flex flex-col items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-200 group-hover:scale-110 transition-transform duration-300">
+                  <div
+                    className="w-16 h-16 rounded-2xl flex flex-col items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                    style={{ background: i % 2 === 0 ? 'linear-gradient(135deg, #ff8c00, #ffb347)' : 'linear-gradient(135deg, #2e7d32, #4caf50)', boxShadow: i % 2 === 0 ? '0 8px 20px rgba(255,140,0,0.25)' : '0 8px 20px rgba(46,125,50,0.25)' }}
+                  >
                     <Icon size={20} className="text-white" />
                   </div>
-                  <div className="text-[10px] font-black text-blue-400 tracking-widest mb-1">{step.num}</div>
+                  <div className="text-[10px] font-black tracking-widest mb-1" style={{ color: i % 2 === 0 ? '#ff8c00' : '#2e7d32' }}>{step.num}</div>
                   <h3 className="font-bold text-gray-900 text-sm mb-1.5">{step.title}</h3>
                   <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
                 </div>
@@ -464,40 +487,46 @@ const Services = () => {
       <section className="py-10 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            <span
+              className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ background: '#e8f5e9', color: '#2e7d32' }}
+            >
               Why Choose Us
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900">
               Us vs{' '}
-              <span className="text-blue-600">Others</span>
+              <span style={{ color: '#2e7d32' }}>Others</span>
             </h2>
           </div>
 
           <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
             {/* Header */}
-            <div className="grid grid-cols-3 bg-gray-900 text-white">
+            <div className="grid grid-cols-3 text-white" style={{ background: '#0d1b2a' }}>
               <div className="p-4 text-sm font-bold text-gray-400">Feature</div>
-              <div className="p-4 text-sm font-bold text-center text-blue-400 border-x border-gray-700">
+              <div className="p-4 text-sm font-bold text-center border-x border-gray-700" style={{ color: '#ff8c00' }}>
                 <div className="flex items-center justify-center gap-1.5">
-                  <Star size={13} className="fill-blue-400" /> Our Institute
+                  <Star size={13} style={{ fill: '#ff8c00', color: '#ff8c00' }} /> Our Institute
                 </div>
               </div>
               <div className="p-4 text-sm font-bold text-center text-gray-400">Others</div>
             </div>
 
             {[
-              { feature: 'Batch Size',             us: 'Max 20 Students',       them: '50–100 Students' },
-              { feature: 'Live Industry Projects',  us: 'Every Course',          them: 'Rarely Included' },
-              { feature: 'Placement Support',       us: 'Dedicated Cell',        them: 'Limited / None' },
-              { feature: 'Certificate Recognition', us: 'Industry Accepted',     them: 'Varies' },
-              { feature: 'Career Counselling',      us: 'Free — Always',         them: 'Paid Add-on' },
+              { feature: 'Batch Size',             us: 'Max 20 Students',         them: '50–100 Students' },
+              { feature: 'Live Industry Projects',  us: 'Every Course',            them: 'Rarely Included' },
+              { feature: 'Placement Support',       us: 'Dedicated Cell',          them: 'Limited / None' },
+              { feature: 'Certificate Recognition', us: 'Industry Accepted',       them: 'Varies' },
+              { feature: 'Career Counselling',      us: 'Free — Always',           them: 'Paid Add-on' },
               { feature: 'Batch Flexibility',       us: 'Morning / Eve / Weekend', them: 'Fixed Slots Only' },
-              { feature: 'Curriculum Updates',      us: 'Every 6 Months',        them: 'Rarely Updated' },
+              { feature: 'Curriculum Updates',      us: 'Every 6 Months',          them: 'Rarely Updated' },
             ].map((row, i) => (
-              <div key={i} className={`grid grid-cols-3 border-t border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50/40 transition-colors duration-200`}>
+              <div key={i} className={`grid grid-cols-3 border-t border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} transition-colors duration-200`}
+                onMouseEnter={e => e.currentTarget.style.background = '#fff4e0'}
+                onMouseLeave={e => e.currentTarget.style.background = ''}
+              >
                 <div className="p-4 text-sm font-semibold text-gray-700">{row.feature}</div>
-                <div className="p-4 text-sm text-center font-bold text-blue-600 border-x border-gray-100 flex items-center justify-center gap-1.5">
-                  <CheckCircle size={13} className="text-green-500 flex-shrink-0" />
+                <div className="p-4 text-sm text-center font-bold border-x border-gray-100 flex items-center justify-center gap-1.5" style={{ color: '#ff8c00' }}>
+                  <CheckCircle size={13} className="flex-shrink-0" style={{ color: '#2e7d32' }} />
                   {row.us}
                 </div>
                 <div className="p-4 text-sm text-center text-gray-400">{row.them}</div>
@@ -510,19 +539,22 @@ const Services = () => {
       {/* ── SECTION 7: CTA ───────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden py-20 px-6"
-        style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #0d1b2a 0%, #1a3a1a 50%, #0d1b2a 100%)' }}
       >
         <div className="absolute inset-0 opacity-[0.05]"
-          style={{ backgroundImage: 'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)', backgroundSize: '40px 40px' }} />
+          style={{ backgroundImage: 'linear-gradient(#ff8c00 1px,transparent 1px),linear-gradient(90deg,#ff8c00 1px,transparent 1px)', backgroundSize: '40px 40px' }} />
+        {/* Orange orb */}
         <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
+          style={{ background: 'radial-gradient(circle, #ff8c00, transparent)' }} />
+        {/* Green orb */}
         <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full blur-3xl opacity-15"
-          style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
+          style={{ background: 'radial-gradient(circle, #2e7d32, transparent)' }} />
 
         <div className="relative max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-            <span className="text-yellow-300 text-sm font-medium">Free Counselling Available — Book Today</span>
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 border"
+            style={{ background: 'rgba(255,140,0,0.1)', borderColor: 'rgba(255,140,0,0.2)' }}>
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#ff8c00' }} />
+            <span className="text-sm font-medium" style={{ color: '#ffb347' }}>Free Counselling Available — Book Today</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-black text-white mb-5 leading-tight">
@@ -537,23 +569,39 @@ const Services = () => {
 
           <div className="flex flex-wrap gap-4 justify-center mb-8">
             <a href="/registration"
-              className="group px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 flex items-center gap-2">
+              className="group px-8 py-4 text-white font-bold rounded-xl transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2"
+              style={{ background: 'linear-gradient(135deg, #ff8c00, #e07800)', boxShadow: '0 4px 15px rgba(255,140,0,0.3)' }}
+              onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 25px rgba(255,140,0,0.4)'}
+              onMouseLeave={e => e.currentTarget.style.boxShadow = '0 4px 15px rgba(255,140,0,0.3)'}
+            >
               Get Started Now
               <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="/contact"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all duration-300 hover:-translate-y-0.5 backdrop-blur">
+              className="px-8 py-4 text-white font-bold rounded-xl border transition-all duration-300 hover:-translate-y-0.5 backdrop-blur"
+              style={{ background: 'rgba(46,125,50,0.15)', borderColor: 'rgba(46,125,50,0.4)' }}
+              onMouseEnter={e => e.currentTarget.style.background = 'rgba(46,125,50,0.3)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'rgba(46,125,50,0.15)'}
+            >
               Book Free Counselling
             </a>
           </div>
 
           {/* Quick contact */}
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="tel:+911234567890" className="flex items-center gap-2 text-sm text-blue-300 hover:text-blue-200 transition-colors font-medium">
+            <a href="tel:+911234567890" className="flex items-center gap-2 text-sm font-medium transition-colors"
+              style={{ color: '#ffb347' }}
+              onMouseEnter={e => e.currentTarget.style.color = '#ff8c00'}
+              onMouseLeave={e => e.currentTarget.style.color = '#ffb347'}
+            >
               <Phone size={14} /> +91 9720535155
             </a>
             <span className="text-gray-600 hidden sm:block">·</span>
-            <a href="mailto:info@institute.com" className="flex items-center gap-2 text-sm text-blue-300 hover:text-blue-200 transition-colors font-medium">
+            <a href="mailto:info@institute.com" className="flex items-center gap-2 text-sm font-medium transition-colors"
+              style={{ color: '#4caf50' }}
+              onMouseEnter={e => e.currentTarget.style.color = '#2e7d32'}
+              onMouseLeave={e => e.currentTarget.style.color = '#4caf50'}
+            >
               <Mail size={14} /> sudheer@gmail.com
             </a>
           </div>

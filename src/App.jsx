@@ -32,7 +32,7 @@ const App = () => {
         </Routes>
         <Footer/>
         {/* Side floating buttons */}
-        <button className='hidden md:block fixed text-white px-2 py-1 bg-red-500 rotate-90 left-[-57px] top-1/2 -translate-y-1/2 z-30 text-sm font-semibold'>
+        <button className='hidden md:block fixed text-white px-2 py-1 bg-orange-600 rotate-90 left-[-57px] top-1/2 -translate-y-1/2 z-30 text-sm font-semibold'>
           Assessment Portal
         </button>
         <button className='hidden md:block fixed text-white px-2 py-1 bg-green-600 rotate-90 right-[-63px] top-1/2 -translate-y-1/2 z-30 text-sm font-semibold'>

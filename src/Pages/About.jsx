@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 // ── Data ────────────────────────────────────────────────────────────────────
 const stats = [
-  { num: "1000", sup: "+", label: "Students Trained", desc: "Across both campuses", icon: "👥", bg: "bg-blue-500/20", text: "text-blue-200" },
+  { num: "1000", sup: "+", label: "Students Trained", desc: "Across both campuses", icon: "👥", bg: "bg-orange-500/20", text: "text-orange-300" },
   { num: "500", sup: "+", label: "Placements Done", desc: "In top MNCs & startups", icon: "💼", bg: "bg-amber-400/20", text: "text-amber-300" },
-  { num: "7", sup: "+", label: "Years of Excellence", desc: "Trusted since 2017", icon: "🏆", bg: "bg-teal-400/20", text: "text-teal-300" },
-  { num: "50", sup: "+", label: "Industry Partners", desc: "Pan-India hiring network", icon: "🏢", bg: "bg-purple-400/20", text: "text-purple-300" },
+  { num: "7", sup: "+", label: "Years of Excellence", desc: "Trusted since 2017", icon: "🏆", bg: "bg-green-500/20", text: "text-green-300" },
+  { num: "50", sup: "+", label: "Industry Partners", desc: "Pan-India hiring network", icon: "🏢", bg: "bg-orange-400/20", text: "text-orange-200" },
 ];
 
 const images = [
@@ -19,44 +19,42 @@ const images = [
   "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=85",
 ];
 
-
-
 const values = [
   {
     icon: Target,
     title: 'Mission-Driven',
     desc: 'Our commitment is to make every student truly industry-ready — not just theory, but real-world, job-ready skills.',
-    accent: '#3b82f6',
-    bg: '#eff6ff',
+    accent: '#ff8c00',
+    bg: '#fff7ed',
   },
   {
     icon: Shield,
     title: 'Trust & Integrity',
     desc: 'A proven track record of 7+ years. We deliver what we promise — backed by our placement guarantee.',
-    accent: '#f59e0b',
-    bg: '#fffbeb',
+    accent: '#2e7d32',
+    bg: '#f0fdf4',
   },
   {
     icon: Zap,
     title: 'Innovation First',
     desc: 'Latest technologies, an updated curriculum, and hands-on live projects — we always stay one step ahead.',
-    accent: '#10b981',
-    bg: '#ecfdf5',
+    accent: '#ff8c00',
+    bg: '#fff7ed',
   },
   {
     icon: Heart,
     title: 'Student-Centric',
     desc: 'Every student is unique. We offer personalized attention, small batches, and dedicated one-on-one mentorship.',
-    accent: '#ef4444',
-    bg: '#fef2f2',
+    accent: '#2e7d32',
+    bg: '#f0fdf4',
   },
 ]
 
 const team = [
-  { name: 'Rajesh Kumar', role: 'Founder & Director', exp: '15+ Years', tag: 'IIT Alumni', color: '#3b82f6' },
-  { name: 'Priya Sharma', role: 'Head of Training', exp: '10+ Years', tag: 'Ex-TCS', color: '#8b5cf6' },
-  { name: 'Amit Singh', role: 'Placement Head', exp: '8+ Years', tag: 'Ex-Infosys', color: '#f59e0b' },
-  { name: 'Neha Gupta', role: 'Technical Lead', exp: '6+ Years', tag: 'Ex-Wipro', color: '#10b981' },
+  { name: 'Rajesh Kumar', role: 'Founder & Director', exp: '15+ Years', tag: 'IIT Alumni', color: '#ff8c00' },
+  { name: 'Priya Sharma', role: 'Head of Training', exp: '10+ Years', tag: 'Ex-TCS', color: '#2e7d32' },
+  { name: 'Amit Singh', role: 'Placement Head', exp: '8+ Years', tag: 'Ex-Infosys', color: '#ff8c00' },
+  { name: 'Neha Gupta', role: 'Technical Lead', exp: '6+ Years', tag: 'Ex-Wipro', color: '#2e7d32' },
 ]
 
 const timeline = [
@@ -138,6 +136,23 @@ const About = () => {
         .text-shadow-strong { text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
         .text-shadow-soft { text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
         .backdrop-blur-card { backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+        @keyframes slideRight { from { opacity:0; transform:translateX(-30px); } to { opacity:1; transform:translateX(0); } }
+        @keyframes slideLeft  { from { opacity:0; transform:translateX( 30px); } to { opacity:1; transform:translateX(0); } }
+        @keyframes fadeUp     { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+        .timeline-line::before {
+          content:''; position:absolute; left:50%; top:0; bottom:0;
+          width:2px; background:linear-gradient(to bottom,#ff8c00,#2e7d32);
+          transform:translateX(-50%);
+        }
+        @media(max-width:767px){ .timeline-line::before { left:20px; } }
+        .shimmer-text {
+          background: linear-gradient(90deg, #ff8c00, #fbbf24, #ff8c00);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmer 3s linear infinite;
+        }
+        @keyframes shimmer { to { background-position: 200% center; } }
       `}</style>
 
       <section className="relative overflow-hidden grid grid-cols-1 lg:grid-cols-2">
@@ -151,11 +166,14 @@ const About = () => {
           ))}
         </div>
 
+        {/* Dark overlay with navy tint */}
+        <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(135deg, rgba(13,27,42,0.88) 0%, rgba(13,27,42,0.75) 50%, rgba(13,27,42,0.88) 100%)' }} />
+
         {/* ── Center divider (desktop only) ── */}
-        <div className="hidden lg:block absolute left-1/2 top-[8%] h-[84%] w-px bg-white/15 z-10" />
+        <div className="hidden lg:block absolute left-1/2 top-[8%] h-[84%] w-px bg-white/15 z-20" />
 
         {/* ── Ghost year ── */}
-        <div className="font-playfair absolute bottom-2 left-8 text-[40px] sm:text-[56px] lg:text-[80px] font-black text-white/[0.06] tracking-[-4px] pointer-events-none select-none z-10 leading-none">
+        <div className="font-playfair absolute bottom-2 left-8 text-[40px] sm:text-[56px] lg:text-[80px] font-black text-white/[0.06] tracking-[-4px] pointer-events-none select-none z-20 leading-none">
           2017
         </div>
 
@@ -164,7 +182,7 @@ const About = () => {
 
           {/* Badges */}
           <div className="flex flex-wrap gap-2 mb-5">
-            <span className="text-[10px] font-semibold tracking-widest uppercase px-3 py-1 rounded bg-blue-300/25 border border-blue-300/60 text-white">
+            <span className="text-[10px] font-semibold tracking-widest uppercase px-3 py-1 rounded bg-orange-400/25 border border-orange-400/60 text-orange-200">
               ISO Certified
             </span>
             <span className="text-[10px] font-semibold tracking-widest uppercase px-3 py-1 rounded bg-amber-300/20 border border-amber-300/55 text-amber-300">
@@ -173,7 +191,7 @@ const About = () => {
           </div>
 
           {/* Accent bar */}
-          <div className="w-9 h-[3px] bg-blue-500 rounded-full mb-5" />
+          <div className="w-9 h-[3px] rounded-full mb-5" style={{ background: 'linear-gradient(90deg, #ff8c00, #2e7d32)' }} />
 
           {/* Title */}
           <h1 className="font-playfair text-[26px] sm:text-[32px] lg:text-[40px] font-black leading-[1.12] text-white mb-4 text-shadow-strong">
@@ -183,28 +201,33 @@ const About = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-md text-white leading-[1.75] max-w-[340px] mb-7 text-shadow-soft">
+          <p className="text-md text-white/85 leading-[1.75] max-w-[340px] mb-7 text-shadow-soft">
             7+ years. 1000+ students. One relentless belief — every learner deserves a genuine shot at the industry.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-2 items-center">
-            <button className="px-5 py-2.5 text-xs font-semibold rounded-md bg-blue-500 text-white border-none cursor-pointer hover:bg-blue-700 transition-colors">
+            <NavLink to="/registration"
+              className="px-5 py-2.5 text-xs font-semibold rounded-md text-white cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              style={{ background: 'linear-gradient(135deg, #ff8c00, #e67e00)' }}>
               Register Now →
-            </button>
-            <button className="px-4 py-2 text-[11px] font-medium rounded-md bg-white/15 text-white border border-white/35 cursor-pointer hover:bg-blue-700 transition-colors">
+            </NavLink>
+            <NavLink to="/training"
+              className="px-4 py-2 text-[11px] font-medium rounded-md bg-white/15 text-white border border-white/35 cursor-pointer hover:bg-white/25 transition-colors">
               20+ Courses
-            </button>
-            <button className="px-4 py-2 text-[11px] font-medium rounded-md bg-white/15 text-white border border-white/35 cursor-pointer hover:bg-blue-700 transition-colors">
+            </NavLink>
+            <NavLink to="/placement"
+              className="px-4 py-2 text-[11px] font-medium rounded-md text-white border cursor-pointer hover:bg-green-700/20 transition-colors"
+              style={{ borderColor: '#2e7d3280', backgroundColor: '#2e7d3220' }}>
               Placement Guarantee
-            </button>
+            </NavLink>
           </div>
 
           {/* Est line */}
           <div className="flex items-center gap-2 mt-6">
-            <div className="w-[5px] h-[5px] rounded-full bg-amber-300 flex-shrink-0" />
+            <div className="w-[5px] h-[5px] rounded-full bg-orange-400 flex-shrink-0" />
             <span className="text-[10px] text-white/50 tracking-[1.4px] uppercase">
-              Established 2017 · 
+              Established 2017 · DigiCoders
             </span>
           </div>
         </div>
@@ -241,10 +264,11 @@ const About = () => {
       <section className="py-8 px-6 bg-gray-50" ref={timelineRef}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Journey</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ backgroundColor: '#fff7ed', color: '#ff8c00' }}>Our Journey</span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900">
               Small Start,{' '}
-              <span className="text-blue-600">Big Journey</span>
+              <span style={{ color: '#ff8c00' }}>Big Journey</span>
             </h2>
           </div>
 
@@ -258,19 +282,20 @@ const About = () => {
 
                 {/* Card */}
                 <div className={`flex-1 bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 ${item.side === 'right' ? 'text-right' : ''} md:block hidden`}>
-                  <div className="text-xs font-bold text-blue-500 mb-1">{item.year}</div>
+                  <div className="text-xs font-bold mb-1" style={{ color: '#ff8c00' }}>{item.year}</div>
                   <div className="font-bold text-gray-900 text-base mb-1">{item.title}</div>
                   <div className="text-gray-500 text-sm leading-relaxed">{item.desc}</div>
                 </div>
 
                 {/* Center dot */}
-                <div className="flex-shrink-0 z-10 w-10 h-10 rounded-full bg-blue-600 border-4 border-white shadow-md flex items-center justify-center">
+                <div className="flex-shrink-0 z-10 w-10 h-10 rounded-full border-4 border-white shadow-md flex items-center justify-center"
+                  style={{ background: 'linear-gradient(135deg, #ff8c00, #2e7d32)' }}>
                   <div className="w-2 h-2 bg-white rounded-full" />
                 </div>
 
-                {/* Right / spacer for mobile visible */}
+                {/* Mobile card */}
                 <div className="flex-1 bg-white rounded-2xl p-5 shadow-sm border border-gray-100 md:hidden">
-                  <div className="text-xs font-bold text-blue-500 mb-1">{item.year}</div>
+                  <div className="text-xs font-bold mb-1" style={{ color: '#ff8c00' }}>{item.year}</div>
                   <div className="font-bold text-gray-900 text-base mb-1">{item.title}</div>
                   <div className="text-gray-500 text-sm leading-relaxed">{item.desc}</div>
                 </div>
@@ -285,10 +310,11 @@ const About = () => {
       <section className="py-8 px-6 bg-white" ref={valuesRef}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Values</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ backgroundColor: '#f0fdf4', color: '#2e7d32' }}>Our Values</span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900">
               Why We Are{' '}
-              <span className="text-blue-600">Different</span>
+              <span style={{ color: '#2e7d32' }}>Different</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -323,10 +349,11 @@ const About = () => {
       <section className="py-5 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Meet the Team</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{ backgroundColor: '#fff7ed', color: '#ff8c00' }}>Meet the Team</span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900">
               The People Who{' '}
-              <span className="text-blue-600">Make It Happen</span>
+              <span style={{ color: '#ff8c00' }}>Make It Happen</span>
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -353,21 +380,22 @@ const About = () => {
 
       {/* ── SECTION 6: CTA ───────────────────────────────────────────────── */}
       <section className="relative overflow-hidden py-20 px-6"
-        style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%)' }}>
+        style={{ background: 'linear-gradient(135deg, #0d1b2a 0%, #1a3a2a 50%, #0d1b2a 100%)' }}>
         {/* background grid */}
         <div className="absolute inset-0 opacity-[0.05]"
-          style={{ backgroundImage: 'linear-gradient(#60a5fa 1px,transparent 1px),linear-gradient(90deg,#60a5fa 1px,transparent 1px)', backgroundSize: '40px 40px' }} />
+          style={{ backgroundImage: 'linear-gradient(#ff8c00 1px,transparent 1px),linear-gradient(90deg,#ff8c00 1px,transparent 1px)', backgroundSize: '40px 40px' }} />
 
         {/* Orbs */}
         <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #3b82f6, transparent)' }} />
+          style={{ background: 'radial-gradient(circle, #ff8c00, transparent)' }} />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full blur-3xl opacity-15"
-          style={{ background: 'radial-gradient(circle, #60a5fa, transparent)' }} />
+          style={{ background: 'radial-gradient(circle, #2e7d32, transparent)' }} />
 
         <div className="relative max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-            <span className="text-yellow-300 text-sm font-medium">Batch Starting Soon</span>
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6"
+            style={{ backgroundColor: '#ff8c0015', border: '1px solid #ff8c0030' }}>
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#ff8c00' }} />
+            <span className="text-sm font-medium" style={{ color: '#ffb347' }}>Batch Starting Soon</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-black text-white mb-5 leading-tight">
@@ -382,12 +410,16 @@ const About = () => {
 
           <div className="flex flex-wrap gap-4 justify-center">
             <NavLink to="/registration"
-              className="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 flex items-center gap-2">
+              className="group relative px-8 py-4 text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
+              style={{ background: 'linear-gradient(135deg, #ff8c00, #e67e00)', boxShadow: '0 4px 15px rgba(255,140,0,0.3)' }}>
               Register Now
               <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </NavLink>
             <NavLink to="/contact"
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl border border-white/20 transition-all duration-300 hover:-translate-y-0.5 backdrop-blur">
+              className="px-8 py-4 font-bold rounded-xl border transition-all duration-300 hover:-translate-y-0.5 text-white"
+              style={{ backgroundColor: '#2e7d3220', borderColor: '#2e7d3260' }}
+              onMouseEnter={e => e.currentTarget.style.backgroundColor = '#2e7d3240'}
+              onMouseLeave={e => e.currentTarget.style.backgroundColor = '#2e7d3220'}>
               Contact Us
             </NavLink>
           </div>
